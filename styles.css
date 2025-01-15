@@ -340,14 +340,18 @@ canvas#canvas3d {
 }
 
 /* General recommender photo styling */
-.recommender-photo-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%; /* Default for circular logos */
-    background-color: #ffffff; /* White background for transparency issues */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.recommendations-section .recommender-photo-container {
+    width: 60px; /* Fixed size for all screens */
+    height: 60px; /* Fixed size for all screens */
+    margin-right: 15px;
+    overflow: hidden; /* Prevent content overflow */
+    border-radius: 50%; /* Perfect circle */
+    border: 2px solid #FF2DF7; /* Gradient border */
+    display: flex; /* Center-align content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-shrink: 0; /* Prevent shrinking on smaller screens */
+    box-sizing: border-box; /* Consistent sizing */
 }
 
 /* Specific styling for the KAU logo */
@@ -549,7 +553,10 @@ canvas#canvas3d {
 }
 
 .recommendations-section .accordion-item {
-    border-bottom: 1px solid #333333;
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    gap: 15px; /* Spacing between the photo and text */
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .recommendations-section .accordion-item:last-child {
@@ -626,12 +633,10 @@ canvas#canvas3d {
 
 /* ====== Accordion Content ====== */
 .recommendations-section .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease;
-    background-color: #1a1a1a;
-    padding: 0 20px;
-    display: block; /* Changed from flex to block to allow vertical expansion */
+    max-width: 100%; /* Prevent content overflow */
+    overflow: hidden; /* Hide excess content */
+    box-sizing: border-box; /* Include padding and border in calculations */
+    padding: 20px; /* Maintain spacing consistency */
 }
 
 .recommendations-section .accordion-content .testimonial-container {
@@ -729,19 +734,6 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-.recommendations-section .recommender-photo-container {
-    width: 60px; /* Fixed size */
-    height: 60px; /* Fixed size */
-    margin-right: 15px;
-    overflow: hidden;
-    border-radius: 50%; /* Ensure perfect circle */
-    border: 2px solid #FF2DF7; /* Gradient-matching border */
-    display: flex; /* Ensure proper content alignment */
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0; /* Prevent shrinking on smaller screens */
-    box-sizing: border-box; /* Include padding and border in size calculation */
-}
 
     .projects-section {
         padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
