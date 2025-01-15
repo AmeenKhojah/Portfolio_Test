@@ -251,23 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-document.addEventListener('DOMContentLoaded', () => {
-    const kauLogo = document.querySelector('img[alt="KAU Logo"]');
-    if (kauLogo) {
-        const parent = kauLogo.parentElement;
-
-        // Ensure the parent container is square
-        const size = Math.min(parent.offsetWidth, parent.offsetHeight);
-        parent.style.width = `${size}px`;
-        parent.style.height = `${size}px`;
-
-        // Enforce circular cropping and scaling for the image
-        kauLogo.style.width = '100%';
-        kauLogo.style.height = '100%';
-        kauLogo.style.objectFit = 'cover';
-        kauLogo.style.borderRadius = '50%';
-    }
-});
 
         // Determine which card is front (best angle) => highlight
         function updateSelectedIndex() {
