@@ -729,17 +729,17 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
+
     .left-section-svg {
         position: absolute;
-        top: 0; /* Move it above the about-me section */
-        left: 0; /* Align to the far left */
-        width: 80px; /* Reduce the size for mobile */
-        height: auto;
-        transform: none; /* Remove translation for cleaner positioning */
-        z-index: -1; /* Place it behind other content */
-        opacity: 0.8; /* Slight transparency if needed */
+        top: -20%; /* Move it above the about-me section */
+        left: 0; /* Align to the far left edge */
+        width: 50px; /* Reduce the size for mobile */
+        height: auto; /* Maintain aspect ratio */
+        transform: none; /* Remove any extra transformations */
+        z-index: -10; /* Push it far into the background */
+        opacity: 0.5; /* Add transparency if necessary */
     }
-
     .projects-section {
         padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
         min-height: 400px; /* Ensure enough space for the entire section */
