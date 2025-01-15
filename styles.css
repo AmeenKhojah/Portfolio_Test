@@ -741,10 +741,23 @@ canvas#canvas3d {
     }
 
     .recommendations-section .recommender-photo-container {
-        width: 50px; /* Fixed width */
-        height: 50px; /* Fixed height - maintaining perfect circle */
-        min-width: 50px; /* Prevent distortion */
-        min-height: 50px; /* Prevent distortion */
+        width: 60px; /* Keep the original size */
+        height: 60px;
+        margin-right: 15px;
+        border-radius: 50%; /* Keep the circular shape */
+        border: 2px solid #FF2DF7; /* Retain the border styling */
+        background-color: #E5F5E4; /* Match this color to the logo's transparent background */
+        position: relative; /* Ensure layering consistency */
+        overflow: hidden; /* Clip the content to fit within the circle */
+    }
+
+    .recommendations-section .recommender-photo-container img {
+        width: 100%; /* Fit the image inside the container */
+        height: 100%; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure no distortion of the logo */
+        position: absolute; /* Align the image perfectly */
+        top: 0;
+        left: 0;
     }
 
     .recommendations-section .accordion-content {
