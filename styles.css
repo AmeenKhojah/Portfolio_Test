@@ -735,7 +735,7 @@ canvas#canvas3d {
         position: absolute; /* Ensure it aligns with the left border */
         left: 0; /* Align it with the very left side */
         top: 50%; /* Move it up by specifying percentage of the parent */
-        transform: translateY(-50%); /* Combine with top for precise positioning */
+        transform: translateY(-35%); /* Combine with top for precise positioning */
         padding: 0; /* Remove any padding */
         margin: 0; /* Remove any margin */
     }
