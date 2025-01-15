@@ -730,17 +730,6 @@ canvas#canvas3d {
 
 @media (max-width: 768px) {
 
-    .left-section-svg {
-        position: absolute;
-        top: 0; /* Position at the top of the section */
-        left: 0; /* Align to the left edge */
-        width: 100%; /* Scale it to fit the width of the viewport */
-        height: auto; /* Maintain aspect ratio */
-        transform: none; /* Remove unnecessary transformations */
-        z-index: -1; /* Push it behind the content */
-        opacity: 0.2; /* Subtle appearance for contrast */
-        pointer-events: none; /* Ensure it doesn’t interfere with interactions */
-    }
     .projects-section {
         padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
         min-height: 400px; /* Ensure enough space for the entire section */
