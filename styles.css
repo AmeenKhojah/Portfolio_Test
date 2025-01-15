@@ -357,6 +357,10 @@ canvas#canvas3d {
     object-fit: contain; /* Ensures the logo is fully visible */
     border-radius: 0; /* Disable circular cropping */
     background-color: transparent; /* Ensure transparency works */
+}
+
+/* Add optional shadow for better visibility */
+.recommender-photo-container img[alt="KAU Logo"] {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
 
@@ -1236,88 +1240,3 @@ canvas#canvas3d {
 /* ====== Bubble Section Styles ====== */
 /* The bubble-section styles are already defined above */
 
-
-/* ====== JavaScript ====== */
-/* JavaScript is included in the index.html inline script */
-/* Ensure touch interactions are smooth and responsive */
-
-/* ====== Additional Responsive Adjustments ====== */
-
-/* Handle orientation changes */
-@media (orientation: portrait) {
-    .portfolio-container {
-        flex-direction: column;
-    }
-
-    .left-section {
-        padding: 20px;
-        align-items: center;
-        text-align: center;
-    }
-
-    .right-section {
-        transform: translateY(0%);
-    }
-
-    .about-me-wrapper {
-        transform: translateY(50%);
-    }
-
-    .left-section-svg {
-        width: 100%;
-        height: auto;
-        top: auto;
-        left: auto;
-        transform: translateY(0%);
-        position: relative;
-        margin-top: 20px;
-    }
-
-    .bubble-section {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 200px;
-        height: 200px;
-        margin-top: 20px;
-    }
-}
-
-@media (orientation: landscape) and (max-width: 768px) {
-    .portfolio-container {
-        flex-direction: row;
-    }
-
-    .left-section {
-        padding: 20px 40px;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .right-section {
-        transform: translateY(0%);
-    }
-
-    .about-me-wrapper {
-        transform: translateY(50%);
-    }
-
-    .left-section-svg {
-        width: 100%;
-        height: auto;
-        top: auto;
-        left: auto;
-        transform: translateY(0%);
-        position: relative;
-        margin-top: 20px;
-    }
-
-    .bubble-section {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 200px;
-        height: 200px;
-        margin-top: 20px;
-    }
-}
