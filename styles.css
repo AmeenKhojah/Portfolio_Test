@@ -729,20 +729,7 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-    .left-section-svg {
-        position: absolute; /* Position it independently */
-        top: 0; /* Place it at the top */
-        left: 0; /* Stick to the leftmost side */
-        width: 300px; /* Adjust the size for mobile */
-        height: auto;
-        margin: 0; /* Remove margins */
-        padding: 0; /* Ensure no padding is applied */
-        transform: none;
-        z-index: 1; /* Ensure it appears above background elements */
-    }
-        .portfolio-container {
-        position: relative; /* Ensure the SVG aligns with this container */
-    }
+
     .projects-section {
         padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
         min-height: 400px; /* Ensure enough space for the entire section */
@@ -763,7 +750,7 @@ canvas#canvas3d {
 
     /* Adjust left-section padding if necessary */
     .left-section {
-        padding: 40px 20px 20px 20px; /* Reduced left padding for smaller screens */
+        padding: 0; /* Reduced left padding for smaller screens */
     }
 
     /* Adjust about-section padding and margins */
