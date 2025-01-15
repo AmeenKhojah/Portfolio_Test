@@ -734,7 +734,7 @@ canvas#canvas3d {
         width: 100%; /* Set the SVG width to 100% */
         position: absolute; /* Ensure it aligns with the left border */
         left: 0; /* Align it with the very left side */
-        top: 75%; /* Move it up by specifying percentage of the parent */
+        top: 50%; /* Move it up by specifying percentage of the parent */
         transform: translateY(0%); /* Combine with top for precise positioning */
         padding: 0; /* Remove any padding */
         margin: 0; /* Remove any margin */
