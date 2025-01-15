@@ -342,23 +342,23 @@ canvas#canvas3d {
 /* General recommender photo styling */
 .recommender-photo-container {
     position: relative;
-    overflow: hidden;
-    border-radius: 50%; /* Keep circular shape */
-    background-color: #ffffff; /* White background for transparency issues */
-    display: flex;
+    overflow: hidden; /* Ensures anything outside the circle is cropped */
+    border-radius: 50%; /* Make the container a perfect circle */
+    background-color: #ffffff; /* White background for transparency */
+    display: flex; /* Center the image */
     justify-content: center;
     align-items: center;
-    width: 60px; /* Ensure a square container */
-    height: 60px; /* Ensure a square container */
+    width: 60px; /* Fixed width for a square container */
+    height: 60px; /* Fixed height for a square container */
 }
 
 /* Specific styling for the KAU logo */
 .recommender-photo-container img[alt="KAU Logo"] {
-    width: 100%; /* Fit fully within the container */
-    height: 100%; /* Scale proportionally */
-    object-fit: cover; /* Prevent distortions */
+    width: 100%; /* Force the logo to fill the container */
+    height: 100%; /* Ensure it scales proportionally */
+    object-fit: cover; /* Prevent distortion by cropping the image */
     border-radius: 50%; /* Enforce circular cropping */
-    background-color: transparent; /* Ensure transparency works */
+    background-color: transparent; /* Ensure no background color conflicts */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
 
@@ -733,8 +733,8 @@ canvas#canvas3d {
 
 @media (max-width: 768px) {
     .recommender-photo-container {
-        width: 50px; /* Smaller container for mobile */
-        height: 50px; /* Match width for square aspect ratio */
+        width: 50px; /* Smaller container for mobile screens */
+        height: 50px; /* Maintain square aspect ratio */
     }
     .projects-section {
         padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
