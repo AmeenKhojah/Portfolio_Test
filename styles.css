@@ -583,13 +583,19 @@ canvas#canvas3d {
 }
 
 .recommendations-section .recommender-photo-container {
-    width: 60px;
-    height: 60px;
+    width: 60px; /* Fixed size */
+    height: 60px; /* Fixed size */
     margin-right: 15px;
     overflow: hidden;
-    border-radius: 50%;
-    border: 2px solid #FF2DF7; /* Adjusted to match gradient */
+    border-radius: 50%; /* Ensure perfect circle */
+    border: 2px solid #FF2DF7; /* Gradient-matching border */
+    display: flex; /* Ensure proper content alignment */
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent shrinking on smaller screens */
+    box-sizing: border-box; /* Include padding and border in size calculation */
 }
+
 
 .recommendations-section .recommender-photo {
     width: 100%;
