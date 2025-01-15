@@ -729,14 +729,14 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-    .left-section-svg {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 300px; /* Adjusted size for mobile */
-        height: auto;
-        margin: 0 auto 20px; /* Center above About Me section and add spacing */
-        transform: none;
+    .contact-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the content horizontally */
+        justify-content: center; /* Centers the content vertically */
+        margin-top: 40px; /* Optional: Adds space above */
+        margin-bottom: 40px; /* Optional: Adds space below */
+        text-align: center; /* Ensures text is centered */
     }
     .projects-section {
         padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
