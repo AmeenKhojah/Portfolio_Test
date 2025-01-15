@@ -736,7 +736,7 @@ canvas#canvas3d {
         left: 0; /* Align it with the very left side */
         padding: 0; /* Remove any padding */
         margin: 0; /* Remove any margin */
-        top: -50px; /* Adjust this value to raise it up */
+        top: -40px; /* Adjust this value to raise it up */
     }
     .contact-section {
         display: flex;
