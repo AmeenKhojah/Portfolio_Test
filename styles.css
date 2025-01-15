@@ -729,6 +729,31 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
+
+    .contact-button {
+        font-size: 0.9em; /* Reduce font size */
+        padding: 10px 20px; /* Adjust padding for smaller screen */
+        position: fixed; /* Fix position to avoid keyboard interference */
+        bottom: 80px; /* Position above the keyboard */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000; /* Ensure it's above other content */
+    }
+
+    .contact-icons {
+        position: fixed; /* Fix position for icons */
+        bottom: 20px; /* Position just above the edge of the screen */
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 10px; /* Reduce gap between icons */
+        z-index: 1000; /* Ensure it's above other content */
+    }
+
+    .contact-icon {
+        width: 25px; /* Reduce size for smaller screens */
+        height: 25px;
+        padding: 0.5px; /* Adjust padding */
+    }
     .portfolio-container {
         flex-direction: column;
         padding: 20px;
