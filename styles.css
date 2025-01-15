@@ -749,20 +749,20 @@ canvas#canvas3d {
     }
 
     /* Adjust left-section padding if necessary */
-    .left-section {
-        padding: 0; /* Reduced left padding for smaller screens */
-    }
-        .left-section-svg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%; /* Optional: Adjust width if SVG needs resizing */
-        height: auto;
-        margin: 0; /* Ensure no margins are applied */
-        padding: 0; /* Ensure no padding is applied */
-        z-index: 1; /* Ensure it is not blocked by other elements */
-    }
-
+.left-section {
+    padding: 40px 20px 20px 20px; /* Keep the padding for all other elements */
+    position: relative; /* Required for the absolute positioning of the SVG */
+}
+.left-section-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjust width as needed */
+    height: auto;
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Ensure no padding */
+    z-index: -1; /* Adjust z-index if it overlaps with other elements */
+}
     /* Adjust about-section padding and margins */
     .about-me {
         padding: 0 20px;
