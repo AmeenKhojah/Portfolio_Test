@@ -133,6 +133,24 @@ document.addEventListener('DOMContentLoaded', () => {
         // Trigger overlap check on page load
         checkOverlap();
     }
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if the user is on a mobile device
+    const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Reset zoom level back to 100%
+        document.body.style.zoom = "100%";
+
+        // Optional: Reset the viewport meta tag to enforce 100% zoom
+        const viewportMeta = document.querySelector('meta[name="viewport"]');
+        if (viewportMeta) {
+            viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0');
+        }
+
+        // Reset the scroll position to top-left
+        window.scrollTo(0, 0);
+    }
+});
 
     // ====== Animated Typing Effect Scripts ======
     const typedTextSpan = document.getElementById('typed-text');
