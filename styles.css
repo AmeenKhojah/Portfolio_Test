@@ -60,11 +60,13 @@ html, body {
 
 /* ====== Animated Typing Effect ====== */
 .typing-effect {
+width: 100%; /* Ensure full width */
     font-family: 'Roboto', sans-serif;
     font-size: 2rem;
     color: #8A2BE2; /* Matching existing purple gradient */
     height: 50px; /* Adjust as needed */
     position: relative;
+    white-space: nowrap; /* Keep text in one line */
     overflow: hidden;
 }
 
@@ -731,9 +733,17 @@ canvas#canvas3d {
 
 @media (max-width: 768px) {
 
-    .recommendations-section .accordion-item:last-child .recommender-photo-container {
-    background-color: #ffffff !important; /* Force white background */
+    .typing-effect {
+        font-size: 1.5rem; /* Smaller font size on mobile */
+        text-align: left; /* Ensure consistent alignment */
+        padding-right: 10px; /* Add some padding to prevent text touching the edge */
     }
+    
+    /* Ensure the container doesn't shift */
+    .portfolio-container {
+        overflow-x: hidden; /* Prevent horizontal scroll on container level */
+        width: 100%;
+        }
     .recommendations-section .recommender-photo-container {
         width: 50px; /* Fixed width */
         height: 50px; /* Fixed height - maintaining perfect circle */
@@ -889,6 +899,13 @@ canvas#canvas3d {
         height: 50px;
         margin-right: 10px;
     }
+    .recommendations-section .recommender-photo-container:last-child {
+    background-color: #ffffff; /* White background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
 
     .recommendations-section .recommender-name {
         font-size: 1rem;
