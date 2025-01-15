@@ -731,13 +731,15 @@ canvas#canvas3d {
 @media (max-width: 768px) {
     .left-section-svg {
         position: absolute;
-        top: 0; /* Move it to the top of the about-me section */
-        left: 0; /* Align to the far left without padding */
-        width: 100px; /* Smaller size for mobile */
+        top: 0; /* Move it above the about-me section */
+        left: 0; /* Align to the far left */
+        width: 80px; /* Reduce the size for mobile */
         height: auto;
-        transform: none; /* Remove additional Y translation */
+        transform: none; /* Remove translation for cleaner positioning */
+        z-index: -1; /* Place it behind other content */
+        opacity: 0.8; /* Slight transparency if needed */
     }
-    
+
     .projects-section {
         padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
         min-height: 400px; /* Ensure enough space for the entire section */
