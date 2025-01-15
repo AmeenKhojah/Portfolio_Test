@@ -729,7 +729,10 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-
+    .name {
+        font-size: 2em; /* Reduce font size to fit in one line */
+        white-space: nowrap; /* Prevent wrapping to the next line */
+    }
     .left-section-svg {
         width: 100%; /* Set the SVG width to 100% */
         position: absolute; /* Ensure it aligns with the left border */
