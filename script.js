@@ -133,31 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Trigger overlap check on page load
         checkOverlap();
     }
-document.addEventListener('DOMContentLoaded', () => {
-    // Check if the user is on a mobile device
-    const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-
-    if (isMobile) {
-        // Reset the viewport to default scale
-        const viewportMeta = document.querySelector('meta[name="viewport"]');
-        if (viewportMeta) {
-            viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0');
-        }
-
-        // Force reset zoom after a delay to override browser behavior
-        setTimeout(() => {
-            if (viewportMeta) {
-                viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0');
-            }
-
-            // Force zoom reset
-            document.body.style.zoom = "100%";
-
-            // Ensure scroll position is reset
-            window.scrollTo(0, 0);
-        }, 100); // Delay ensures this executes after browser attempts to restore
-    }
-});
 
     // ====== Animated Typing Effect Scripts ======
     const typedTextSpan = document.getElementById('typed-text');
