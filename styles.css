@@ -733,7 +733,18 @@ canvas#canvas3d {
         flex-direction: column;
         padding: 20px;
     }
+    .skills-section {
+        padding: 40px 20px; /* Reduce padding for smaller screens */
+        transform: none; /* Remove unnecessary translation */
+        margin-top: 60px; /* Adjust spacing to ensure no overlap */
+    }
 
+    .projects-section {
+        padding: 40px 20px; /* Reduce padding for smaller screens */
+        transform: none; /* Remove unnecessary translation */
+        margin-top: 40px; /* Adjust spacing between sections */
+    }
+}
     .left-section, .right-section {
         flex: 1 1 100%;
         margin-bottom: 30px;
@@ -881,6 +892,15 @@ canvas#canvas3d {
 }
 
 @media (max-width: 480px) {
+    .skills-section {
+        padding: 30px 15px; /* Further reduce padding */
+        margin-top: 40px; /* Slightly smaller gap */
+    }
+
+    .projects-section {
+        padding: 30px 15px; /* Match the padding with skills section */
+        margin-top: 30px; /* Ensure sufficient spacing between sections */
+    }
     .cards-container {
         grid-template-columns: 1fr; /* Single column */
     }
