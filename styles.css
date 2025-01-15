@@ -745,7 +745,6 @@ canvas#canvas3d {
         height: 50px; /* Fixed height - maintaining perfect circle */
         min-width: 50px; /* Prevent distortion */
         min-height: 50px; /* Prevent distortion */
-        
     }
 
     .recommendations-section .accordion-content {
