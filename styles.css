@@ -729,36 +729,6 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-/* Ensure the photo container maintains its circle shape */
-.recommendations-section .recommender-photo-container {
-    width: 60px; /* Fixed size for all screens */
-    height: 60px; /* Fixed size for all screens */
-    margin-right: 15px;
-    overflow: hidden; /* Prevent content overflow */
-    border-radius: 50%; /* Perfect circle */
-    border: 2px solid #FF2DF7; /* Gradient border */
-    display: flex; /* Center-align content */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-shrink: 0; /* Prevent shrinking on smaller screens */
-    box-sizing: border-box; /* Consistent sizing */
-}
-
-/* Address layout issues caused by parent or text overflow */
-.recommendations-section .accordion-item {
-    display: flex;
-    align-items: flex-start; /* Align items to the start */
-    gap: 15px; /* Spacing between the photo and text */
-    flex-wrap: nowrap; /* Prevent wrapping */
-}
-
-/* Ensure the accordion content doesn't distort layout */
-.recommendations-section .accordion-content {
-    max-width: 100%; /* Prevent content overflow */
-    overflow: hidden; /* Hide excess content */
-    box-sizing: border-box; /* Include padding and border in calculations */
-    padding: 20px; /* Maintain spacing consistency */
-}
 
     .projects-section {
         padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
