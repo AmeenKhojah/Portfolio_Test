@@ -732,25 +732,25 @@ canvas#canvas3d {
 
     .contact-button {
         font-size: 0.9em; /* Reduce font size */
-        padding: 10px 20px; /* Adjust padding for smaller screen */
-        position: fixed; /* Fix position to avoid keyboard interference */
-        bottom: 80px; /* Position above the keyboard */
+        padding: 10px 20px; /* Adjust padding */
+        position: fixed; /* Fix position to avoid overlapping input */
+        bottom: calc(env(safe-area-inset-bottom) + 80px); /* Position above keyboard */
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1000; /* Ensure it's above other content */
+        z-index: 1000; /* Ensure it is above other content */
     }
 
     .contact-icons {
-        position: fixed; /* Fix position for icons */
-        bottom: 20px; /* Position just above the edge of the screen */
+        position: fixed; /* Fix position */
+        bottom: calc(env(safe-area-inset-bottom) + 20px); /* Position above the screen edge */
         left: 50%;
         transform: translateX(-50%);
-        gap: 10px; /* Reduce gap between icons */
-        z-index: 1000; /* Ensure it's above other content */
+        gap: 10px; /* Reduce gap */
+        z-index: 1000; /* Ensure it is above other content */
     }
 
     .contact-icon {
-        width: 25px; /* Reduce size for smaller screens */
+        width: 25px; /* Reduce size */
         height: 25px;
         padding: 0.5px; /* Adjust padding */
     }
