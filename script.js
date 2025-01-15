@@ -164,11 +164,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
 
     if (isMobile) {
-        // Reset viewport to default scale
+        // Reset the viewport to default scale
         const viewportMeta = document.querySelector('meta[name="viewport"]');
         if (viewportMeta) {
             viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0');
         }
+
+        // Reset the scroll position to the top-left corner
+        window.scrollTo(0, 0);
+
+        // Force a slight delay to ensure zoom level stabilizes
+        setTimeout(() => {
+            if (viewportMeta) {
+                viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0');
+            }
+            window.scrollTo(0, 0); // Ensure scroll position is corrected again
+        }, 50); // 50ms delay to account for browser quirks
     }
 });
 
