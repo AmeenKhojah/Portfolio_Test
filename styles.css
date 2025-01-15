@@ -1202,9 +1202,18 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
+    .projects-section {
+        padding: 40px 20px 80px; /* Add more padding to the bottom */
+    }
+
     .carousel-wrapper {
         max-width: 500px;
-        height: 200px;
+        height: 240px; /* Increase height to prevent clipping */
+    }
+
+    .carousel-card {
+        width: 180px;
+        height: 220px; /* Adjust height for better spacing */
     }
 }
 
