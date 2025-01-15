@@ -749,11 +749,12 @@ canvas#canvas3d {
         max-height: 1000px; /* Allow enough height for content */
     }
 
-    /* Keep download button aligned to the end */
+
     .download-recommendation-button {
-        gap: 4px; /* Reduced spacing for mobile screens */
-        padding: 6px 12px; /* Smaller padding for compact design */
-        font-size: 0.8em; /* Slightly smaller text size */
+        align-self: flex-start; /* Align the button to the left */
+        margin-top: 20px; /* Optional: Add space above the button */
+        margin-left: 0; /* Ensure no unintended left margin */
+    }
     }
 
     /* Fix expansion button rotation */
