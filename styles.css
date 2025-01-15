@@ -729,6 +729,61 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
+
+    .recommendations-section {
+        padding: 40px 20px;
+        transform: none; /* Remove transform to prevent layout issues */
+        margin-top: 50px;
+    }
+
+    .recommendations-section .accordion {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .recommendations-section .accordion-item {
+        height: auto; /* Allow content to determine height */
+    }
+
+    .recommendations-section .accordion-header {
+        min-height: 80px; /* Ensure consistent header height */
+        padding: 15px;
+        flex-wrap: wrap; /* Allow content to wrap if needed */
+    }
+
+    .recommendations-section .recommender-info {
+        flex: 1;
+        min-width: 200px; /* Ensure info has enough space */
+    }
+
+    .recommendations-section .accordion-content {
+        height: auto;
+        max-height: none; /* Remove max-height restriction */
+        transition: all 0.3s ease;
+    }
+
+    .recommendations-section .accordion-content.active {
+        height: auto;
+        padding: 15px;
+    }
+
+    .recommendations-section .testimonial-container {
+        padding: 15px 0;
+        gap: 15px;
+    }
+
+    .recommendations-section .testimonial-text {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        padding: 10px;
+    }
+
+    .download-recommendation-button {
+        width: auto;
+        align-self: center; /* Center the button on mobile */
+        margin-top: 10px;
+        padding: 8px 16px;
+    }
     .name {
         font-size: 2em; /* Reduce font size to fit in one line */
 
@@ -940,7 +995,24 @@ canvas#canvas3d {
 }
 
 @media (max-width: 480px) {
+    .recommendations-section .accordion-header {
+        min-height: 70px;
+        padding: 10px;
+    }
 
+    .recommendations-section .recommender-info {
+        min-width: 160px;
+    }
+
+    .recommendations-section .recommender-photo-container {
+        width: 45px;
+        height: 45px;
+    }
+
+    .recommendations-section .testimonial-text {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
     .cards-container {
         grid-template-columns: 1fr; /* Single column */
     }
