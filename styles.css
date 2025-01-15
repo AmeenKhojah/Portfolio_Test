@@ -741,25 +741,17 @@ canvas#canvas3d {
     }
 
     .recommendations-section .recommender-photo-container {
-        width: 60px; /* Same width */
-        height: 60px; /* Same height */
-        margin-right: 15px; /* Maintain spacing */
-        border-radius: 50%; /* Keep it circular */
-        border: 2px solid #FF2DF7; /* Retain the border style */
-        background-color: white; /* Add a solid white background */
-        position: relative; /* Ensures proper layering for the image */
-        overflow: hidden; /* Ensures no part of the image overflows */
+        width: 50px; /* Fixed width */
+        height: 50px; /* Fixed height - maintaining perfect circle */
+        min-width: 50px; /* Prevent distortion */
+        min-height: 50px; /* Prevent distortion */
+        border-radius: 50%; /* Circular shape */
+        overflow: hidden; /* Ensure the image stays within the circle */
+        border: 2px solid #FF2DF7; /* Adjusted to match gradient */
+        background-color: white; /* White background to cover the entire circle */
+    }
     }
 
-    .recommendations-section .recommender-photo-container img {
-        width: 100%; /* Fit the image within the circle */
-        height: 100%; /* Maintain the aspect ratio */
-        object-fit: cover; /* Ensure the image doesn't distort */
-        position: absolute; /* Overlay the image on the white background */
-        top: 0;
-        left: 0;
-        border-radius: 50%; /* Ensure the image aligns perfectly with the circle shape */
-    }
     .recommendations-section .accordion-content {
         max-height: 0; /* Reset to default collapsed state */
         overflow: hidden;
