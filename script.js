@@ -159,6 +159,18 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(erase, newTextDelay);
         }
     }
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if the user is on a mobile device
+    const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Reset viewport to default scale
+        const viewportMeta = document.querySelector('meta[name="viewport"]');
+        if (viewportMeta) {
+            viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0');
+        }
+    }
+});
 
     function erase() {
         if (charIndex > 0) {
