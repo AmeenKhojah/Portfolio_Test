@@ -741,24 +741,11 @@ canvas#canvas3d {
     }
 
     .recommendations-section .recommender-photo-container {
-        width: 60px; /* Maintain size */
-        height: 60px;
-        margin-right: 15px; /* Adjust spacing */
+        width: 50px; /* Fixed width */
+        height: 50px; /* Fixed height - maintaining perfect circle */
+        min-width: 50px; /* Prevent distortion */
+        min-height: 50px; /* Prevent distortion */
         background-color: white; /* Ensure the entire circle has a white background */
-        overflow: hidden; /* Clip the content within the circle */
-        border-radius: 50%; /* Keep the circular shape */
-        border: 2px solid #FF2DF7; /* Retain the gradient border */
-        display: flex; /* Center the content inside */
-        align-items: center; /* Vertically center image */
-        justify-content: center; /* Horizontally center image */
-    }
-
-    .recommendations-section .recommender-photo-container img {
-        width: 100%; /* Ensure the image covers the circle */
-        height: 100%; /* Maintain aspect ratio */
-        object-fit: cover; /* Prevent distortion */
-        border-radius: 50%; /* Ensure the image remains circular */
-        background-color: white; /* Apply white background for transparency issues */
     }
 
     .recommendations-section .accordion-content {
