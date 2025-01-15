@@ -1,1 +1,1 @@
-web: python3 -m http.server $PORT
+web: busybox httpd -f -p $PORT
