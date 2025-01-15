@@ -831,27 +831,35 @@ canvas#canvas3d {
     }
 
     .recommendations-section .recommender-photo-container {
-        width: 60px; /* Slightly larger for clarity */
-        height: 60px; /* Maintain circular aspect ratio */
-        margin-right: 10px;
-        border-radius: 50%; /* Ensure circular shape */
-        overflow: hidden; /* Prevent content overflow */
+        flex-shrink: 0; /* Prevent resizing due to text */
+        width: 60px; /* Ensure a consistent circular size */
+        height: 60px; /* Match width for a perfect circle */
+        margin-right: 15px; /* Add space between image and text */
+        border-radius: 50%; /* Make it a circle */
+        overflow: hidden; /* Crop overflowing content */
         display: flex; /* Center image within the circle */
-        align-items: center;
-        justify-content: center;
+        align-items: center; /* Vertical centering */
+        justify-content: center; /* Horizontal centering */
+        background-color: #ffffff; /* Ensure a clear background */
     }
     .recommendations-section .recommender-photo {
-        width: 100%; /* Make image fit the container */
-        height: 100%; /* Keep aspect ratio */
-        object-fit: cover; /* Ensure the image scales properly within the circle */
+        width: 100%; /* Fully fill the container */
+        height: 100%; /* Match height for scaling */
+        object-fit: cover; /* Scale image proportionally */
     }
-
+        .recommendations-section .recommender-info {
+        display: flex; /* Align image and text horizontally */
+        align-items: center; /* Vertically align content */
+        flex-wrap: wrap; /* Allow wrapping if space is limited */
+    }
     .recommendations-section .recommender-name {
-        font-size: 1rem;
+        font-size: 1rem; /* Adjust size for mobile */
+        margin-bottom: 2px; /* Space between name and title */
     }
 
     .recommendations-section .recommender-title {
-        font-size: 0.8rem;
+        font-size: 0.8rem; /* Adjust title size */
+        color: #c0c0c0; /* Slightly muted color for readability */
     }
 
     .accordion-icon {
