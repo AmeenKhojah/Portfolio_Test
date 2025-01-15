@@ -60,7 +60,7 @@ html, body {
 
 /* ====== Animated Typing Effect ====== */
 .typing-effect {
-width: 100%; /* Ensure full width */
+
     font-family: 'Roboto', sans-serif;
     font-size: 2rem;
     color: #8A2BE2; /* Matching existing purple gradient */
@@ -738,7 +738,7 @@ canvas#canvas3d {
         text-align: left; /* Ensure consistent alignment */
         padding-right: 10px; /* Add some padding to prevent text touching the edge */
     }
-    
+
     /* Ensure the container doesn't shift */
     .portfolio-container {
         overflow-x: hidden; /* Prevent horizontal scroll on container level */
