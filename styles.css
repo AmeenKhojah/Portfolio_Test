@@ -829,59 +829,7 @@ canvas#canvas3d {
     .section-title {
         font-size: 2.5rem;
     }
-    .recommendations-section .accordion-item:last-child .recommender-photo-container {
-        width: 50px; /* Match other circles */
-        height: 50px; /* Match other circles */
-        min-width: 50px; /* Prevent shrinking */
-        min-height: 50px; /* Prevent shrinking */
-        flex-shrink: 0; /* Prevent flexbox from resizing */
-        border-radius: 50%; /* Maintain circular shape */
-        overflow: hidden; /* Ensure content stays inside the circle */
-        display: flex; /* Center the image */
-        align-items: center; /* Vertical alignment */
-        justify-content: center; /* Horizontal alignment */
-        margin-right: 10px; /* Maintain consistent spacing */
-    }
 
-    /* Ensure the image scales correctly inside the circle */
-    .recommendations-section .accordion-item:last-child .recommender-photo {
-        width: 100%; /* Fill the container */
-        height: 100%; /* Match the container */
-        object-fit: cover; /* Maintain aspect ratio */
-    }
-
-    /* Proper layout for the header */
-    .recommendations-section .accordion-item:last-child .accordion-header {
-        display: flex; /* Align items horizontally */
-        align-items: center; /* Center vertically */
-        gap: 10px; /* Add spacing between image and text */
-        padding: 15px; /* Ensure consistent padding */
-        flex-wrap: wrap; /* Allow text to wrap as needed */
-    }
-
-    /* Layout for the recommender info */
-    .recommendations-section .accordion-item:last-child .recommender-info {
-        display: flex; /* Align items horizontally */
-        flex-direction: column; /* Stack text below the image on small screens */
-        align-items: flex-start; /* Align text to the left */
-        flex: 1; /* Use available space */
-    }
-
-    /* Allow text to wrap without being truncated */
-    .recommendations-section .accordion-item:last-child .recommender-details {
-        flex: 1; /* Take up remaining space */
-        min-width: 0; /* Prevent text from breaking layout */
-        overflow: visible; /* Allow text to expand */
-    }
-
-    /* Ensure name and title wrap correctly */
-    .recommendations-section .accordion-item:last-child .recommender-name,
-    .recommendations-section .accordion-item:last-child .recommender-title {
-        white-space: normal; /* Allow text to wrap */
-        overflow: visible; /* No truncation */
-        text-overflow: clip; /* Ensure no ellipsis */
-        word-wrap: break-word; /* Break long words if needed */
-    }
     .recommendations-section .recommender-photo-container {
         width: 50px;
         height: 50px;
