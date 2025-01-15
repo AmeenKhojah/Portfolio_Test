@@ -729,7 +729,15 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-
+    .left-section-svg {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 300px; /* Adjusted size for mobile */
+        height: auto;
+        margin: 0 auto 20px; /* Center above About Me section and add spacing */
+        transform: none;
+    }
     .projects-section {
         padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
         min-height: 400px; /* Ensure enough space for the entire section */
@@ -747,15 +755,7 @@ canvas#canvas3d {
     .typing-effect {
         height: 50px; /* Increased to prevent clipping */
     }
-    .left-section-svg {
-        position: relative;
-        top: auto;
-        left: 0; /* Align to the leftmost side */
-        width: 300px; /* Adjusted size for mobile */
-        height: auto;
-        margin: 0; /* Remove all margins */
-        transform: none;
-    }
+
     /* Adjust left-section padding if necessary */
     .left-section {
         padding: 40px 20px 20px 20px; /* Reduced left padding for smaller screens */
