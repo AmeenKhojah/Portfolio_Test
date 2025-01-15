@@ -733,7 +733,9 @@ canvas#canvas3d {
         flex-direction: column;
         padding: 20px;
     }
-
+    #canvas3d {
+        display: none; /* Completely hide the canvas on mobile devices */
+    }
     .left-section, .right-section {
         flex: 1 1 100%;
         margin-bottom: 30px;
@@ -749,29 +751,28 @@ canvas#canvas3d {
     }
 
     .bubble-section {
-        width: 150px;
-        height: 150px;
-        pointer-events: none; /* Prevent blocking scroll */
-        z-index: 1; /* Lower z-index to allow interactions */
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
     }
 
     .static-bubble {
-        width: 100px;
-        height: 100px;
-        left: 30px;
+        width: 120px;
+        height: 120px;
+        left: 40px;
         top: 50%;
     }
 
     .lens-bubble {
-        width: 60px;
-        height: 60px;
-        left: 70px;
+        width: 80px;
+        height: 80px;
+        left: 80px;
         top: 50%;
     }
 
     .original-text,
     .lens-text {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .about-heading {
@@ -816,6 +817,30 @@ canvas#canvas3d {
         font-size: 0.95rem;
     }
 
+    .bubble-section {
+        width: 150px;
+        height: 150px;
+    }
+
+    .static-bubble {
+        width: 100px;
+        height: 100px;
+        left: 30px;
+        top: 50%;
+    }
+
+    .lens-bubble {
+        width: 60px;
+        height: 60px;
+        left: 70px;
+        top: 50%;
+    }
+
+    .original-text,
+    .lens-text {
+        font-size: 14px;
+    }
+
     /* Projects Section Adjustments */
     .projects-section {
         padding: 40px 20px;
@@ -845,18 +870,6 @@ canvas#canvas3d {
 
     .carousel-card p {
         font-size: 0.8rem;
-    }
-
-    /* ====== Bubble Section Spacing ====== */
-    .portfolio-container {
-        padding-bottom: 20px; /* Add space at bottom */
-    }
-
-    .skills-section,
-    .projects-section,
-    .recommendations-section {
-        margin-top: 20px; /* Add spacing between sections */
-        padding: 40px 20px; /* Ensure adequate padding */
     }
 }
 
@@ -1229,61 +1242,3 @@ canvas#canvas3d {
 /* ====== Bubble Section Styles ====== */
 /* The bubble-section styles are already defined above */
 
-
-/* ====== Modified Mobile Sections ====== */
-@media (max-width: 768px) {
-    /* Prevent the robot animation and bubble section from blocking scroll */
-    .bubble-section {
-        pointer-events: none; /* Allow touch events to pass through */
-        z-index: 1; /* Lower z-index to prevent blocking */
-        left: 0; /* Reposition to avoid overlapping content */
-        top: auto; /* Reset top position */
-        transform: none; /* Remove any transforms that might cause positioning issues */
-        margin: 20px auto; /* Center the bubble section */
-    }
-
-    /* Adjust the robot animation canvas to ensure it doesn't cover content */
-    canvas#canvas3d {
-        margin-bottom: 20px; /* Reduce bottom margin */
-        height: 200px; /* Set a fixed height to prevent excessive space */
-    }
-
-    /* Add spacing between sections to prevent interference */
-    .skills-section,
-    .projects-section,
-    .recommendations-section {
-        margin-top: 30px; /* Increased spacing */
-        padding: 20px; /* Adjusted padding for better separation */
-    }
-
-    /* Ensure the about-me-wrapper doesn't push content off-screen */
-    .about-me-wrapper {
-        transform: translateY(0%); /* Reset transformation */
-        margin-top: 20px; /* Add top margin for spacing */
-    }
-}
-
-@media (max-width: 480px) {
-    /* Further adjustments for smaller screens */
-    .bubble-section {
-        width: 120px;
-        height: 120px;
-    }
-
-    canvas#canvas3d {
-        height: 150px; /* Further reduce height */
-        margin-bottom: 15px;
-    }
-
-    .skills-section,
-    .projects-section,
-    .recommendations-section {
-        margin-top: 20px;
-        padding: 15px;
-    }
-
-    .about-me-wrapper {
-        margin-top: 15px;
-    }
-}
-/* ====== End of Mobile Modifications ====== */
