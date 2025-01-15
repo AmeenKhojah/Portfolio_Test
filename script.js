@@ -133,7 +133,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // Trigger overlap check on page load
         checkOverlap();
     }
+document.addEventListener('DOMContentLoaded', () => {
+    // Reset the viewport meta tag to default on page load
+    const viewportMeta = document.querySelector('meta[name="viewport"]');
+    viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0');
 
+    // Force a reflow to ensure the viewport is applied correctly
+    document.body.style.display = 'none';
+    document.body.offsetHeight; // Trigger reflow
+    document.body.style.display = 'block';
+});
     // ====== Animated Typing Effect Scripts ======
     const typedTextSpan = document.getElementById('typed-text');
     const cursorSpan = document.getElementById('cursor');
