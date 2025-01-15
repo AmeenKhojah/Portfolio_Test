@@ -831,9 +831,19 @@ canvas#canvas3d {
     }
 
     .recommendations-section .recommender-photo-container {
-        width: 50px;
-        height: 50px;
+        width: 60px; /* Slightly larger for clarity */
+        height: 60px; /* Maintain circular aspect ratio */
         margin-right: 10px;
+        border-radius: 50%; /* Ensure circular shape */
+        overflow: hidden; /* Prevent content overflow */
+        display: flex; /* Center image within the circle */
+        align-items: center;
+        justify-content: center;
+    }
+    .recommendations-section .recommender-photo {
+        width: 100%; /* Make image fit the container */
+        height: 100%; /* Keep aspect ratio */
+        object-fit: cover; /* Ensure the image scales properly within the circle */
     }
 
     .recommendations-section .recommender-name {
