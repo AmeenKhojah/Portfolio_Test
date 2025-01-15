@@ -753,16 +753,15 @@ canvas#canvas3d {
     padding: 40px 20px 20px 20px; /* Keep the padding for all other elements */
     position: relative; /* Required for the absolute positioning of the SVG */
 }
-.left-section-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Adjust width as needed */
-    height: auto;
-    margin: 0; /* Remove any margin */
-    padding: 0; /* Ensure no padding */
-    z-index: -1; /* Adjust z-index if it overlaps with other elements */
-}
+    .left-section-svg {
+        position: absolute;
+        top: auto;
+        left: 0; /* Align to the leftmost side */
+        width: 300px; /* Adjusted size for mobile */
+        height: auto;
+        margin: 0; /* Remove all margins */
+        transform: none;
+    }
     /* Adjust about-section padding and margins */
     .about-me {
         padding: 0 20px;
