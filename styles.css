@@ -597,6 +597,11 @@ canvas#canvas3d {
     object-fit: cover;
 }
 
+.recommendations-section .recommender-details {
+    display: flex;
+    flex-direction: column;
+}
+
 .recommendations-section .recommender-name {
     font-family: 'Merriweather', serif;
     font-size: 1.2rem;
@@ -736,7 +741,7 @@ canvas#canvas3d {
 
     .typing-effect {
         font-size: 1.5rem;
-        height: 40px;
+        height: 50px; /* Increased to prevent clipping */
     }
 
     .contact-icons {
@@ -863,6 +868,15 @@ canvas#canvas3d {
 
     .carousel-card p {
         font-size: 0.8rem;
+    }
+
+    /* ====== Hide Robot Animation on Mobile ====== */
+    canvas#canvas3d {
+        display: none;
+    }
+
+    .about-me-wrapper {
+        transform: translateY(0%); /* Reset transform to prevent overlapping */
     }
 }
 
@@ -1236,27 +1250,32 @@ canvas#canvas3d {
 /* The bubble-section styles are already defined above */
 
 
-/* ====== Responsive Adjustments for Robot Animation Removal ====== */
+/* ====== Responsive Adjustments for Mobile ====== */
+/* Hide Robot Animation and Adjust Layout on Mobile */
 @media (max-width: 768px) {
-    /* Hide the robot animation canvas on mobile devices */
-    #canvas3d {
+    /* Hide the robot animation */
+    canvas#canvas3d {
         display: none;
     }
 
-    /* Adjust the About Me section positioning */
+    /* Reset the transform for about-me-wrapper to ensure proper spacing */
     .about-me-wrapper {
-        transform: translateY(0%); /* Reset transform to align correctly */
+        transform: translateY(0%);
     }
 
-    /* Optional: Adjust the left-section padding if needed */
+    /* Ensure typing-effect has sufficient height */
+    .typing-effect {
+        height: 50px; /* Increased to prevent clipping */
+    }
+
+    /* Adjust left-section padding if necessary */
     .left-section {
-        padding: 20px 20px 20px 40px; /* Reduced padding for smaller screens */
+        padding: 40px 20px 20px 20px; /* Reduced left padding for smaller screens */
     }
 
-    /* Optional: Adjust the size of the left-section-svg image */
-    .left-section-svg {
-        width: 500px; /* Reduced width for smaller screens */
-        top: 50%; /* Adjusted position */
-        transform: translateY(0%); /* Reset transform */
+    /* Adjust about-section padding and margins */
+    .about-me {
+        padding: 0 20px;
+        margin-bottom: 20px;
     }
 }
