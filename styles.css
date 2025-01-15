@@ -933,17 +933,17 @@ canvas#canvas3d {
         font-size: 2em;
     }
 
-.carousel-wrapper {
-    perspective: 600px;
-    height: auto;
-    overflow: hidden;
-}
+    .carousel-wrapper {
+        max-width: 500px;
+        height: auto; /* Allow height to adjust dynamically based on content */
+        padding-bottom: 40px; /* Add padding to ensure the cards are fully visible */
+    }
 
-.carousel-card {
-    width: 80%;
-    height: auto;
-    padding: 0.5rem;
-}
+    .carousel-card {
+        width: 180px;
+        height: auto; /* Dynamically adjust card height */
+        margin-bottom: 20px; /* Add space below cards to avoid clipping */
+    }
 
     .carousel-card img.project-img {
         max-height: 80px;
