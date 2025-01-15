@@ -743,12 +743,9 @@ canvas#canvas3d {
         margin: 0; /* Remove any margin */
     }
     .contact-section {
-        display: flex;
-        flex-direction: column; /* Stack elements vertically */
-        align-items: flex-start; /* Center horizontally */
-        justify-content: flex-start; /* Center vertically */
+
         gap: 20px; /* Add spacing between the button and icons */
-        margin: 0 auto; /* Ensure proper centering */
+
     }
 
     .contact-button {
@@ -756,7 +753,7 @@ canvas#canvas3d {
     }
 
     .contact-icons {
-        justify-content: flex-start; /* Align icons to the left */
+
         gap: 15px; /* Add spacing between icons */
     }
     .projects-section {
