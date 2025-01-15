@@ -747,14 +747,8 @@ canvas#canvas3d {
     .typing-effect {
         height: 50px; /* Increased to prevent clipping */
     }
-
-    /* Adjust left-section padding if necessary */
-.left-section {
-    padding: 40px 20px 20px 20px; /* Keep the padding for all other elements */
-    position: relative; /* Required for the absolute positioning of the SVG */
-}
     .left-section-svg {
-        position: absolute;
+        position: relative;
         top: auto;
         left: 0; /* Align to the leftmost side */
         width: 300px; /* Adjusted size for mobile */
@@ -762,6 +756,11 @@ canvas#canvas3d {
         margin: 0; /* Remove all margins */
         transform: none;
     }
+    /* Adjust left-section padding if necessary */
+    .left-section {
+        padding: 40px 20px 20px 20px; /* Reduced left padding for smaller screens */
+    }
+
     /* Adjust about-section padding and margins */
     .about-me {
         padding: 0 20px;
