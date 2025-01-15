@@ -62,13 +62,10 @@ html, body {
 .typing-effect {
     font-family: 'Roboto', sans-serif;
     font-size: 2rem;
-    color: #8A2BE2;
-    min-height: 50px; /* Changed from fixed height to min-height */
+    color: #8A2BE2; /* Matching existing purple gradient */
+    height: 50px; /* Adjust as needed */
     position: relative;
-    overflow: visible; /* Changed from hidden to visible */
-    word-wrap: break-word; /* Enable word wrapping */
-    white-space: pre-wrap; /* Allow text to wrap */
-    line-height: 1.2; /* Add line height for better readability */
+    overflow: hidden;
 }
 
 #typed-text {
@@ -733,26 +730,7 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-    .typing-effect {
-        font-size: 1.5rem;
-        min-height: auto; /* Remove fixed height on mobile */
-        height: auto; /* Allow height to adjust to content */
-        word-break: break-word; /* Enable word breaking for very long words */
-        width: 100%; /* Ensure full width */
-        padding-right: 10px; /* Add some padding to prevent text touching the edge */
-    }
 
-    #typed-text {
-        display: inline-block; /* Make text block-level */
-        width: 100%; /* Full width */
-        white-space: pre-wrap; /* Allow text to wrap */
-    }
-
-    #cursor {
-        position: relative; /* Change from absolute positioning */
-        display: inline;
-        vertical-align: middle; /* Align with text */
-    }
     .recommendations-section .recommender-photo-container {
         width: 50px; /* Fixed width */
         height: 50px; /* Fixed height - maintaining perfect circle */
