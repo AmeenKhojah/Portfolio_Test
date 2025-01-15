@@ -729,9 +729,9 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-    .carousel-wrapper {
-        max-width: 500px;
-        height: 200px;
+    .projects-section {
+        padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
+        min-height: 400px; /* Ensure enough space for the entire section */
     }
     canvas#canvas3d {
         display: none;
@@ -757,7 +757,7 @@ canvas#canvas3d {
         padding: 0 20px;
         margin-bottom: 20px;
     }
-    
+
     .skills-section {
         padding: 40px 20px 60px; /* Add more padding at the bottom */
         text-align: center;
@@ -886,13 +886,15 @@ canvas#canvas3d {
     }
 
     .carousel-wrapper {
-        max-width: 600px;
-        height: 240px;
+        max-width: 500px;
+        height: auto; /* Allow height to adjust dynamically based on content */
+        padding-bottom: 40px; /* Add padding to ensure the cards are fully visible */
     }
 
     .carousel-card {
         width: 180px;
-        height: 200px;
+        height: auto; /* Dynamically adjust card height */
+        margin-bottom: 20px; /* Add space below cards to avoid clipping */
     }
 
     .carousel-card img.project-img {
@@ -906,6 +908,12 @@ canvas#canvas3d {
     .carousel-card p {
         font-size: 0.8rem;
     }
+        .carousel {
+        height: auto; /* Ensure the carousel height adapts to the cards */
+        display: flex; /* Ensure proper alignment of cards */
+        align-items: center;
+    }
+
 
     /* ====== Hide Robot Animation on Mobile ====== */
     canvas#canvas3d {
