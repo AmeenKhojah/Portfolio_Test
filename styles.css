@@ -729,6 +729,19 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
+    .recommender-photo-container {
+        width: 50px; /* Adjust size to fit smaller screens */
+        height: 50px; /* Match width for perfect circle */
+        border-radius: 50%; /* Ensure it remains circular */
+        overflow: hidden; /* Prevent content overflow */
+    }
+
+    .recommender-photo-container img[alt="KAU Logo"] {
+        width: 100%; /* Make image fit the container fully */
+        height: 100%; /* Match container's height */
+        object-fit: cover; /* Ensures no distortion */
+        border-radius: 50%; /* Apply circular cropping */
+    }
     .portfolio-container {
         flex-direction: column;
         padding: 20px;
