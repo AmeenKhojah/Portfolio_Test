@@ -583,19 +583,13 @@ canvas#canvas3d {
 }
 
 .recommendations-section .recommender-photo-container {
-    width: 60px; /* Fixed size */
-    height: 60px; /* Fixed size */
+    width: 60px;
+    height: 60px;
     margin-right: 15px;
     overflow: hidden;
-    border-radius: 50%; /* Ensure perfect circle */
-    border: 2px solid #FF2DF7; /* Gradient-matching border */
-    display: flex; /* Ensure proper content alignment */
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0; /* Prevent shrinking on smaller screens */
-    box-sizing: border-box; /* Include padding and border in size calculation */
+    border-radius: 50%;
+    border: 2px solid #FF2DF7; /* Adjusted to match gradient */
 }
-
 
 .recommendations-section .recommender-photo {
     width: 100%;
@@ -735,6 +729,20 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
+.recommendations-section .recommender-photo-container {
+    width: 60px; /* Fixed size */
+    height: 60px; /* Fixed size */
+    margin-right: 15px;
+    overflow: hidden;
+    border-radius: 50%; /* Ensure perfect circle */
+    border: 2px solid #FF2DF7; /* Gradient-matching border */
+    display: flex; /* Ensure proper content alignment */
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent shrinking on smaller screens */
+    box-sizing: border-box; /* Include padding and border in size calculation */
+}
+
     .projects-section {
         padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
         min-height: 400px; /* Ensure enough space for the entire section */
