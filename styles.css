@@ -731,28 +731,25 @@ canvas#canvas3d {
 @media (max-width: 768px) {
 
     .contact-button {
-        font-size: 0.9em; /* Reduce font size */
-        padding: 10px 20px; /* Adjust padding */
-        position: fixed; /* Fix position to avoid overlapping input */
-        bottom: calc(env(safe-area-inset-bottom) + 80px); /* Position above keyboard */
+        font-size: 0.85em; /* Reduce font size for smaller screens */
+        padding: 10px 18px; /* Adjust padding for better fit */
+        white-space: nowrap; /* Prevent text wrapping */
+        overflow: hidden; /* Hide overflow if text is too long */
+        text-overflow: ellipsis; /* Show ellipsis for long text */
+        position: fixed; /* Fix position to ensure it's above the keyboard */
+        bottom: calc(env(safe-area-inset-bottom) + 120px); /* Create more space above the keyboard */
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1000; /* Ensure it is above other content */
+        z-index: 1000;
     }
 
     .contact-icons {
-        position: fixed; /* Fix position */
-        bottom: calc(env(safe-area-inset-bottom) + 20px); /* Position above the screen edge */
+        position: fixed;
+        bottom: calc(env(safe-area-inset-bottom) + 60px); /* Adjust icon position */
         left: 50%;
         transform: translateX(-50%);
-        gap: 10px; /* Reduce gap */
-        z-index: 1000; /* Ensure it is above other content */
-    }
-
-    .contact-icon {
-        width: 25px; /* Reduce size */
-        height: 25px;
-        padding: 0.5px; /* Adjust padding */
+        gap: 10px; /* Reduce spacing */
+        z-index: 1000;
     }
     .portfolio-container {
         flex-direction: column;
