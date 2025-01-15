@@ -829,37 +829,66 @@ canvas#canvas3d {
     .section-title {
         font-size: 2.5rem;
     }
+    .recommendations-section .accordion-item:last-child .recommender-photo-container {
+        width: 50px !important; /* Force fixed width */
+        height: 50px !important; /* Force fixed height */
+        min-width: 50px; /* Prevent shrinking */
+        min-height: 50px; /* Prevent shrinking */
+        flex-shrink: 0; /* Prevent flexbox from shrinking the container */
+        position: relative; /* Ensure positioning context */
+        margin-right: 10px; /* Maintain spacing */
+    }
 
+    .recommendations-section .accordion-item:last-child .recommender-photo {
+        width: 100% !important; /* Force image to fill container */
+        height: 100% !important; /* Force image to fill container */
+        object-fit: cover; /* Maintain aspect ratio */
+        position: absolute; /* Position within container */
+        top: 0;
+        left: 0;
+    }
+
+    /* Ensure the header maintains proper layout */
+    .recommendations-section .accordion-item:last-child .accordion-header {
+        display: flex;
+        align-items: center;
+        padding: 15px; /* Consistent padding */
+    }
+
+    /* Ensure recommender info maintains proper layout */
+    .recommendations-section .accordion-item:last-child .recommender-info {
+        display: flex;
+        align-items: center;
+        flex: 1; /* Take up available space */
+        min-width: 0; /* Allow text to wrap if needed */
+    }
+
+    /* Adjust text container to prevent overflow */
+    .recommendations-section .accordion-item:last-child .recommender-details {
+        flex: 1;
+        min-width: 0; /* Allow text to wrap */
+        overflow: hidden; /* Prevent text overflow */
+    }
+
+    /* Ensure name and title don't overflow */
+    .recommendations-section .accordion-item:last-child .recommender-name,
+    .recommendations-section .accordion-item:last-child .recommender-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
     .recommendations-section .recommender-photo-container {
-        flex-shrink: 0; /* Prevent resizing due to text */
-        width: 60px; /* Ensure a consistent circular size */
-        height: 60px; /* Match width for a perfect circle */
-        margin-right: 15px; /* Add space between image and text */
-        border-radius: 50%; /* Make it a circle */
-        overflow: hidden; /* Crop overflowing content */
-        display: flex; /* Center image within the circle */
-        align-items: center; /* Vertical centering */
-        justify-content: center; /* Horizontal centering */
-        background-color: #ffffff; /* Ensure a clear background */
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
     }
-    .recommendations-section .recommender-photo {
-        width: 100%; /* Fully fill the container */
-        height: 100%; /* Match height for scaling */
-        object-fit: cover; /* Scale image proportionally */
-    }
-        .recommendations-section .recommender-info {
-        display: flex; /* Align image and text horizontally */
-        align-items: center; /* Vertically align content */
-        flex-wrap: wrap; /* Allow wrapping if space is limited */
-    }
+
     .recommendations-section .recommender-name {
-        font-size: 1rem; /* Adjust size for mobile */
-        margin-bottom: 2px; /* Space between name and title */
+        font-size: 1rem;
     }
 
     .recommendations-section .recommender-title {
-        font-size: 0.8rem; /* Adjust title size */
-        color: #c0c0c0; /* Slightly muted color for readability */
+        font-size: 0.8rem;
     }
 
     .accordion-icon {
