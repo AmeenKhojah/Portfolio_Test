@@ -729,26 +729,14 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-
-    .contact-button {
-        position: relative; /* Make the button static within its section */
-        margin: 20px auto 0; /* Center it and add spacing */
-        display: block;
-    }
-
-    .contact-icons {
-        position: relative; /* Make the icons static */
-        margin: 10px auto; /* Center them and add spacing */
-        display: flex;
-        justify-content: center; /* Center the icons */
+    canvas#canvas3d {
+        display: none;
     }
     .portfolio-container {
         flex-direction: column;
         padding: 20px;
     }
-    #canvas3d {
-        display: none; /* Completely hide the canvas on mobile devices */
-    }
+
     .left-section, .right-section {
         flex: 1 1 100%;
         margin-bottom: 30px;
