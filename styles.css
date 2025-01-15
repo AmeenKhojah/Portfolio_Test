@@ -729,49 +729,19 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-
-    .recommender-photo-container {
-        width: 60px; /* Explicitly set container width */
-        height: 60px; /* Ensure height matches width for a perfect circle */
-        border-radius: 50%; /* Makes the container circular */
-        overflow: hidden; /* Ensures the image doesn’t exceed container bounds */
-        display: flex; /* Ensures image is centered inside */
-        justify-content: center;
-        align-items: center;
-        background-color: #ffffff; /* Optional: Background for transparent images */
-    }
-
-    .recommender-photo-container img {
-        width: 100%; /* Let the image take full container width */
-        height: 100%; /* Force image height to match container */
-        object-fit: cover; /* Crop image to fit without distortion */
-        border-radius: 50%; /* Crop image into a perfect circle */
-        display: block; /* Ensure the image behaves as a block-level element */
-    }
-
-    /* Specific fix for KAU logo if it's uniquely affected */
-    .recommender-photo-container img[alt="KAU Logo"] {
-        object-fit: contain; /* Allow logos to be fully visible */
-        width: 90%; /* Adjust logo size relative to container */
-        height: auto; /* Maintain aspect ratio */
-        background-color: transparent; /* Clean background for logos */
+    .skills-section {
+        padding: 40px 20px 60px; /* Add more padding at the bottom */
+        text-align: center;
+        background-color: #000000;
+        color: #FFFFFF;
+        transform: none; /* Remove translateY to prevent clipping */
+        margin-top: 100px; /* Adjust margin for proper spacing */
     }
     .portfolio-container {
         flex-direction: column;
         padding: 20px;
     }
-    .skills-section {
-        padding: 40px 20px; /* Reduce padding for smaller screens */
-        transform: none; /* Remove unnecessary translation */
-        margin-top: 60px; /* Adjust spacing to ensure no overlap */
-    }
 
-    .projects-section {
-        padding: 40px 20px; /* Reduce padding for smaller screens */
-        transform: none; /* Remove unnecessary translation */
-        margin-top: 40px; /* Adjust spacing between sections */
-    }
-}
     .left-section, .right-section {
         flex: 1 1 100%;
         margin-bottom: 30px;
@@ -919,15 +889,6 @@ canvas#canvas3d {
 }
 
 @media (max-width: 480px) {
-    .skills-section {
-        padding: 30px 15px; /* Further reduce padding */
-        margin-top: 40px; /* Slightly smaller gap */
-    }
-
-    .projects-section {
-        padding: 30px 15px; /* Match the padding with skills section */
-        margin-top: 30px; /* Ensure sufficient spacing between sections */
-    }
     .cards-container {
         grid-template-columns: 1fr; /* Single column */
     }
