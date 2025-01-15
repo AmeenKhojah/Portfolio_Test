@@ -745,11 +745,7 @@ canvas#canvas3d {
         height: 50px; /* Fixed height - maintaining perfect circle */
         min-width: 50px; /* Prevent distortion */
         min-height: 50px; /* Prevent distortion */
-        border-radius: 50%; /* Circular shape */
-        overflow: hidden; /* Ensure the image stays within the circle */
-        border: 2px solid #FF2DF7; /* Adjusted to match gradient */
-        background-color: white; /* White background to cover the entire circle */
-    }
+        
     }
 
     .recommendations-section .accordion-content {
