@@ -729,6 +729,32 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
+    .recommender-photo-container {
+        width: 60px; /* Adjust to a consistent size for mobile screens */
+        height: 60px; /* Ensure width and height match for a perfect circle */
+        border-radius: 50%; /* Keeps the container circular */
+        overflow: hidden; /* Ensures the image does not overflow the container */
+        display: flex; /* Center-align the image inside the container */
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff; /* Optional: Add a background color for transparent images */
+    }
+
+    .recommender-photo-container img {
+        width: 100%; /* Make the image fully fit the container */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 100%; /* Prevent vertical stretching */
+        object-fit: cover; /* Ensures proper scaling and cropping */
+        border-radius: 50%; /* Keep the image circular inside the container */
+    }
+
+    /* Specific fix for KAU logo if it has unique issues */
+    .recommender-photo-container img[alt="KAU Logo"] {
+        object-fit: contain; /* Ensure the logo is fully visible without distortion */
+        width: 80%; /* Slightly reduce the size for better alignment */
+        height: 80%; /* Maintain aspect ratio */
+        background-color: transparent; /* Ensure background is clean */
+    }
 
     .portfolio-container {
         flex-direction: column;
