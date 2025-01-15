@@ -730,7 +730,7 @@ canvas#canvas3d {
 
 @media (max-width: 768px) {
     .left-section-svg {
-        position: relative;
+        position: absolute;
         top: auto;
         left: auto;
         width: 300px; /* Adjusted size for mobile */
