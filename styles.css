@@ -739,23 +739,7 @@ canvas#canvas3d {
         padding: 0; /* Remove any padding */
         margin: 0; /* Remove any margin */
     }
-    .contact-section {
-        display: flex;
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center horizontally */
-        justify-content: center; /* Center vertically */
-        gap: 20px; /* Add spacing between the button and icons */
-        margin: 0 auto; /* Ensure proper centering */
-    }
 
-    .contact-button {
-        margin: 0; /* Remove any external margins */
-    }
-
-    .contact-icons {
-        justify-content: center; /* Center icons */
-        gap: 15px; /* Add spacing between icons */
-    }
     .recommendations-section .recommender-photo-container {
         width: 50px; /* Fixed width */
         height: 50px; /* Fixed height - maintaining perfect circle */
