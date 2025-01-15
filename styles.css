@@ -742,23 +742,7 @@ canvas#canvas3d {
         padding: 0; /* Remove any padding */
         margin: 0; /* Remove any margin */
     }
-    .contact-section {
-        display: flex;
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center horizontally */
-        justify-content: center; /* Center vertically */
-        gap: 20px; /* Add spacing between the button and icons */
-        margin: 0 auto; /* Ensure proper centering */
-    }
 
-    .contact-button {
-        margin: 0; /* Remove any external margins */
-    }
-
-    .contact-icons {
-        justify-content: center; /* Center icons */
-        gap: 15px; /* Add spacing between icons */
-    }
     .projects-section {
         padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
         min-height: 400px; /* Ensure enough space for the entire section */
