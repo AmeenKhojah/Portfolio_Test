@@ -729,6 +729,14 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
+    
+    .left-section-svg {
+        width: 100%; /* Set the SVG width to 100% */
+        position: absolute; /* Ensure it aligns with the left border */
+        left: 0; /* Align it with the very left side */
+        padding: 0; /* Remove any padding */
+        margin: 0; /* Remove any margin */
+    }
     .contact-section {
         display: flex;
         flex-direction: column; /* Stack elements vertically */
