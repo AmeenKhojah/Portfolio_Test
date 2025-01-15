@@ -736,6 +736,7 @@ canvas#canvas3d {
         left: 0; /* Align it with the very left side */
         padding: 0; /* Remove any padding */
         margin: 0; /* Remove any margin */
+        top: -20px; /* Move the SVG up by 20px */
     }
     .contact-section {
         display: flex;
