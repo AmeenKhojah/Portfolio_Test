@@ -730,12 +730,12 @@ canvas#canvas3d {
 
 @media (max-width: 768px) {
     .left-section-svg {
-        position: left;
+        position: relative;
         top: auto;
-        left: auto;
+        left: 0; /* Align to the leftmost side */
         width: 300px; /* Adjusted size for mobile */
         height: auto;
-        margin: 0 auto 20px; /* Center above About Me section and add spacing */
+        margin: 0; /* Remove all margins */
         transform: none;
     }
     .projects-section {
