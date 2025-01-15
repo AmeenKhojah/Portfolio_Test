@@ -273,30 +273,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactButton = document.querySelector('.contact-button');
     const contactIcons = document.querySelector('.contact-icons');
 
-    // Monitor screen height changes to detect keyboard visibility
+    // Listen for viewport resize events
     window.addEventListener('resize', () => {
         const viewportHeight = window.innerHeight;
         const screenHeight = screen.height;
 
         if (screenHeight - viewportHeight > 150) {
-            // Keyboard is open, move button and icons further up
+            // Keyboard is visible
             if (contactButton) {
-                contactButton.style.bottom = `calc(${viewportHeight * 0.15}px)`; // 15% above keyboard
+                contactButton.style.marginBottom = '150px'; // Add more space when keyboard is visible
             }
             if (contactIcons) {
-                contactIcons.style.bottom = `calc(${viewportHeight * 0.1}px)`; // 10% above keyboard
+                contactIcons.style.marginBottom = '100px'; // Add more space for icons
             }
         } else {
-            // Keyboard is closed, reset position
+            // Keyboard is hidden
             if (contactButton) {
-                contactButton.style.bottom = `calc(env(safe-area-inset-bottom) + 120px)`;
+                contactButton.style.marginBottom = '20px'; // Reset margin
             }
             if (contactIcons) {
-                contactIcons.style.bottom = `calc(env(safe-area-inset-bottom) + 60px)`;
+                contactIcons.style.marginBottom = '10px'; // Reset margin
             }
         }
     });
 });
+
 
 
         // Mark the selected card visually
