@@ -269,36 +269,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             selectedIndex = best;
         }
-document.addEventListener('DOMContentLoaded', () => {
-    const contactButton = document.querySelector('.contact-button');
-    const contactIcons = document.querySelector('.contact-icons');
-
-    // Listen for viewport resize events
-    window.addEventListener('resize', () => {
-        const viewportHeight = window.innerHeight;
-        const screenHeight = screen.height;
-
-        if (screenHeight - viewportHeight > 150) {
-            // Keyboard is visible
-            if (contactButton) {
-                contactButton.style.marginBottom = '150px'; // Add more space when keyboard is visible
-            }
-            if (contactIcons) {
-                contactIcons.style.marginBottom = '100px'; // Add more space for icons
-            }
-        } else {
-            // Keyboard is hidden
-            if (contactButton) {
-                contactButton.style.marginBottom = '20px'; // Reset margin
-            }
-            if (contactIcons) {
-                contactIcons.style.marginBottom = '10px'; // Reset margin
-            }
-        }
-    });
-});
-
-
 
         // Mark the selected card visually
         function highlightSelectedCard() {
