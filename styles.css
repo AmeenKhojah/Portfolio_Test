@@ -732,9 +732,8 @@ canvas#canvas3d {
 @media (max-width: 768px) {
 
     .recommendations-section .accordion-item:last-child .recommender-photo-container {
-        background-color: #ffffff; /* Set background to solid white */
-        }
-        
+    background-color: #ffffff !important; /* Force white background */
+    }
     .recommendations-section .recommender-photo-container {
         width: 50px; /* Fixed width */
         height: 50px; /* Fixed height - maintaining perfect circle */
