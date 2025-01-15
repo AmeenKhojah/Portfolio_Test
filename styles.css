@@ -729,33 +729,33 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
+
     .recommender-photo-container {
-        width: 60px; /* Adjust to a consistent size for mobile screens */
-        height: 60px; /* Ensure width and height match for a perfect circle */
-        border-radius: 50%; /* Keeps the container circular */
-        overflow: hidden; /* Ensures the image does not overflow the container */
-        display: flex; /* Center-align the image inside the container */
+        width: 60px; /* Explicitly set container width */
+        height: 60px; /* Ensure height matches width for a perfect circle */
+        border-radius: 50%; /* Makes the container circular */
+        overflow: hidden; /* Ensures the image doesn’t exceed container bounds */
+        display: flex; /* Ensures image is centered inside */
         justify-content: center;
         align-items: center;
-        background-color: #ffffff; /* Optional: Add a background color for transparent images */
+        background-color: #ffffff; /* Optional: Background for transparent images */
     }
 
     .recommender-photo-container img {
-        width: 100%; /* Make the image fully fit the container */
-        height: auto; /* Maintain aspect ratio */
-        max-height: 100%; /* Prevent vertical stretching */
-        object-fit: cover; /* Ensures proper scaling and cropping */
-        border-radius: 50%; /* Keep the image circular inside the container */
+        width: 100%; /* Let the image take full container width */
+        height: 100%; /* Force image height to match container */
+        object-fit: cover; /* Crop image to fit without distortion */
+        border-radius: 50%; /* Crop image into a perfect circle */
+        display: block; /* Ensure the image behaves as a block-level element */
     }
 
-    /* Specific fix for KAU logo if it has unique issues */
+    /* Specific fix for KAU logo if it's uniquely affected */
     .recommender-photo-container img[alt="KAU Logo"] {
-        object-fit: contain; /* Ensure the logo is fully visible without distortion */
-        width: 80%; /* Slightly reduce the size for better alignment */
-        height: 80%; /* Maintain aspect ratio */
-        background-color: transparent; /* Ensure background is clean */
+        object-fit: contain; /* Allow logos to be fully visible */
+        width: 90%; /* Adjust logo size relative to container */
+        height: auto; /* Maintain aspect ratio */
+        background-color: transparent; /* Clean background for logos */
     }
-
     .portfolio-container {
         flex-direction: column;
         padding: 20px;
