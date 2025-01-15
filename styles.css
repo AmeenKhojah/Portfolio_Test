@@ -730,59 +730,38 @@ canvas#canvas3d {
 
 @media (max-width: 768px) {
 
-    .recommendations-section {
-        padding: 40px 20px;
-        transform: none; /* Remove transform to prevent layout issues */
-        margin-top: 50px;
-    }
-
-    .recommendations-section .accordion {
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .recommendations-section .accordion-item {
-        height: auto; /* Allow content to determine height */
-    }
-
-    .recommendations-section .accordion-header {
-        min-height: 80px; /* Ensure consistent header height */
-        padding: 15px;
-        flex-wrap: wrap; /* Allow content to wrap if needed */
-    }
-
-    .recommendations-section .recommender-info {
-        flex: 1;
-        min-width: 200px; /* Ensure info has enough space */
+    .recommendations-section .recommender-photo-container {
+        width: 50px; /* Fixed width */
+        height: 50px; /* Fixed height - maintaining perfect circle */
+        min-width: 50px; /* Prevent distortion */
+        min-height: 50px; /* Prevent distortion */
     }
 
     .recommendations-section .accordion-content {
-        height: auto;
-        max-height: none; /* Remove max-height restriction */
-        transition: all 0.3s ease;
+        max-height: 0; /* Reset to default collapsed state */
+        overflow: hidden;
+        transition: max-height 0.5s ease;
     }
 
-    .recommendations-section .accordion-content.active {
-        height: auto;
-        padding: 15px;
+    /* Active state for accordion content */
+    .recommendations-section .accordion-header[aria-expanded="true"] + .accordion-content {
+        max-height: 1000px; /* Allow enough height for content */
     }
 
-    .recommendations-section .testimonial-container {
-        padding: 15px 0;
-        gap: 15px;
-    }
-
-    .recommendations-section .testimonial-text {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        padding: 10px;
-    }
-
+    /* Keep download button aligned to the end */
     .download-recommendation-button {
-        width: auto;
-        align-self: center; /* Center the button on mobile */
-        margin-top: 10px;
-        padding: 8px 16px;
+        align-self: flex-end; /* Restore original alignment */
+        margin-top: auto; /* Push to bottom */
+    }
+
+    /* Fix expansion button rotation */
+    .recommendations-section .accordion-icon {
+        transform: rotate(0deg); /* Reset rotation */
+        transition: transform 0.3s ease;
+    }
+
+    .recommendations-section .accordion-header[aria-expanded="true"] .accordion-icon {
+        transform: rotate(45deg); /* Only rotate when expanded */
     }
     .name {
         font-size: 2em; /* Reduce font size to fit in one line */
@@ -995,24 +974,7 @@ canvas#canvas3d {
 }
 
 @media (max-width: 480px) {
-    .recommendations-section .accordion-header {
-        min-height: 70px;
-        padding: 10px;
-    }
 
-    .recommendations-section .recommender-info {
-        min-width: 160px;
-    }
-
-    .recommendations-section .recommender-photo-container {
-        width: 45px;
-        height: 45px;
-    }
-
-    .recommendations-section .testimonial-text {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
     .cards-container {
         grid-template-columns: 1fr; /* Single column */
     }
