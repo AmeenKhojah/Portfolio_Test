@@ -729,15 +729,15 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-    .contact-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centers the content horizontally */
-        justify-content: center; /* Centers the content vertically */
-        margin-top: 40px; /* Optional: Adds space above */
-        margin-bottom: 40px; /* Optional: Adds space below */
-        text-align: center; /* Ensures text is centered */
+    .left-section-svg {
+        position: absolute;
+        top: 0; /* Move it to the top of the about-me section */
+        left: 0; /* Align to the far left without padding */
+        width: 100px; /* Smaller size for mobile */
+        height: auto;
+        transform: none; /* Remove additional Y translation */
     }
+    
     .projects-section {
         padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
         min-height: 400px; /* Ensure enough space for the entire section */
