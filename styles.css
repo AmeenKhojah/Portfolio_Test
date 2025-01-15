@@ -856,10 +856,20 @@ canvas#canvas3d {
         font-size: 2.5rem;
     }
 
-    .recommendations-section .recommender-photo-container {
-        width: 50px;
-        height: 50px;
-        margin-right: 10px;
+    .recommender-photo-container {
+        width: 50px; /* Set a fixed width for the container */
+        height: 50px; /* Match height to width for a perfect circle */
+        overflow: hidden; /* Ensure content doesn't overflow */
+        border-radius: 50%; /* Force the shape to be a circle */
+        display: flex; /* Flexbox ensures image alignment */
+        justify-content: center; /* Center the image horizontally */
+        align-items: center; /* Center the image vertically */
+    }
+
+    .recommender-photo {
+        width: 100%; /* Ensure the image fills the container */
+        height: auto; /* Maintain the aspect ratio of the image */
+        object-fit: cover; /* Ensure the image covers the container */
     }
 
     .recommendations-section .recommender-name {
