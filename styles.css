@@ -1048,76 +1048,34 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
+  /* Ensure left-section-svg stays in its original position */
   .left-section-svg {
     width: 100%;
     position: absolute;
     left: 0;
-    top: 50%; /* Adjusted to avoid overlap */
-    transform: translateY(-50%);
+    top: 45%;  /* Keeps SVG positioned correctly */
+    transform: translateY(0%);
     padding: 0;
     margin: 0;
   }
 
-  .recommendations-section .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-  }
-
-  .recommendations-section
-    .accordion-header[aria-expanded='true']
-    + .accordion-content {
-    max-height: 1000px;
-  }
-
-  .download-recommendation-button {
-    gap: 4px;
-    padding: 6px 12px;
-    font-size: 0.8em;
-    align-self: flex-start;
-  }
-
-  .recommendations-section .accordion-icon {
-    transform: rotate(0deg);
-    transition: transform 0.3s ease;
-  }
-  .recommendations-section
-    .accordion-header[aria-expanded='true']
-    .accordion-icon {
-    transform: rotate(45deg);
-  }
-
-  .projects-section {
-    padding: 40px 20px 100px;
-    min-height: 400px;
-    margin-top: 100px;
-  }
-
-  canvas#canvas3d {
-    display: none;
-  }
-
-  /* New Section for About Me */
+  /* About Me Section: Ensure it does not overlap with Hero Section */
   .about-me-wrapper {
-    padding: 40px 20px;
-    margin-top: 20px; /* Ensure space between Hero and About Me */
-    background-color: #000000;
-    color: #ffffff;
-    border-top: 2px solid #ff2df7; /* Optional: styling for separation */
+    margin-top: 250px;  /* Creates space between Hero section and About Me section */
+    padding: 20px;  /* Adds padding for the About Me section */
+    background-color: #000000;  /* Keeps background consistent */
+    color: #ffffff;  /* Ensures text color contrasts well */
     box-sizing: border-box;
-    overflow: hidden;
-    max-width: 100%;
-    height: auto; /* Ensures that it fits within screen */
   }
 
-  /* About Me Text */
+  /* Ensure About Me text fits within the screen and doesn't overflow */
   .about-me {
-    padding: 20px;
-    max-height: 100%;
-    overflow-y: auto; /* Avoids text overflow */
-    box-sizing: border-box;
+    padding: 0 20px;
+    max-width: 100%;
+    overflow: hidden;  /* Ensures text doesn't overflow */
   }
 
+  /* About Me Text Styling */
   .about-heading {
     font-size: 2.2em;
     margin-bottom: 15px;
@@ -1133,23 +1091,18 @@ canvas#canvas3d {
     line-height: 1.6;
     margin-bottom: 25px;
     color: #cccccc;
-    text-align: left;
   }
 
-  /* Fix for About Me section overflowing */
-  .about-me-wrapper {
-    padding: 20px 10px;
-    overflow-y: auto;
-  }
-
+  /* Ensures Skills Section maintains its spacing */
   .skills-section {
     padding: 40px 20px 60px;
     text-align: center;
     background-color: #000000;
     color: #ffffff;
-    margin-top: 20px;
+    margin-top: 20px;  /* Keeps skills section correctly spaced */
   }
 
+  /* Rest of the Layout */
   .portfolio-container {
     flex-direction: column;
     padding: 20px;
@@ -1168,18 +1121,6 @@ canvas#canvas3d {
 
   .contact-icons {
     gap: 10px;
-  }
-
-  .about-heading {
-    font-size: 2.2em;
-  }
-
-  .about-subheading {
-    font-size: 1.6em;
-  }
-
-  .about-paragraph {
-    font-size: 1.1em;
   }
 
   .gradient-line {
