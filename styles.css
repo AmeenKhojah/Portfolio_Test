@@ -1048,26 +1048,26 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-/* Fix for the last photo (Dr. Naif Rajkhan, KAU) */
-/* Ensure the circle container for KAU photo (Dr. Naif Rajkhan) is the same size as Aramco logos */
+/* Ensure that the KAU container is identical to the Aramco one (60px by 60px circle) */
 .recommendations-section .accordion-item:last-child .recommender-photo-container {
-  width: 60px;           /* Set the container width to 60px (same size as Aramco logos) */
-  height: 60px;          /* Set the container height to 60px (same size as Aramco logos) */
-  border-radius: 50%;    /* Force the container to be circular */
-  background-color: white; /* Background is white to ensure it fills the circle */
-  overflow: hidden;      /* Hide anything that overflows the circular container */
-  display: flex;
-  justify-content: center; /* Center the image inside the circle */
-  align-items: center;    /* Center the image vertically inside the circle */
+  width: 60px !important;    /* Force the container's width to 60px */
+  height: 60px !important;   /* Force the container's height to 60px */
+  border-radius: 50% !important; /* Make the container a perfect circle */
+  background-color: white;  /* Set a white background */
+  overflow: hidden;         /* Hide anything that overflows the container */
+  display: flex;            /* Flexbox for centering */
+  justify-content: center;  /* Center the image horizontally */
+  align-items: center;     /* Center the image vertically */
 }
 
-/* Make sure the image inside the container fits perfectly within the circle */
+/* Ensures the image fills the circle perfectly without distortion */
 .recommendations-section .accordion-item:last-child .recommender-photo-container img {
-  width: 100%;          /* Make the image fill the entire width of the circle */
-  height: 100%;         /* Make the image fill the entire height of the circle */
-  object-fit: cover;    /* Ensures the image covers the circle without distortion */
-  object-position: center; /* Ensure the image is centered */
+  width: 100% !important;     /* Image takes up full width of container */
+  height: 100% !important;    /* Image takes up full height of container */
+  object-fit: cover !important; /* Ensures the image covers the area without stretching */
+  object-position: center !important; /* Centers the image */
 }
+
 
 
   .left-section-svg {
