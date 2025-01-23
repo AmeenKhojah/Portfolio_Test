@@ -1,350 +1,478 @@
 /* ====== Reset & Base Styles ====== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
-    background: #000000; /* Set background to pure black */
-    color: #ffffff; /* Default text color */
-    overflow-x: hidden; /* Prevent horizontal scroll */
+html,
+body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  /* Remove or comment out the following lines to allow text selection globally */
+  /* -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; */
+  -webkit-touch-callout: none;
+  background: #000000; /* Pure black */
+  background-attachment: fixed; /* Parallax effect */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff; /* Default text color */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  scroll-behavior: smooth;
+
+}
+
+
+
+/* ====== Navigation Bar ====== */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  backdrop-filter: blur(10px) saturate(180%);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.navbar-container {
+  width: 90%;
+  max-width: 1200px;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar-item {
+}
+
+.navbar-link {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: linear-gradient(90deg, #ff00ff, #65558f);
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+
+.navbar-link:hover,
+.navbar-link:focus {
+  color: #8a2be2;
+}
+
+.navbar-link:hover::after,
+.navbar-link:focus::after {
+  width: 100%;
+  left: 0;
+  background: linear-gradient(90deg, #ff00ff, #ff77ff, #65558f);
+}
+
+/* ====== Active Navbar Link ====== */
+.navbar-link.active,
+.navbar-link.active::after {
+  color: #8a2be2;
+}
+
+/* Add scroll margin to all sections */
+section {
+  scroll-margin-top: 80px;
 }
 
 /* ====== Portfolio Container ====== */
 .portfolio-container {
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    align-items: center;
-    padding: 0;
-    box-sizing: border-box;
-    background: transparent;
-    z-index: 2;
-    /* Removed transform: translateY(-15%); to prevent shifting */
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  align-items: center;
+  padding: 80px 0 0 0;
+  box-sizing: border-box;
+  background: transparent;
+  z-index: 2;
+  contain: layout size;
 }
 
 /* ====== Left Section: Name and Contact ====== */
 .left-section {
-    flex: 0.8; /* Adjusted flex for layout */
-    padding: 40px 40px 40px 120px; /* Adjusted padding */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 0;
-    /* Removed transform: translateY(45%); */
+  flex: 0.68;
+  padding: 600px 40px 400px 120px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .greeting {
-    font-size: 3em;
-    margin: 0;
-    font-weight: bold;
-    color: #ffffff;
+  font-size: 3em;
+  margin: 0;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 .name {
-    font-size: 2.5em;
-    margin: 10px 0 20px 0;
-    font-weight: bold;
-    color: #ffffff;
+  font-size: 2.5em;
+  margin: 10px 0 20px 0;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 /* ====== Animated Typing Effect ====== */
 .typing-effect {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    color: #8A2BE2; /* Matching existing purple gradient */
-    height: 50px; /* Adjust as needed */
-    position: relative;
-    overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  color: #8a2be2;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
 }
 
 #typed-text {
-    /* Additional styles if needed */
+  /* Additional styles if needed */
 }
 
 #cursor {
-    display: inline-block;
-    width: 10px;
-    background-color: #8A2BE2; /* Matching typing effect color */
-    animation: blink 0.7s infinite;
-    margin-left: 5px;
+  display: inline-block;
+  width: 10px;
+  background-color: #8a2be2;
+  animation: blink 0.7s infinite;
+  margin-left: 5px;
 }
 
 @keyframes blink {
-    0%, 50% {
-        opacity: 1;
-    }
-    51%, 100% {
-        opacity: 0;
-    }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
-/* ====== Contact Section Wrapper ====== */
-/* Updated to use Flexbox for responsive alignment */
+/* ====== Contact Section ====== */
 .contact-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px; /* Adds space below the contact section */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
-/* ====== Get in Touch Button ====== */
 .contact-button {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 1em;
-    color: #ffffff; /* Text color */
-    background-color: rgba(101, 85, 143, 0.03); /* 3% opacity purple fill */
-    border: none; /* No border directly */
-    border-radius: 100px; /* Fully rounded corners */
-    text-decoration: none; /* No underline */
-    cursor: pointer;
-    position: relative;
-    z-index: 1; /* Ensure text stays above pseudo-elements */
-    transition: color 0.3s, background-color 0.3s; /* Smooth hover transitions */
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1em;
+  color: #ffffff;
+  background-color: rgba(101, 85, 143, 0.03);
+  border: none;
+  border-radius: 100px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s, background-color 0.3s;
+  user-select: none;
 }
 
 .contact-button::before {
-    content: ""; /* Pseudo-element for consistent border */
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 100px; /* Fully rounded edges */
-    background: linear-gradient(90deg, #ff00ff, #65558f); /* Gradient stroke */
-    z-index: -1; /* Place behind button content */
-    padding: 2px; /* Adjust for desired border thickness */
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    box-sizing: border-box; /* Ensures padding and size are calculated correctly */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #ff00ff, #65558f);
+  z-index: -1;
+  padding: 2px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  box-sizing: border-box;
 }
 
 .contact-button:hover {
-    /* Keep the background color consistent */
-    background-color: rgba(101, 85, 143, 0.03);
-    /* Apply expanded gradient to the text */
-    background: linear-gradient(90deg, #ff00ff, #ff77ff, #65558f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text; /* For non-webkit browsers */
-    color: transparent; /* Fallback for non-webkit browsers */
-    transition: color 0.5s, background 0.5s; /* Smooth hover transitions */
+  background: linear-gradient(90deg, #ff00ff, #ff77ff, #65558f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: color 0.5s, background 0.5s;
 }
 
 .contact-button:hover::before {
-    /* Keeps the same gradient */
-    background: linear-gradient(90deg, #ff00ff, #65558f);
+  background: linear-gradient(90deg, #ff00ff, #65558f);
 }
 
 /* ====== Contact Icons ====== */
-/* Updated to remove absolute positioning and center using Flexbox */
 .contact-icons {
-    display: flex;
-    gap: 15px; /* Spacing between icons */
-    margin-top: 10px; /* Adds space between the button and icons */
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  user-select: none;
 }
 
 .contact-icons a {
-    display: inline-block;
-    text-decoration: none; /* Remove underline */
+  display: inline-block;
+  text-decoration: none;
+  user-select: none;
 }
 
 .contact-icon {
-    width: 30px; /* Ensures consistent circle size for all icons */
-    height: 30px; /* Ensures consistent circle size for all icons */
-    background-color: white; /* Makes the transparent part white */
-    border-radius: 50%; /* Makes the icon circular */
-    padding: 1px; /* Creates a consistent border thickness */
-    box-sizing: border-box; /* Ensures padding adds to the border */
-    display: flex; /* Centers the icon */
-    align-items: center; /* Centers the icon vertically */
-    justify-content: center; /* Centers the icon horizontally */
-    transition: transform 0.3s ease; /* Smooth hover scaling */
-}
-
-.contact-icon img {
-    width: 100%; /* Makes the icon fit within the parent container */
-    height: 100%; /* Keeps aspect ratio */
-    border-radius: 50%; /* Ensures the icon itself is circular */
-    object-fit: cover; /* Prevents distortion */
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 1px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  user-select: none;
 }
 
 .contact-icon:hover {
-    transform: scale(1.2); /* Enlarge slightly on hover */
+  transform: scale(1.2);
+  user-select: none;
 }
 
-/* ====== Right Section: Robot Animation and About Me ====== */
+/* ====== Right Section ====== */
 .right-section {
-    flex: 1.3;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-    margin-top: 0;
-    /* Removed transform: translateY(5%); */
-}
-
-/* Adjust canvas size */
-.about-me-wrapper {
-    width: 100%;
-    position: relative;
-    transform: translateY(95%); /* Increased by 20% */
-}
-
-.about-me {
-    width: 100%;
-    max-width: 780px;
-    text-align: left;
-    padding: 0 26px;
-    margin-top: 0px;
-    position: relative;
+  flex: 1.3;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: -15px;
+  contain: layout;
 }
 
 canvas#canvas3d {
-    width: 100%;
-    height: auto;
-    margin-bottom: 30px;
-    transform: translateY(0%);
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  transform: translateY(10%);
+  will-change: transform;
+  contain: size layout;
 }
 
-/* ====== About Me Section ====== */
+.about-me-wrapper {
+  width: 100%;
+  position: relative;
+  transform: translateY(255%);
+  contain: layout;
+  will-change: transform;
+
+}
+
+.about-me {
+  width: 100%;
+  max-width: 780px;
+  text-align: left;
+  padding: 0 26px;
+  position: relative;
+  transform: translateY(-550px);
+  margin-left: 85px;
+  will-change: transform;
+
+}
+
 .left-section-svg {
-    position: absolute;
-    top: 65%;
-    left: 0;
-    width: 850px;
-    height: auto;
-    transform: translateY(15%); /* Adjusted by 20% more */
+  position: absolute;
+  top: 65%;
+  left: 0;
+  width: 850px;
+  height: auto;
+  transform: translateY(50%);
 }
 
+/* ====== About Me ====== */
 .about-heading {
-    font-size: 2.6em;
-    font-weight: bold;
-    background: linear-gradient(90deg, #FF2DF7, #AB84E5); /* Gradient color */
-    -webkit-background-clip: text; /* Clip gradient to text */
-    -webkit-text-fill-color: transparent; /* Make background fill visible */
-    background-clip: text; /* For non-webkit browsers */
-    color: transparent; /* Fallback for non-webkit browsers */
-    margin-bottom: 12px;
-    text-align: left; /* Align heading to the left */
+  font-size: 2.6em;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff2df7, #ab84e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-bottom: 12px;
+  text-align: left;
 }
 
 .about-subheading {
-    font-size: 1.95em;
-    color: #ffffff;
-    margin-bottom: 25px;
-    text-align: left; /* Align subheading to the left */
+  font-size: 1.95em;
+  color: #ffffff;
+  margin-bottom: 25px;
+  text-align: left;
 }
 
 .about-paragraph {
-    font-size: 1.3em;
-    line-height: 1.9;
-    color: #cccccc;
-    margin-bottom: 35px;
-    text-align: left; /* Align paragraph text to the left */
+  font-size: 1.3em;
+  line-height: 1.9;
+  color: #cccccc;
+  margin-bottom: 35px;
+  text-align: left;
+}
+
+#about {
+  scroll-margin-top: 900px;
 }
 
 /* ====== Gradient Line ====== */
 .gradient-line {
-    border: none;
-    height: 2px;
-    background: linear-gradient(90deg, #FF2DF7, #5200FF, #00F0FF);
-    margin: 0 0 35px 0; /* Align line to the left */
-    width: 85%;
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, #ff2df7, #5200ff, #00f0ff);
+  margin: 0 0 35px 0;
+  width: 85%;
 }
 
 /* ====== Download My CV Button ====== */
 .download-button {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 1em;
-    color: #ffffff; /* Text color */
-    background-color: rgba(101, 85, 143, 0.03); /* 3% opacity purple fill */
-    border: none; /* No border directly */
-    border-radius: 100px; /* Fully rounded corners */
-    text-decoration: none; /* No underline */
-    cursor: pointer;
-    position: relative;
-    z-index: 1; /* Ensure text stays above pseudo-elements */
-    transition: color 0.3s, background-color 0.3s; /* Smooth hover transitions */
-    /* Consistent with .contact-button */
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1em;
+  color: #ffffff;
+  background-color: rgba(101, 85, 143, 0.03);
+  border: none;
+  border-radius: 100px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s, background-color 0.3s;
+  user-select: none;
 }
 
 .download-button::before {
-    content: ""; /* Pseudo-element for consistent border */
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 100px; /* Fully rounded edges */
-    background: linear-gradient(90deg, #ff00ff, #65558f); /* Gradient stroke */
-    z-index: -1; /* Place behind button content */
-    padding: 2px; /* Adjust for desired border thickness */
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    box-sizing: border-box; /* Ensures padding and size are calculated correctly */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #ff00ff, #65558f);
+  z-index: -1;
+  padding: 2px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  box-sizing: border-box;
+  user-select: none;
 }
 
 .download-button:hover {
-    /* Keep the background color consistent */
-    background-color: rgba(101, 85, 143, 0.03);
-    /* Apply expanded gradient to the text */
-    background: linear-gradient(90deg, #ff00ff, #ff77ff, #65558f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text; /* For non-webkit browsers */
-    color: transparent; /* Fallback for non-webkit browsers */
-    transition: color 0.5s, background 0.5s; /* Smooth hover transitions */
+  background: linear-gradient(90deg, #ff00ff, #ff77ff, #65558f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: color 0.5s, background 0.5s;
+  user-select: none;
 }
 
 .download-button:hover::before {
-    /* Keeps the same gradient */
-    background: linear-gradient(90deg, #ff00ff, #65558f);
+  background: linear-gradient(90deg, #ff00ff, #65558f);
 }
 
-/* ====== Skills Section Styles ====== */
+/* ====== Relationship Section (KAU + ARAMCO) ====== */
+.relationship-section {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 25px 0;
+  /* You can tweak as needed */
+  user-select: none;
+}
 
-/* General Styles */
+.relationship-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.relationship-separator {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(90deg, #ff00ff, #65558f);
+  border-radius: 1px;
+}
+
+.relationship-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.relationship-logo:hover {
+  transform: scale(1.1);
+}
+
+.relationship-caption {
+  margin-top: 2px;
+  font-size: 0.9rem;
+  color: #cccccc;
+  white-space: nowrap;
+}
+/* This ensures the aramco logo is the same size as KAU's */
+.aramco-logo {
+  width: 120px;        /* same as KAU width */
+  height: 120px;       /* same as KAU height */
+  object-fit: contain; /* keep it from distorting */
+}
+
+/* ====== Skills Section ====== */
 .skills-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #000000;
-    color: #FFFFFF;
-    transform: translateY(35%); /* Increased by 20% */
-    margin-top: 400px; /* Adjust the value as needed for the gap */
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  margin-top: 1300px;
 }
 
 .section-title {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    background: linear-gradient(90deg, #FF2DF7, #AB84E5); /* Gradient color */
-    -webkit-background-clip: text; /* Clip gradient to text */
-    -webkit-text-fill-color: transparent; /* Make background fill visible */
-    background-clip: text;
-    color: transparent;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #ff2df7, #ab84e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
-/* General recommender photo styling */
+/* Recommender Photo (KAU + Aramco) */
 .recommender-photo-container {
     position: relative;
     overflow: hidden;
-    border-radius: 50%; /* Default for circular logos */
-    background-color: #ffffff; /* White background for transparency issues */
+    border-radius: 50%;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -352,232 +480,283 @@ canvas#canvas3d {
 
 /* Specific styling for the KAU logo */
 .recommender-photo-container.kau-logo img {
-    width: 100%; /* Make image fill the container */
-    height: 100%; /* Make image fill the container */
-    object-fit: contain; /* Maintain aspect ratio without distortion */
-    border-radius: 0; /* Disable circular cropping for the image */
-    background-color: white; /* Ensure background is white */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0;
+    background-color: white;
 }
 
 /* Add optional shadow for better visibility */
 .recommender-photo-container img[alt="KAU Logo"] {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Specific styling for Aramco logos */
 .recommender-photo-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures proper scaling without distortion */
-    transition: transform 0.3s ease; /* Smooth zoom transition */
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .recommender-photo-container img[alt="Aramco Logo"] {
-    transform: scale(1.1); /* Zoom level for Aramco logos */
+    transform: scale(1.1);
 }
 
 .recommender-photo-container img:hover {
-    transform: scale(1.2); /* Further zoom on hover */
-    transition: transform 0.2s ease-in-out; /* Smooth zoom effect */
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
 }
 
 /* ====== Cards Container ====== */
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    gap: 20px; /* Space between cards */
-    justify-items: center; /* Center items horizontally */
-    align-items: start; /* Align items to the start vertically */
-    max-width: 1200px;
-    margin: 0 auto; /* Center the grid container */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Prevent Text Selection */
 .card {
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-}
-
-/* ====== Card Styles ====== */
-.card {
-    background-color: transparent;
-    width: 220px;
-    height: 260px;
-    perspective: 1000px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s, border-radius 0.3s; /* Add transition for border-radius */
-    border-radius: 15px; /* Ensure the initial border-radius is set */
-    overflow: hidden; /* Prevent overflow for all states */
+  background-color: transparent;
+  width: 220px;
+  height: 260px;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, border-radius 0.3s;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .card:hover,
 .card:focus {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(248, 29, 251, 0.4); /* Magenta shadow */
-    border-radius: 15px; /* Keep the border-radius consistent */
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(248, 29, 251, 0.4);
+  border-radius: 15px;
 }
 
 .card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    border-radius: 15px;
-    transition: box-shadow 0.3s;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-radius: 15px;
+  transition: box-shadow 0.3s;
 }
 
-/* Front of Card */
 .card-content {
-    background-color: #1E1E1E; /* Dark Gray */
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between; /* Ensure spacing between elements */
-    padding: 20px;
-    box-sizing: border-box;
-    transition: background-color 0.3s, transform 0.3s;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .card:hover .card-content,
 .card:focus .card-content {
-    background-color: #2C2C2C; /* Slightly Lighter Gray on Hover */
-    transform: translateY(-5px);
+  background-color: #2c2c2c;
+  transform: translateY(-5px);
 }
 
-/* ====== Gradient Icons ====== */
+/* Gradient Icons */
 .card-content i {
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text; /* For Safari */
-    -webkit-text-fill-color: transparent; /* For Safari */
-    margin-bottom: 15px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.5s ease; /* Smooth gradient transition */
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s ease;
 }
 
-/* Gradient for Each Icon */
-
-/* Gradient 1: F81DFB to 620C90 */
-.js-icon {
-    background: linear-gradient(90deg, #4C1B8B, #F81DFB);
-}
-
-/* Gradient 2: 4C1B8B to AB84E5 */
-.python-icon {
-    background: linear-gradient(90deg, #4C1B8B, #F81DFB);
-}
-
-/* Gradient 3: 1A0B2D to 620C90 */
-.html-icon {
-    background: linear-gradient(90deg, #4C1B8B, #F81DFB);
-}
-
-/* Gradient 4: AB84E5 to F81DFB */
-.css-icon {
-    background: linear-gradient(90deg, #4C1B8B, #F81DFB);
-}
-
-/* Additional Gradients for Other Icons */
-
-/* Gradient 5: F81DFB to 4C1B8B */
-.ai-icon {
-    background: linear-gradient(90deg, #4C1B8B, #F81DFB);
-}
-
-/* Gradient 6: 620C90 to 1A0B2D */
-.leadership-icon {
-    background: linear-gradient(90deg, #4C1B8B, #F81DFB);
-}
-
-/* Gradient 7: 4C1B8B to F81DFB */
-.java-icon {
-    background: linear-gradient(90deg, #4C1B8B, #F81DFB);
-}
-
-/* Gradient 8: 1A0B2D to AB84E5 */
+.js-icon,
+.python-icon,
+.html-icon,
+.css-icon,
+.ai-icon,
+.leadership-icon,
+.java-icon,
 .assembly-icon {
-    background: linear-gradient(90deg, #4C1B8B, #F81DFB);
+  background: linear-gradient(90deg, #4c1b8b, #f81dfb);
 }
 
-/* ====== Icon Titles and Descriptions ====== */
 .card-content h3 {
-    margin: 10px 0;
-    font-size: 1.5em;
-    color: #FFFFFF;
+  margin: 10px 0;
+  font-size: 1.5em;
+  color: #ffffff;
 }
 
 .card-content p {
-    font-size: 1em;
-    line-height: 1.4;
-    color: #CCCCCC;
+  font-size: 1em;
+  line-height: 1.4;
+  color: #cccccc;
 }
 
-/* ====== Recommendations Section Styles ====== */
+/* ====== Projects Section ====== */
+.projects-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  margin-top: 125px;
+}
+
+.projects-section .section-title {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #ff2df7, #ab84e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.carousel-wrapper {
+  perspective: 1200px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 700px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+  cursor: grab;
+}
+
+.carousel-wrapper:active {
+  cursor: grabbing;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+}
+
+.carousel-card {
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  width: 200px;
+  height: 220px;
+  background: #1e1e1e;
+  border-left: 4px solid #ff2df7;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 1s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #ffffff;
+  cursor: grab;
+  overflow-wrap: break-word;
+}
+
+.carousel-card:active {
+  cursor: grabbing;
+}
+
+.carousel-card.selected {
+  box-shadow: 0 8px 20px rgba(255, 29, 251, 0.5);
+}
+
+.carousel-card img.project-img {
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+.carousel-card h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+  color: #ff2df7;
+  overflow-wrap: break-word;
+}
+
+/* ====== Recommendations Section ====== */
 .recommendations-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #000000;
-    color: #ffffff;
-    transform: translateY(35%); /* Increased by 20% */
+  position: relative;
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  margin-top: 250px;
+  z-index: 1;
 }
 
 .recommendations-section .section-title {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    background: linear-gradient(90deg, #FF2DF7, #AB84E5); /* Matching main gradient */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #ff2df7, #ab84e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .recommendations-section .accordion {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto 60px auto;
-    border-radius: 10px;
-    overflow: hidden;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .recommendations-section .accordion-item {
-    border-bottom: 1px solid #333333;
+  border-bottom: 1px solid #333333;
 }
 
 .recommendations-section .accordion-item:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .recommendations-section .accordion-header {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    cursor: pointer;
-    padding: 20px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s ease;
-    font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 20px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  font-family: 'Roboto', sans-serif;
 }
 
 .recommendations-section .accordion-header:hover,
 .recommendations-section .accordion-header:focus {
-    background-color: #2a2a2a;
+  background-color: #2a2a2a;
 }
 
 .recommendations-section .recommender-info {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .recommendations-section .recommender-photo-container {
@@ -586,1202 +765,499 @@ canvas#canvas3d {
     margin-right: 15px;
     overflow: hidden;
     border-radius: 50%;
-    border: 2px solid #FF2DF7; /* Adjusted to match gradient */
-}
-
-.recommendations-section .recommender-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.recommendations-section .recommender-details {
-    display: flex;
-    flex-direction: column;
+    border: 2px solid #FF2DF7;
 }
 
 .recommendations-section .recommender-name {
-    font-family: 'Merriweather', serif;
-    font-size: 1.2rem;
-    color: #FF2DF7; /* Matching gradient color */
-    margin-bottom: 5px;
+  font-family: 'Merriweather', serif;
+  font-size: 1.2rem;
+  color: #ff2df7;
+  margin-bottom: 5px;
 }
 
 .recommendations-section .recommender-title {
-    font-size: 0.9rem;
-    color: #C0C0C0; /* Metallic Silver */
+  font-size: 0.9rem;
+  color: #c0c0c0;
 }
 
 .recommendations-section .accordion-icon {
-    font-size: 1.5rem;
-    color: #FF2DF7; /* Matching gradient */
-    transition: transform 0.3s ease;
+  font-size: 1.5rem;
+  color: #ff2df7;
+  transition: transform 0.3s ease;
 }
 
-.recommendations-section .accordion-header[aria-expanded="true"] .accordion-icon {
-    transform: rotate(45deg);
+.recommendations-section
+  .accordion-header[aria-expanded='true']
+  .accordion-icon {
+  transform: rotate(45deg);
 }
 
-/* ====== Accordion Content ====== */
 .recommendations-section .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease;
-    background-color: #1a1a1a;
-    padding: 0 20px;
-    display: block; /* Changed from flex to block to allow vertical expansion */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  background-color: #1a1a1a;
+  padding: 0 20px;
+  display: block;
 }
 
 .recommendations-section .accordion-content .testimonial-container {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: flex-start; /* Align items from the top */
-    width: 100%;
-    gap: 20px; /* Space between testimonial text and download button */
-    padding: 20px 0 40px 0; /* Add more space below the section (bottom padding increased to 40px) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 20px;
+  padding: 20px 0 40px 0;
 }
 
 .recommendations-section .testimonial-text {
-    font-size: 1rem;
-    color: #f0f0f0;
-    text-align: center; /* Center the text */
-    margin: 0; /* Remove default margins */
-    padding: 10px 0; /* Add padding for spacing */
-    position: relative;
+  font-size: 1rem;
+  color: #f0f0f0;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+  position: relative;
 }
 
 .recommendations-section .testimonial-text::before {
-    content: "“";
-    font-size: 2rem;
-    color: #FF2DF7; /* Matching gradient */
-    position: absolute;
-    left: -10px; /* Adjusted to position correctly */
-    top: -10px; /* Adjusted to position correctly */
+  content: '“';
+  font-size: 2rem;
+  color: #ff2df7;
+  position: absolute;
+  left: -10px;
+  top: -10px;
 }
 
 .download-recommendation-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px; /* Add spacing between icon and text */
-    padding: 8px 16px;
-    font-size: 0.9em;
-    color: #ffffff; /* Text color */
-    background-color: rgba(101, 85, 143, 0.03); /* 3% opacity purple fill */
-    border: none; /* No border directly */
-    border-radius: 50px; /* Fully rounded corners */
-    text-decoration: none; /* No underline */
-    cursor: pointer;
-    position: relative;
-    z-index: 1; /* Ensure text stays above pseudo-elements */
-    transition: color 0.3s, background-color 0.3s; /* Smooth hover transitions */
-    align-self: flex-end; /* Align the button to the right */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 0.9em;
+  color: #ffffff;
+  background-color: rgba(101, 85, 143, 0.03);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s, background-color 0.3s;
+  align-self: flex-end;
+  user-select: none;
 }
 
 .download-recommendation-button::before {
-    content: ""; /* Pseudo-element for consistent border */
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50px; /* Fully rounded edges */
-    background: linear-gradient(90deg, #ff00ff, #65558f); /* Gradient stroke */
-    z-index: -1; /* Place behind button content */
-    padding: 1.5px; /* Adjust for desired border thickness */
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    box-sizing: border-box; /* Ensures padding and size are calculated correctly */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #ff00ff, #65558f);
+  z-index: -1;
+  padding: 1.5px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  box-sizing: border-box;
+  user-select: none;
 }
 
 .download-recommendation-button:hover {
-    /* Keep the background color consistent */
-    background-color: rgba(101, 85, 143, 0.03);
-    /* Apply expanded gradient to the text */
-    background: linear-gradient(90deg, #ff00ff, #ff77ff, #65558f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text; /* For non-webkit browsers */
-    color: transparent; /* Fallback for non-webkit browsers */
-    transition: color 0.5s, background 0.5s; /* Smooth hover transitions */
+  background-color: rgba(101, 85, 143, 0.03);
+  background: linear-gradient(90deg, #ff00ff, #ff77ff, #65558f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  transition: color 0.5s, background 0.5s;
+  user-select: none;
 }
 
 .download-recommendation-button:hover::before {
-    /* Keeps the same gradient */
-    background: linear-gradient(90deg, #ff00ff, #65558f);
+  background: linear-gradient(90deg, #ff00ff, #65558f);
+  user-select: none;
 }
 
-/* ====== Recommendations Section .accordion-content Active State ====== */
-.recommendations-section .accordion-header[aria-expanded="true"] + .accordion-content {
+.recommendations-section
+  .accordion-header[aria-expanded='true']
+  + .accordion-content {
+  padding: 20px;
+
+}
+/* ====== MODAL STYLES ====== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.modal-content {
+    width: 95%;
+    max-width: 1200px;
+    max-height: 80vh;
+    overflow-y: auto;
     padding: 20px;
+    border-radius: 12px;
 }
 
-/* ====== Responsive Design ====== */
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+.modal-content.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Modal Body */
+.modal-body {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.modal-image {
+    flex: 1 1 40%;
+}
+
+.modal-image img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.modal-description {
+    flex: 1 1 55%;
+}
+
+.modal-description h3 {
+    margin-bottom: 10px;
+    color: #ff77ff;
+}
+
+.modal-description ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.modal-description ul li {
+    margin-bottom: 10px;
+}
+
+/* Modal Footer */
+.modal-footer {
+    text-align: center;
+}
+
+.modal-button {
+    background-color: #ff77ff;
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-button:hover {
+    background-color: #ff55ff;
+    transform: scale(1.05);
+}
+/* ====== Content Section Visibility ====== */
+.content-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.content-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====== Project Vector Image ====== */
+.projects-section {
+  position: relative;
+}
+.project-vector {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  transform: translate(35%, -50%);
+  width: 1200px;
+  height: auto;
+  z-index: 10;
+  opacity: 0.8;
+  pointer-events: none;
+}
 
 @media (max-width: 1200px) {
-    .cards-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust columns */
-    }
+  .project-vector {
+    width: 120px;
+    transform: translate(50%, -50%);
+  }
+}
+
+/* ====== Responsive Breakpoints ====== */
+@media (max-width: 1200px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
-    .left-section-svg {
-        width: 100%; /* Set the SVG width to 100% */
-        position: absolute; /* Ensure it aligns with the left border */
-        left: 0; /* Align it with the very left side */
-        top: 45%; /* Move it up by specifying percentage of the parent */
-        transform: translateY(0%); /* Combine with top for precise positioning */
-        padding: 0; /* Remove any padding */
-        margin: 0; /* Remove any margin */
-    }
-
-    .recommendations-section .recommender-photo-container {
-        width: 50px; /* Fixed width */
-        height: 50px; /* Fixed height - maintaining perfect circle */
-        min-width: 50px; /* Prevent distortion */
-        min-height: 50px; /* Prevent distortion */
-    }
-
-    .recommendations-section .accordion-content {
-        max-height: 0; /* Reset to default collapsed state */
-        overflow: hidden;
-        transition: max-height 0.5s ease;
-    }
-
-    /* Active state for accordion content */
-    .recommendations-section .accordion-header[aria-expanded="true"] + .accordion-content {
-        max-height: 1000px; /* Allow enough height for content */
-    }
-
-    /* Keep download button aligned to the end */
-    .download-recommendation-button {
-        gap: 4px; /* Reduced spacing for mobile screens */
-        padding: 6px 12px; /* Smaller padding for compact design */
-        font-size: 0.8em; /* Slightly smaller text size */
-        align-self: flex-start; /* Align the button to the left */
-    }
-
-    /* Fix expansion button rotation */
-    .recommendations-section .accordion-icon {
-        transform: rotate(0deg); /* Reset rotation */
-        transition: transform 0.3s ease;
-    }
-
-    .recommendations-section .accordion-header[aria-expanded="true"] .accordion-icon {
-        transform: rotate(45deg); /* Only rotate when expanded */
-    }
-
-
-    .projects-section {
-        padding: 40px 20px 100px; /* Add extra padding at the bottom for visual spacing */
-        min-height: 400px; /* Ensure enough space for the entire section */
-    }
-    canvas#canvas3d {
-        display: none;
-    }
-
-    /* Reset the transform for about-me-wrapper to ensure proper spacing */
-    .about-me-wrapper {
-        transform: translateY(0%);
-    }
-
-    /* Ensure typing-effect has sufficient height */
-    .typing-effect {
-        height: 50px; /* Increased to prevent clipping */
-    }
-
-    /* Adjust left-section padding if necessary */
-    .left-section {
-        padding: 40px 20px 20px 20px; /* Reduced left padding for smaller screens */
-    }
-
-    /* Adjust about-section padding and margins */
-    .about-me {
-        padding: 0 20px;
-        margin-bottom: 20px;
-    }
-
-    .skills-section {
-        padding: 40px 20px 60px; /* Add more padding at the bottom */
-        text-align: center;
-        background-color: #000000;
-        color: #FFFFFF;
-        transform: none; /* Remove translateY to prevent clipping */
-        margin-top: 100px; /* Adjust margin for proper spacing */
-    }
-    .portfolio-container {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .left-section, .right-section {
-        flex: 1 1 100%;
-        margin-bottom: 30px;
-    }
-
-    .typing-effect {
-        font-size: 1.5rem;
-        height: 50px; /* Increased to prevent clipping */
-    }
-
-    .contact-icons {
-        gap: 10px; /* Reduce gap on smaller screens */
-    }
-
-    .bubble-section {
-        width: 200px;
-        height: 200px;
-        margin-top: 20px;
-    }
-
-    .static-bubble {
-        width: 120px;
-        height: 120px;
-        left: 40px;
-        top: 50%;
-    }
-
-    .lens-bubble {
-        width: 80px;
-        height: 80px;
-        left: 80px;
-        top: 50%;
-    }
-
-    .original-text,
-    .lens-text {
-        font-size: 16px;
-    }
-
-    .about-heading {
-        font-size: 2.2em;
-    }
-
-    .about-subheading {
-        font-size: 1.6em;
-    }
-
-    .about-paragraph {
-        font-size: 1.1em;
-    }
-
-    .gradient-line {
-        width: 90%;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-    }
-
-    .recommendations-section .recommender-photo-container {
-        width: 50px;
-        height: 50px;
-        margin-right: 10px;
-    }
-
-    .recommendations-section .recommender-name {
-        font-size: 1rem;
-    }
-
-    .recommendations-section .recommender-title {
-        font-size: 0.8rem;
-    }
-
-    .accordion-icon {
-        font-size: 1.2rem;
-    }
-
-    .accordion-content p {
-        font-size: 0.95rem;
-    }
-
-    .bubble-section {
-        width: 150px;
-        height: 150px;
-    }
-
-    .static-bubble {
-        width: 100px;
-        height: 100px;
-        left: 30px;
-        top: 50%;
-    }
-
-    .lens-bubble {
-        width: 60px;
-        height: 60px;
-        left: 70px;
-        top: 50%;
-    }
-
-    .original-text,
-    .lens-text {
-        font-size: 14px;
-    }
-
-    /* Projects Section Adjustments */
-    .projects-section {
-        padding: 40px 20px;
-    }
-
-    .projects-section h2.section-title {
-        font-size: 2em;
-    }
-
-    .carousel-wrapper {
-        max-width: 500px;
-        height: auto; /* Allow height to adjust dynamically based on content */
-        padding-bottom: 40px; /* Add padding to ensure the cards are fully visible */
-    }
-
-    .carousel-card {
-        width: 180px;
-        height: auto; /* Dynamically adjust card height */
-        margin-bottom: 20px; /* Add space below cards to avoid clipping */
-    }
-
-    .carousel-card img.project-img {
-        max-height: 80px;
-    }
-
-    .carousel-card h3 {
-        font-size: 1rem;
-    }
-
-    .carousel-card p {
-        font-size: 0.8rem;
-    }
-        .carousel {
-        height: auto; /* Ensure the carousel height adapts to the cards */
-        display: flex; /* Ensure proper alignment of cards */
-        align-items: center;
-    }
-
-
-    /* ====== Hide Robot Animation on Mobile ====== */
-    canvas#canvas3d {
-        display: none;
-    }
-
-    .about-me-wrapper {
-        transform: translateY(0%); /* Reset transform to prevent overlapping */
-    }
-}
-
-@media (max-width: 480px) {
-
-    .cards-container {
-        grid-template-columns: 1fr; /* Single column */
-    }
-
-    .card {
-        width: 100%;
-        max-width: 300px; /* Optional: limit max width */
-        height: 220px;
-    }
-
-    .card-content h3 {
-        font-size: 1.1em;
-    }
-
-    .card-content p {
-        font-size: 0.8em;
-    }
-
-    .recommendations-section .section-title {
-        font-size: 2rem;
-    }
-
-    .recommendations-section .accordion-header {
-        padding: 10px;
-    }
-
-    .recommendations-section .recommender-photo-container {
-        width: 40px;
-        height: 40px;
-        margin-right: 8px;
-    }
-
-    .recommendations-section .recommender-name {
-        font-size: 0.9rem;
-    }
-
-    .recommendations-section .recommender-title {
-        font-size: 0.7rem;
-    }
-
-    .accordion-icon {
-        font-size: 1rem;
-    }
-
-    .accordion-content p {
-        font-size: 0.9rem;
-    }
-
-    .bubble-section {
-        width: 150px;
-        height: 150px;
-    }
-
-    .static-bubble {
-        width: 100px;
-        height: 100px;
-        left: 30px;
-        top: 50%;
-    }
-
-    .lens-bubble {
-        width: 60px;
-        height: 60px;
-        left: 70px;
-        top: 50%;
-    }
-
-    .original-text,
-    .lens-text {
-        font-size: 14px;
-    }
-
-    /* Projects Section Adjustments */
-    .projects-section {
-        max-width: 400px;
-        height: 180px;
-    }
-}
-
-/* ====== Bubble Section Styles ====== */
-.bubble-section {
-    position: absolute;
-    top: 30%; /* Adjusted by 20% more */
-    left: -60%;
-    width: 300px;
-    height: 300px;
-    z-index: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.bubble-container {
-    position: relative;
+  .left-section-svg {
     width: 100%;
-    height: 100%;
-}
-
-/* Common bubble styles */
-.bubble {
     position: absolute;
-    border-radius: 50%;
-    background: radial-gradient(
-        circle at 30% 30%,
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(182, 227, 255, 0.05) 40%,
-        rgba(182, 227, 255, 0.1) 60%,
-        rgba(182, 227, 255, 0.2) 80%
-    );
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(2px);
-}
-
-/* Static Bubble (Bubble 1) specifics */
-.static-bubble {
-    width: 150px; /* Bubble size */
-    height: 150px;
-    position: absolute;
-    left: 40px; /* Position relative to the section */
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2; /* Ensure it stays below the lens bubble */
-    overflow: hidden;
-
-    /* Center the text properly */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* Draggable Lens Bubble (Bubble 2) specifics */
-.lens-bubble {
-    width: 100px; /* Smaller size for half-overlap */
-    height: 100px;
-    position: absolute;
-    left: 85px; /* Adjust for half-overlap */
-    top: 150px; /* Align near static bubble */
-    transform: translate(-50%, -50%);
-    z-index: 3; /* Ensure it's above the static bubble */
-    cursor: grab;
-    transition: box-shadow 0.2s, transform 0.05s;
-}
-
-.lens-bubble:active {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Reflection effect for bubbles */
-.bubble-reflection {
-    position: absolute;
-    width: 30%;
-    height: 30%;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.4) 0%,
-        transparent 70%
-    );
-    border-radius: 50%;
-    top: 20%;
-    left: 20%;
-}
-
-/* ====== Original "Ameen Khojah" and "Magic!" Content Styling ====== */
-.original-text,
-.lens-text {
-    position: absolute;
-    width: 100%; /* Full coverage for accurate centering */
-    height: 100%;
-    top: 0;
     left: 0;
-    display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
-    text-align: center; /* Ensure text is centered */
-    color: white;
-    font-size: 18px; /* Adjust size as needed */
-    font-family: Arial, sans-serif;
-    pointer-events: none;
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
-    z-index: 1; /* Ensure it's visible inside the bubble */
-}
+    top: 45%;
+    transform: translateY(0%);
+    padding: 0;
+    margin: 0;
+  }
 
-/* "Ameen Khojah" text is at a lower z-index */
-.original-text {
-    z-index: 1;
-}
+  .recommendations-section .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
 
-/* "Magic!" content is above "Ameen Khojah" and initially hidden */
-.lens-text {
-    z-index: 2; /* Higher than .original-text */
-    opacity: 0; /* Hidden by default */
-    /* Removed transitions for abrupt appearance */
-}
+  .recommendations-section
+    .accordion-header[aria-expanded='true']
+    + .accordion-content {
+    max-height: 1000px;
+  }
 
-/* ====== Fallback for Browsers ====== */
-.card-content i {
-    /* Fallback solid color */
-    color: #FFFFFF; /* White as a default fallback */
-}
+  .download-recommendation-button {
+    gap: 4px;
+    padding: 6px 12px;
+    font-size: 0.8em;
+    align-self: flex-start;
+  }
 
-/* ====== Projects Section Styles ====== */
+  .recommendations-section .accordion-icon {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+  }
+  .recommendations-section
+    .accordion-header[aria-expanded='true']
+    .accordion-icon {
+    transform: rotate(45deg);
+  }
 
-.projects-section {
-    padding: 60px 20px;
+  .projects-section {
+    padding: 40px 20px 100px;
+    min-height: 400px;
+    margin-top: 100px;
+  }
+  canvas#canvas3d {
+    display: none;
+  }
+
+  .about-me-wrapper {
+    transform: translateY(0%);
+  }
+
+  .typing-effect {
+    height: 50px;
+  }
+
+  .left-section {
+    padding: 40px 20px 20px 20px;
+  }
+
+  .about-me {
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
+  .skills-section {
+    padding: 40px 20px 60px;
     text-align: center;
-    background-color: #000000; /* Match the dark theme */
-    color: #FFFFFF; /* Ensure text is visible */
-    transform: translateY(20%); /* Adjusted to fit within current layout */
-    margin-top: 125px; /* Space between Skills and Recommendations */
-}
-
-.projects-section .section-title {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    background: linear-gradient(90deg, #FF2DF7, #AB84E5); /* Gradient color */
-    -webkit-background-clip: text; /* Clip gradient to text */
-    -webkit-text-fill-color: transparent; /* Make background fill visible */
-    background-clip: text; /* For non-webkit browsers */
-    color: transparent; /* Fallback for non-webkit browsers */
-}
-
-.carousel-wrapper {
-    perspective: 1200px;
-    margin: 20px auto;
-    width: 100%;
-    max-width: 700px;
-    height: 280px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: visible;
-    cursor: grab;
-}
-
-.carousel-wrapper:active {
-    cursor: grabbing;
-}
-
-.carousel {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 1s ease;
-}
-
-/* The card => smaller or bigger depending on device */
-.carousel-card {
-    position: absolute;
-    top: 50%;
-    left: 33%; /* Center on large screens */
-    width: 200px;
-    height: 220px;
-    background: #1E1E1E; /* Dark background to match theme */
-    border-left: 4px solid #FF2DF7; /* Gradient border to match theme */
-    border-radius: 5px;
-    box-shadow: 0 4px 12px rgba(255,255,255,0.1);
-    padding: 1rem;
-    text-align: center;
-    transform-style: preserve-3d;
-    transition: transform 1s ease, box-shadow 0.3s ease;
-    display: flex;
+    background-color: #000000;
+    color: #ffffff;
+    margin-top: 100px;
+  }
+  .portfolio-container {
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    color: #FFFFFF; /* White text for visibility */
-    cursor: grab;
-    overflow-wrap: break-word; /* keep text inside card */
-}
+    padding: 20px;
+  }
 
-.carousel-card:active {
-    cursor: grabbing;
-}
+  .left-section,
+  .right-section {
+    flex: 1 1 100%;
+    margin-bottom: 30px;
+  }
 
-.carousel-card.selected {
-    box-shadow: 0 8px 20px rgba(255, 29, 251, 0.5); /* Magenta shadow */
-}
+  .typing-effect {
+    font-size: 1.5rem;
+    height: 50px;
+  }
 
-.carousel-card img.project-img {
-    width: 100%;
-    height: auto;
-    max-height: 100px;
-    object-fit: cover;
-    margin-bottom: 0.5rem;
-    border-radius: 4px;
-}
+  .contact-icons {
+    gap: 10px;
 
-.carousel-card h3 {
-    margin-bottom: 0.4rem;
-    font-size: 1.1rem;
-    color: #FF2DF7; /* Matching gradient color */
-    overflow-wrap: break-word;
-}
+  }
 
-.carousel-card p {
-    font-size: 0.9rem;
-    line-height: 1.3;
-    color: #CCCCCC;
-    overflow-wrap: break-word;
-}
+  .about-heading {
+    font-size: 2.2em;
+  }
 
-/* ====== Responsive Design for Projects Section ====== */
+  .about-subheading {
+    font-size: 1.6em;
+  }
 
-@media (max-width: 1200px) {
-    .carousel-wrapper {
-        max-width: 600px;
-        height: 240px;
-    }
-}
+  .about-paragraph {
+    font-size: 1.1em;
+  }
 
+  .gradient-line {
+    width: 90%;
+  }
 
-@media (max-width: 576px) {
-    .carousel-wrapper {
-        perspective: 600px; /* smaller perspective => smaller circle */
-        height: 220px;
-    }
-    .carousel-card {
-        top: 50%;
-        left: 50% !important;
-        transform: translate(-50%, -50%);
-        width: 120px;
-        height: 140px;
-        padding: 0.5rem; /* smaller padding so text fits inside */
-    }
-    .carousel-card img.project-img {
-        max-height: 50px;
-    }
-    .carousel-card h3 {
-        font-size: 0.85rem;
-    }
-    .carousel-card p {
-        font-size: 0.7rem;
-        line-height: 1.2;
-    }
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .recommendations-section .recommender-photo-container {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .recommendations-section .recommender-name {
+    font-size: 1rem;
+  }
+
+  .recommendations-section .recommender-title {
+    font-size: 0.8rem;
+  }
+
+  .accordion-icon {
+    font-size: 1.2rem;
+  }
+
+  .accordion-content p {
+    font-size: 0.95rem;
+  }
+
+  .projects-section {
+    max-width: 400px;
+    height: 180px;
+  }
+
+  /* Relationship Section Adjustments on Mobile */
+  .relationship-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .relationship-separator {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
-    .carousel-wrapper {
-        max-width: 400px;
-        height: 180px;
-    }
-    .carousel-card {
-        width: 100px;
-        height: 120px;
-        padding: 0.3rem;
-    }
-    .carousel-card img.project-img {
-        max-height: 40px;
-    }
-    .carousel-card h3 {
-        font-size: 0.75rem;
-    }
-    .carousel-card p {
-        font-size: 0.6rem;
-    }
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+    height: 220px;
+  }
+
+  .card-content h3 {
+    font-size: 1.1em;
+  }
+
+  .card-content p {
+    font-size: 0.8em;
+  }
+
+  .recommendations-section .section-title {
+    font-size: 2rem;
+  }
+
+  .recommendations-section .accordion-header {
+    padding: 10px;
+  }
+
+  .recommendations-section .recommender-photo-container {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+  }
+
+  .recommendations-section .recommender-name {
+    font-size: 0.9rem;
+  }
+
+  .recommendations-section .recommender-title {
+    font-size: 0.7rem;
+  }
+
+  .accordion-icon {
+    font-size: 1rem;
+  }
+
+  .accordion-content p {
+    font-size: 0.9rem;
+  }
+
+  .projects-section {
+    max-width: 400px;
+    height: 180px;
+  }
+
+  .relationship-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .relationship-caption {
+    font-size: 0.85rem;
+  }
 }
-
-/* ====== Bubble Section Styles ====== */
-/* The bubble-section styles are already defined above */
-
-
-/* ====== Responsive Adjustments for Mobile ====== */
-/* Hide Robot Animation and Adjust Layout on Mobile */
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Portfolio Enhancements (Existing Scripts)
-    console.log('Portfolio scripts loaded.');
-
-    // Bubble Effect Scripts
-    const bubbleSection = document.querySelector('.bubble-section');
-    if (bubbleSection) {
-        const lensBubble = bubbleSection.querySelector('.lens-bubble');
-        const staticBubble = bubbleSection.querySelector('.static-bubble');
-        const lensText = bubbleSection.querySelector('.lens-text');
-        const originalText = bubbleSection.querySelector('.original-text');
-
-        let isDragging = false;
-        let currentX = 0;
-        let currentY = 0;
-        let initialX = 0;
-        let initialY = 0;
-        let xOffset = 0;
-        let yOffset = 0;
-
-        // Add wobble animation to the lens bubble when not dragging
-        function addWobble() {
-            setInterval(() => {
-                if (!isDragging) {
-                    const wobbleX = Math.sin(Date.now() / 1000) * 2;
-                    const wobbleY = Math.cos(Date.now() / 1000) * 2;
-
-                    lensBubble.style.transform = `translate(calc(-50% + ${xOffset}px + ${wobbleX}px), calc(-50% + ${yOffset}px + ${wobbleY}px))`;
-                }
-            }, 50);
-        }
-
-        function dragStart(e) {
-            e.preventDefault();
-            if (e.type === "touchstart") {
-                initialX = e.touches[0].clientX - xOffset;
-                initialY = e.touches[0].clientY - yOffset;
-            } else {
-                initialX = e.clientX - xOffset;
-                initialY = e.clientY - yOffset;
-            }
-
-            if (e.target === lensBubble || e.target.parentElement === lensBubble) {
-                isDragging = true;
-                lensBubble.style.cursor = 'grabbing';
-            }
-        }
-
-        function dragEnd() {
-            isDragging = false;
-            lensBubble.style.cursor = 'grab';
-        }
-
-        function drag(e) {
-            if (isDragging) {
-                e.preventDefault();
-
-                if (e.type === "touchmove") {
-                    currentX = e.touches[0].clientX - initialX;
-                    currentY = e.touches[0].clientY - initialY;
-                } else {
-                    currentX = e.clientX - initialX;
-                    currentY = e.clientY - initialY;
-                }
-
-                xOffset = currentX;
-                yOffset = currentY;
-
-                lensBubble.style.transform = `translate(calc(-50% + ${currentX}px), calc(-50% + ${currentY}px))`;
-                checkOverlap();
-            }
-        }
-
-        function getDistance(x1, y1, x2, y2) {
-            return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-        }
-
-        function checkOverlap() {
-            const lensRect = lensBubble.getBoundingClientRect();
-            const staticRect = staticBubble.getBoundingClientRect();
-
-            const lensCenter = {
-                x: lensRect.left + lensRect.width / 2,
-                y: lensRect.top + lensRect.height / 2
-            };
-
-            const staticCenter = {
-                x: staticRect.left + staticRect.width / 2,
-                y: staticRect.top + staticRect.height / 2
-            };
-
-            const distance = getDistance(lensCenter.x, lensCenter.y, staticCenter.x, staticCenter.y);
-            const maxDistance = (lensRect.width + staticRect.width) / 2;
-
-            if (distance <= maxDistance) { // Include edge touching
-                // Calculate the overlapping area relative to the static bubble
-                const overlapX = lensCenter.x - staticRect.left;
-                const overlapY = lensCenter.y - staticRect.top;
-
-                const radius = lensRect.width / 2;
-
-                // Set clip-path for lens-text to show "Magic!" only in the overlapped area
-                lensText.style.clipPath = `circle(${radius}px at ${overlapX}px ${overlapY}px)`;
-                lensText.style.opacity = '1';
-
-                // Create a path for original-text to exclude the overlapped area
-                const path = `M0,0 H${staticRect.width} V${staticRect.height} H0 Z M${overlapX},${overlapY} m-${radius},0 a${radius},${radius} 0 1,0 ${2 * radius},0 a${radius},${radius} 0 1,0 -${2 * radius},0`;
-
-                originalText.style.clipPath = `path("${path}")`;
-                originalText.style.clipRule = 'evenodd';
-            } else {
-                // Reset when not overlapping
-                lensText.style.opacity = '0';
-                lensText.style.clipPath = 'none';
-                originalText.style.clipRule = 'initial';
-                originalText.style.clipPath = 'none';
-            }
-        }
-
-        // Event listeners for mouse and touch interactions
-        lensBubble.addEventListener('mousedown', dragStart);
-        lensBubble.addEventListener('touchstart', dragStart, { passive: false });
-
-        document.addEventListener('mouseup', dragEnd);
-        document.addEventListener('touchend', dragEnd);
-
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('touchmove', drag, { passive: false });
-
-        // Initialize wobble animation
-        addWobble();
-
-        // Trigger overlap check on page load
-        checkOverlap();
-    }
-
-    // ====== Animated Typing Effect Scripts ======
-    const typedTextSpan = document.getElementById('typed-text');
-    const cursorSpan = document.getElementById('cursor');
-
-    const textArray = [        "A Software Engineer.",        "A Full-Stack Developer.",        "An Open Source Contributor.",        "A Tech Enthusiast."    ];
-    const typingDelay = 100; // Delay between each character (in ms)
-    const erasingDelay = 50; // Delay between each character when erasing (in ms)
-    const newTextDelay = 2000; // Delay between current and next text (in ms)
-    let textArrayIndex = 0;
-    let charIndex = 0;
-
-    function type() {
-        if (charIndex < textArray[textArrayIndex].length) {
-            typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-            charIndex++;
-            setTimeout(type, typingDelay);
-        } else {
-            setTimeout(erase, newTextDelay);
-        }
-    }
-
-    function erase() {
-        if (charIndex > 0) {
-            typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(erase, erasingDelay);
-        } else {
-            textArrayIndex++;
-            if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-            setTimeout(type, typingDelay + 1100);
-        }
-    }
-
-    // Start the typing effect
-    if (textArray.length) setTimeout(type, newTextDelay + 250);
-
-    // ====== Accordion Functionality for Recommendations Section ======
-    const recommendationsAccordionHeaders = document.querySelectorAll('.recommendations-section .accordion-header');
-
-    recommendationsAccordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const contentId = header.getAttribute('aria-controls'); // Get associated content ID
-            const content = document.getElementById(contentId); // Select the associated content
-            const isExpanded = header.getAttribute('aria-expanded') === 'true';
-
-            // Close all accordion items
-            recommendationsAccordionHeaders.forEach(item => {
-                const itemContentId = item.getAttribute('aria-controls');
-                const itemContent = document.getElementById(itemContentId);
-                item.setAttribute('aria-expanded', 'false');
-                if (itemContent) {
-                    itemContent.style.maxHeight = null; // Collapse the content
-                }
-            });
-
-            // Expand the clicked item if it was not already expanded
-            if (!isExpanded && content) {
-                header.setAttribute('aria-expanded', 'true');
-
-                // Dynamically set max height for smooth expansion
-                content.style.maxHeight = `${content.scrollHeight}px`;
-
-                // Scroll to ensure the expanded section is fully visible
-                // Added a slight delay to ensure maxHeight is applied before scrolling
-                setTimeout(() => {
-                    content.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start', // Align the top of the content to the top of the viewport
-                        inline: 'nearest'
-                    });
-                }, 300);
-            }
-        });
-
-        // Keyboard accessibility: Enter and Space keys to toggle accordion
-        header.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                header.click();
-            }
-        });
-    });
-
-    /* ====== Projects Carousel Scripts ====== */
-
-    // 1. Carousel Functionality
-    const carousel = document.querySelector('.carousel');
-    const carouselCards = document.querySelectorAll('.carousel-card');
-    const instruction = document.getElementById('carousel-instruction');
-
-    // If no carousel or no cards, do nothing
-    if (carousel && carouselCards.length > 0) {
-        const totalCards = carouselCards.length;
-        const angleBetweenCards = 360 / totalCards;
-
-        // Start with no offset rotation
-        let rotationAngle = 0;
-        let selectedIndex = 0;
-
-        // Position the cards based on rotationAngle
-        function positionCards() {
-            carouselCards.forEach((card, i) => {
-                let cardAngle = i * angleBetweenCards + rotationAngle;
-
-                // On small devices => smaller circle
-                if (window.innerWidth <= 576) {
-                    card.style.transform = `translate(-50%, -50%) rotateY(${cardAngle}deg) translateZ(150px)`;
-                } else {
-                    card.style.transform = `rotateY(${cardAngle}deg) translateZ(300px)`;
-                }
-            });
-        }
-
-        // Determine which card is front (best angle) => highlight
-        function updateSelectedIndex() {
-            let minDiff = Infinity;
-            let best = 0;
-
-            for (let i = 0; i < totalCards; i++) {
-                let cardAngle = (i * angleBetweenCards + rotationAngle) % 360;
-                if (cardAngle < 0) cardAngle += 360;
-                // diff from 0 => front facing
-                let diff = Math.min(Math.abs(cardAngle), 360 - Math.abs(cardAngle));
-                if (diff < minDiff) {
-                    minDiff = diff;
-                    best = i;
-                }
-            }
-            selectedIndex = best;
-        }
-
-        // Mark the selected card visually
-        function highlightSelectedCard() {
-            carouselCards.forEach((card, i) => {
-                card.classList.toggle('selected', i === selectedIndex);
-            });
-        }
-
-        // Hide instructions once user interacts
-        function hideInstruction() {
-            if (instruction && !instruction.classList.contains('fade-out')) {
-                instruction.style.transition = 'opacity 1s ease'; // Add fading transition
-                instruction.style.opacity = '0'; // Set opacity to 0 for fading effect
-                setTimeout(() => {
-                    instruction.style.visibility = 'hidden'; // Hide element after fading
-                }, 1000); // Matches the transition duration
-            }
-        }
-
-        // Initial setup
-        positionCards();
-        updateSelectedIndex();
-        highlightSelectedCard();
-
-        // Utility to spin forward/back
-        function spinForward() {
-            rotationAngle -= angleBetweenCards;
-            positionCards();
-            updateSelectedIndex();
-            highlightSelectedCard();
-            hideInstruction();
-        }
-        function spinBackward() {
-            rotationAngle += angleBetweenCards;
-            positionCards();
-            updateSelectedIndex();
-            highlightSelectedCard();
-            hideInstruction();
-        }
-
-        // KEYBOARD
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') {
-                spinForward();
-            } else if (e.key === 'ArrowLeft') {
-                spinBackward();
-            } else if (e.key === 'Enter') {
-                const card = carouselCards[selectedIndex];
-                if (card) {
-                    alert(`Opening details for: ${card.querySelector('h3')?.textContent || 'Project'}`);
-                }
-            }
-        });
-
-        // Drag logic for PC from anywhere on the carousel
-        let isDraggingCarousel = false;
-        let startXCarousel = 0;
-        let startYCarousel = 0;
-        let dragXCarousel = 0;
-        let dragYCarousel = 0;
-        const DRAG_THRESHOLD = 25; // small => easier to spin vs. click
-
-        // Attach MOUSE events to entire .carousel so user can drag from anywhere
-        carousel.addEventListener('mousedown', (e) => {
-            e.preventDefault();
-            isDraggingCarousel = true;
-            startXCarousel = e.clientX;
-            startYCarousel = e.clientY;
-            dragXCarousel = 0;
-            dragYCarousel = 0;
-            hideInstruction();
-        });
-
-        carousel.addEventListener('mousemove', (e) => {
-            if (!isDraggingCarousel) return;
-            dragXCarousel = e.clientX - startXCarousel;
-            dragYCarousel = e.clientY - startYCarousel;
-        });
-
-        carousel.addEventListener('mouseup', (e) => {
-            if (!isDraggingCarousel) return;
-            isDraggingCarousel = false;
-
-            // Distinguish spin vs. click
-            if (
-                Math.abs(dragXCarousel) > DRAG_THRESHOLD &&
-                Math.abs(dragXCarousel) > Math.abs(dragYCarousel)
-            ) {
-                if (dragXCarousel < 0) spinForward();
-                else spinBackward();
-            } else {
-                // It's a click => see if user clicked on a card
-                const target = e.target;
-                if (target.classList.contains('carousel-card') ||
-                    target.closest('.carousel-card')) {
-                    const card = carouselCards[selectedIndex];
-                    if (card) {
-                        alert(`Opening details for: ${card.querySelector('h3')?.textContent || 'Project'}`);
-                    }
-                }
-            }
-        });
-
-        // If mouse leaves => no drag
-        carousel.addEventListener('mouseleave', () => {
-            isDraggingCarousel = false;
-        });
-
-        // Touch logic (mobile)
-        let touchDragging = false;
-        let startTouchX = 0;
-        let startTouchY = 0;
-        let distX = 0;
-        let distY = 0;
-
-        carousel.addEventListener('touchstart', (e) => {
-            if (e.touches.length > 1) return; // ignore multi-touch
-            touchDragging = true;
-            startTouchX = e.touches[0].clientX;
-            startTouchY = e.touches[0].clientY;
-            distX = 0;
-            distY = 0;
-            hideInstruction();
-        }, { passive: true });
-
-        carousel.addEventListener('touchmove', (e) => {
-            if (!touchDragging) return;
-            distX = e.touches[0].clientX - startTouchX;
-            distY = e.touches[0].clientY - startTouchY;
-
-            if (Math.abs(distY) > Math.abs(distX)) {
-                // vertical => let page scroll
-                return;
-            } else {
-                e.preventDefault(); // horizontal => spin
-            }
-        }, { passive: false });
-
-        carousel.addEventListener('touchend', (e) => {
-            if (!touchDragging) return;
-            touchDragging = false;
-
-            if (
-                Math.abs(distX) > DRAG_THRESHOLD &&
-                Math.abs(distX) > Math.abs(distY)
-            ) {
-                if (distX < 0) spinForward();
-                else spinBackward();
-            } else {
-                // treat as click
-                const touch = e.changedTouches[0];
-                const elem = document.elementFromPoint(touch.clientX, touch.clientY);
-                if (elem && (
-                    elem.classList.contains('carousel-card') ||
-                    elem.closest('.carousel-card')
-                )) {
-                    const card = carouselCards[selectedIndex];
-                    if (card) {
-                        alert(`Opening details for: ${card.querySelector('h3')?.textContent || 'Project'}`);
-                    }
-                }
-            }
-        }, { passive: true });
-
-        // ACCESSIBILITY: press Enter on a card
-        carouselCards.forEach((card) => {
-            card.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    alert(`Opening details for: ${card.querySelector('h3')?.textContent || 'Project'}`);
-                }
-            });
-        });
-
-        // Reposition on orientation/resize => immediate effect
-        window.addEventListener('resize', () => {
-            positionCards();
-            updateSelectedIndex();
-            highlightSelectedCard();
-        });
-    }
-});
