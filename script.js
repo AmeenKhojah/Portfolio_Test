@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Portfolio scripts loaded.');
 
+  // Scroll to the top on mobile devices
+  if (window.innerWidth <= 768) {  // Target mobile devices
+    window.scrollTo(0, 0); // Scroll to the very top of the page
+  }
+
   // ====== Disable dragging on all images ======
   const images = document.querySelectorAll('img');
   images.forEach(img => {
@@ -225,9 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
               openModal();
             } else {
               alert(
-                `Opening details for: ${
-                  card.querySelector('h3')?.textContent || 'Project'
-                }`
+                `Opening details for: ${card.querySelector('h3')?.textContent || 'Project'}`
               );
             }
           }
@@ -303,9 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 openModal();
               } else {
                 alert(
-                  `Opening details for: ${
-                    card.querySelector('h3')?.textContent || 'Project'
-                  }`
+                  `Opening details for: ${card.querySelector('h3')?.textContent || 'Project'}`
                 );
               }
             }
