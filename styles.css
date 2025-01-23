@@ -1214,22 +1214,30 @@ canvas#canvas3d {
   .relationship-separator {
     display: none;
   }
-  .relationship-item {
+.relationship-item {
   display: flex;
-  align-items: center; /* Align logo and text vertically */
-  gap: 15px; /* Space between logo and text */
+  align-items: center; /* Align logos and text vertically */
+  gap: 15px; /* Space between the logo and text */
 }
+
 .relationship-logo {
-  width: 80px; /* Set fixed width for all logos */
-  height: 80px; /* Set fixed height for all logos */
-  object-fit: contain; /* Keep the logos proportional */
+  width: 80px; /* Default size for all logos */
+  height: 80px;
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+.aramco-logo {
+  width: 100px; /* Larger size for the Aramco logo */
+  height: 100px;
+  object-fit: contain; /* Maintain aspect ratio */
 }
 
 .relationship-caption {
   margin: 0;
-  font-size: 1rem; /* Adjust text size as needed */
+  font-size: 1rem; /* Text size */
   line-height: 1.5; /* Add spacing for readability */
   color: #ffffff; /* Match the text color */
+  flex: 1; /* Allow text to occupy remaining space and align properly */
 }
 }
 
