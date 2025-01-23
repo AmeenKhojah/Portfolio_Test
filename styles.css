@@ -1050,10 +1050,10 @@ canvas#canvas3d {
 @media (max-width: 768px) {
 /* Fix for the last photo (Dr. Naif Rajkhan, KAU) */
 .recommendations-section .accordion-item:last-child .recommender-photo-container {
-  width: 60px;  /* Same as Aramco logos */
-  height: 60px; /* Same as Aramco logos */
+  width: 60px;  /* Fixed width */
+  height: 60px; /* Fixed height */
   overflow: hidden; /* Ensures no overflow */
-  border-radius: 50%; /* Keeps the round shape */
+  border-radius: 50%; /* Perfectly round */
   background-color: white; /* Set the background color to white */
   display: flex;
   justify-content: center;
@@ -1062,7 +1062,7 @@ canvas#canvas3d {
 
 /* Ensuring the image fits the container correctly without distortion */
 .recommendations-section .accordion-item:last-child .recommender-photo-container img {
-  object-fit: cover;  /* Ensures the image fills the container without distortion */
+  object-fit: cover;  /* Ensures the image covers the container without distortion */
   width: 100%;         /* Fill the container's width */
   height: 100%;        /* Fill the container's height */
 }
