@@ -1101,18 +1101,20 @@ canvas#canvas3d {
   margin-top: 600px; /* Space below the hero section */
   margin-bottom: 600px; /* Space above the skills section */
   position: relative; /* Ensure proper placement */
-
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  width: 100%; /* Ensure it spans the entire width of the container */
 }
-  .about-me {
-    margin-top: 20px;
-    width: 100%;
-    text-align: left;
-    padding-left: 20px; /* Align the content to the left */
-    padding-right: 20px; /* Add padding on the right as well */
-    overflow-wrap: break-word; /* Prevent text from overflowing */
-    word-wrap: break-word;
-    word-break: break-word; /* Ensure long words break correctly */
-  }
+
+.about-me {
+  padding: 0 40px; /* Add horizontal padding for spacing */
+  margin-left: 0; /* Align directly to the left */
+  text-align: left; /* Ensure text is left-aligned */
+  width: 100%; /* Fit within the screen */
+  max-width: 1200px; /* Optionally set a maximum width for readability */
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
 
   .typing-effect {
     height: 50px;
