@@ -1262,25 +1262,34 @@ canvas#canvas3d {
 
 
 
-/* General recommender photo styles */
+/* General photo container styles */
+.recommender-photo-container {
+  width: 60px; /* Set a fixed width for all containers */
+  height: 60px; /* Set a fixed height for all containers */
+  border-radius: 50%; /* Keep containers circular */
+  overflow: hidden; /* Ensure images don’t overflow */
+  display: flex;
+  align-items: center; /* Center image vertically */
+  justify-content: center; /* Center image horizontally */
+  background-color: #ffffff; /* Optional: Add a white background */
+}
+
+/* General image styles */
 .recommender-photo-container img {
-  width: 100%; /* Scales image within its container */
-  height: auto; /* Maintains aspect ratio */
-  object-fit: contain; /* Prevents distortion */
+  width: 100%; /* Ensure the image covers the container */
+  height: 100%; /* Ensure the image covers the container */
+  object-fit: cover; /* Fill the container without distortion */
 }
 
-/* Specific styles for KAU logo */
-.recommender-photo-container.kau-logo img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+/* Specific styling for KAU logo in the last recommendation */
+.accordion-item:last-child .recommender-photo-container.kau-logo {
+  width: 60px; /* Match the size of other containers */
+  height: 60px;
 }
 
-/* Specific styles for the last recommendation */
 .accordion-item:last-child .recommender-photo-container.kau-logo img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+  object-fit: contain; /* Keep the logo proportional within the container */
+  background-color: transparent; /* Optional: Ensure no background color */
 }
 
 
