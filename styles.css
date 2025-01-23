@@ -1101,7 +1101,7 @@ canvas#canvas3d {
   margin-top: 600px; /* Space below the hero section */
   margin-bottom: 600px; /* Space above the skills section */
   position: relative; /* Ensure proper placement */
-  z-index: 1; /* Prevent overlap with other sections */
+
 }
 
 
@@ -1123,7 +1123,7 @@ canvas#canvas3d {
     text-align: center;
     background-color: #000000;
     color: #ffffff;
-    margin-top: 100px;
+    margin-top: 700px;
   }
   .portfolio-container {
     flex-direction: column;
