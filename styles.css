@@ -1178,32 +1178,25 @@ canvas#canvas3d {
   }
   .carousel-wrapper {
     display: flex;
-    justify-content: center; /* Center the carousel wrapper horizontally */
-    align-items: center;     /* Ensure the carousel is vertically centered */
-    width: 100%;             /* Ensure the wrapper spans full width */
-    padding-left: 10px;      /* Add a small padding if needed */
-    padding-right: 10px;     /* Add a small padding if needed */
-    box-sizing: border-box;  /* Ensure padding doesn’t mess up the width */
-    margin-top: 60px;        /* Adjust to space the carousel below content */
+    justify-content: center;  /* Horizontally center the carousel wrapper */
+    align-items: center;      /* Vertically center the carousel wrapper */
+    margin-top: 60px;         /* Adjust spacing if needed */
+    padding: 0 10px;          /* Small padding on left and right to prevent overflow */
   }
 
   .carousel {
-    display: block;          /* Ensures the carousel is displayed as a block */
-    margin: 0 auto;          /* Automatically aligns it to the center */
-    position: relative;      /* Keeps carousel content within normal flow */
-    width: auto;             /* Prevent any width constraints from being applied */
-    max-width: 100%;         /* Makes sure it's not expanding beyond its content */
-    transform: none;         /* No transformations (like translate) */
+    margin: 0 auto;           /* Centers the carousel inside the wrapper */
+    position: relative;       /* Keeps it in the normal flow */
+    transform: none;          /* Prevent any unnecessary transformations */
   }
 
+  /* Ensuring no changes to the cards themselves */
   .carousel-card {
-    /* No width change, but ensure cards are not forced to behave differently */
-    width: auto;             /* Let them scale naturally */
-    flex-shrink: 0;          /* Prevent cards from shrinking */
+    flex-shrink: 0;           /* Prevents shrinking of the carousel cards */
   }
 
   #carousel-instruction {
-    margin-top: 40px;        /* Adjust this to move the instruction text into view */
+    margin-top: 40px;         /* Adjust text position */
   }
   .recommendations-section .recommender-photo-container {
     width: 50px;
