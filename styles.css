@@ -1260,54 +1260,19 @@ canvas#canvas3d {
   flex: 1; /* Allow text to occupy remaining space and align properly */
 }
 
-  .recommendations-section .accordion-item:last-child .recommender-photo-container.kau-logo {
-    width: 50px !important;  /* Adjust the width for mobile */
-    height: 50px !important; /* Set height to match width for a circle */
-    border-radius: 50% !important;  /* Make it a perfect circle */
-    background-color: white !important;  /* Set white background */
-    overflow: hidden !important; /* Hide any overflow */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
-  /* Ensure the image is centered inside the container */
-  .recommendations-section .accordion-item:last-child .recommender-photo-container.kau-logo img {
-    width: 100% !important;  /* Make image fill the entire container */
-    height: 100% !important; /* Make image cover the container */
-    object-fit: cover !important;  /* Ensure the image is cropped and fills the circle */
-    object-position: center !important;  /* Ensure the important part of the image is centered */
-  }
+      .recommendations-section .recommender-photo-container {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        border: 2px solid #FF2DF7;
+      }
 
-  /* Additional styles to ensure everything works fine for mobile */
-  .recommendations-section .recommender-photo-container {
-    width: 50px !important;
-    height: 50px !important;
-    margin-right: 10px;
-  }
-
-  /* Ensure that the text and the circle image appear correctly next to each other */
-  .recommendations-section .recommender-name,
-  .recommendations-section .recommender-title {
-    font-size: 1rem;
-  }
-
-  .recommendations-section .recommender-title {
-    font-size: 0.8rem;
-  }
-
-  .recommendations-section .accordion-icon {
-    font-size: 1rem;
-  }
-
-  .recommendations-section .accordion-content p {
-    font-size: 0.9rem;
-  }
-
-  .recommendations-section .accordion-header {
-    padding: 10px;
-  }
-
+      .recommendations-section .recommender-photo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
 
 
 }
