@@ -1048,15 +1048,16 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-/* Ensure the last recommendation photo doesn't get distorted */
+/* Targeting the last recommender photo (Dr. Naif Rajkhan) */
 .recommendations-section .accordion-item:last-child .recommender-photo-container {
-  object-fit: cover;  /* Ensure the aspect ratio is maintained */
-  overflow: hidden;   /* Prevent overflow and maintain image shape */
-  width: 100%;        /* Make sure it covers the available space */
-  height: 100%;       /* Keep it within bounds */
-  display: flex;      /* Ensure it remains flexible within its container */
-  justify-content: center; /* Center the image inside the container */
-  align-items: center;     /* Center the image vertically */
+  width: 60px;  /* Match the size of other images */
+  height: 60px; /* Match the size of other images */
+}
+
+.recommendations-section .accordion-item:last-child .recommender-photo-container img {
+  object-fit: contain;  /* Ensure the image fits within the container without distortion */
+  width: 100%;  /* Ensures the image fills the container width */
+  height: 100%; /* Ensures the image fills the container height */
 }
 
   .left-section-svg {
