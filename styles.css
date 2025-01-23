@@ -1177,20 +1177,18 @@ canvas#canvas3d {
     font-size: 2.5rem;
   }
   .carousel-wrapper {
-    /* Center the carousel wrapper horizontally without changing size */
     display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align to the top to avoid overlap with instruction */
-    position: relative;
-    margin-top: 100px; /* Adjust space from the top if needed */
+    justify-content: center; /* This ensures horizontal centering */
+    align-items: flex-start; /* Keeps the carousel aligned at the top */
+    width: 100%; /* Ensures the wrapper takes up full width */
+    margin-top: 100px; /* Adjust as needed for spacing */
   }
 
-  /* Ensure the carousel itself stays at its current size and position */
   .carousel {
-    position: relative;
-    top: 0;
-    margin: 0;
-    transform: none; /* No scaling or changing of size */
+    position: static; /* Reset any positioning that might be interfering */
+    margin: 0; /* Reset margin */
+    transform: none; /* No scaling or translation */
+    display: block; /* Ensures it’s not overriding the size */
   }
   .recommendations-section .recommender-photo-container {
     width: 50px;
