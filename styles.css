@@ -1048,71 +1048,7 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-.navbar-menu {
-    display: none;  /* Initially hide the menu */
-    width: 100%;  /* Make it full width */
-    flex-direction: column;  /* Stack items vertically */
-    align-items: center;  /* Center items */
-    background-color: rgba(0, 0, 0, 0.8); /* Dark background for the dropdown */
-    position: absolute;  /* Position it fixed in mobile view */
-    top: 60px;  /* Just below the navbar */
-    left: 0;
-    padding: 20px 0;
-  }
 
-  .navbar-menu.active {
-    display: flex;  /* Show when active */
-  }
-
-  .navbar-link {
-    padding: 15px 0;
-    font-size: 1.2em;
-    text-align: center;
-    width: 100%;
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .navbar-link:hover {
-    color: #8a2be2;
-  }
-
-  .navbar-toggle {
-    display: block; /* Show the hamburger menu */
-    cursor: pointer;
-    z-index: 5;
-    padding: 10px;
-  }
-
-  .navbar-toggle span {
-    display: block;
-    width: 30px;
-    height: 4px;
-    margin: 6px auto;
-    background-color: #fff;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-  }
-
-  .navbar-menu.active {
-    display: flex;
-  }
-
-  .navbar-toggle.active span:nth-child(1) {
-    transform: rotate(45deg);
-    top: 10px;
-  }
-
-  .navbar-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .navbar-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: -10px;
-  }
-/* For mobile when the menu is active */
   .left-section-svg {
     width: 100%;
     position: absolute;
