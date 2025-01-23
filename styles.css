@@ -1179,24 +1179,22 @@ canvas#canvas3d {
   .carousel-wrapper {
     display: flex;
     justify-content: center;  /* Horizontally center the carousel wrapper */
-    align-items: center;      /* Vertically center the carousel wrapper */
-    margin-top: 60px;         /* Adjust spacing if needed */
-    padding: 0 10px;          /* Small padding on left and right to prevent overflow */
+    align-items: flex-start;  /* Align the carousel to the top to avoid overlapping */
+    margin-top: 100px;         /* Adjust space from the top if needed */
+    padding: 0 10px;           /* Prevent any overflow from left and right */
+    width: 100%;               /* Ensure the wrapper uses the full width */
   }
 
   .carousel {
-    margin: 0 auto;           /* Centers the carousel inside the wrapper */
-    position: relative;       /* Keeps it in the normal flow */
-    transform: none;          /* Prevent any unnecessary transformations */
+    margin: 0 auto;           /* Center the carousel inside the wrapper */
+    position: relative;
+    transform: none;          /* No scaling or transformation */
+    width: auto;               /* Let the carousel retain its original width */
+    max-width: 100%;           /* Prevent overflow */
   }
 
-  /* Ensuring no changes to the cards themselves */
   .carousel-card {
-    flex-shrink: 0;           /* Prevents shrinking of the carousel cards */
-  }
-
-  #carousel-instruction {
-    margin-top: 40px;         /* Adjust text position */
+    flex-shrink: 0;            /* Prevent the cards from shrinking */
   }
   .recommendations-section .recommender-photo-container {
     width: 50px;
