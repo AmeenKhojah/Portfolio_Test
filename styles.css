@@ -1052,8 +1052,8 @@ canvas#canvas3d {
     width: 100%;
     position: absolute;
     left: 0;
-    top: 50%; /* Adjust to avoid overlap */
-    transform: translateY(0%);
+    top: 50%; /* Adjusted to avoid overlap */
+    transform: translateY(-50%);
     padding: 0;
     margin: 0;
   }
@@ -1092,15 +1092,18 @@ canvas#canvas3d {
     min-height: 400px;
     margin-top: 100px;
   }
+
   canvas#canvas3d {
     display: none;
   }
 
+  /* Fix for About Me section */
   .about-me-wrapper {
-    transform: translateY(0%); /* Ensure the About Me section is not covered */
-    margin-top: 120px; /* Add spacing above the About Me section */
+    margin-top: 150px; /* Create space between hero and about me section */
+    transform: translateY(0%); /* Ensure smooth positioning */
   }
 
+  /* Typing effect */
   .typing-effect {
     height: 50px;
   }
@@ -1114,6 +1117,7 @@ canvas#canvas3d {
     margin-bottom: 20px;
   }
 
+  /* Skills Section */
   .skills-section {
     padding: 40px 20px 60px;
     text-align: center;
@@ -1121,6 +1125,7 @@ canvas#canvas3d {
     color: #ffffff;
     margin-top: 100px;
   }
+
   .portfolio-container {
     flex-direction: column;
     padding: 20px;
@@ -1131,6 +1136,7 @@ canvas#canvas3d {
     flex: 1 1 100%;
     margin-bottom: 30px;
   }
+
   .typing-effect {
     font-size: 1.5rem;
     height: 50px;
@@ -1138,7 +1144,6 @@ canvas#canvas3d {
 
   .contact-icons {
     gap: 10px;
-
   }
 
   .about-heading {
@@ -1197,19 +1202,8 @@ canvas#canvas3d {
     display: none;
   }
 }
-  .project-vector {
-    width: 100%;
-    transform: translate(0%, -50%);
-    opacity: 0.8;
-  }
-  .relationship-logo {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .relationship-caption {
-    font-size: 0.85rem;
-  }
+
+
 @media (max-width: 480px) {
   .cards-container {
     grid-template-columns: 1fr;
