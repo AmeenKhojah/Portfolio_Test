@@ -1048,70 +1048,42 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-  /* Ensure left-section-svg stays in its original position */
-  .left-section-svg {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 45%;  /* Keeps SVG positioned correctly */
-    transform: translateY(0%);
-    padding: 0;
-    margin: 0;
-  }
-
-  /* About Me Section: Ensure it does not overlap with Hero Section */
-  .about-me-wrapper {
-    margin-top: 250px;  /* Creates space between Hero section and About Me section */
-    padding: 20px;  /* Adds padding for the About Me section */
-    background-color: #000000;  /* Keeps background consistent */
-    color: #ffffff;  /* Ensures text color contrasts well */
-    box-sizing: border-box;
-  }
-
-  /* Ensure About Me text fits within the screen and doesn't overflow */
-  .about-me {
-    padding: 0 20px;
-    max-width: 100%;
-    overflow: hidden;  /* Ensures text doesn't overflow */
-  }
-
-  /* About Me Text Styling */
-  .about-heading {
-    font-size: 2.2em;
-    margin-bottom: 15px;
-  }
-
-  .about-subheading {
-    font-size: 1.6em;
-    margin-bottom: 20px;
-  }
-
-  .about-paragraph {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    color: #cccccc;
-  }
-
-  /* Ensures Skills Section maintains its spacing */
-  .skills-section {
-    padding: 40px 20px 60px;
-    text-align: center;
-    background-color: #000000;
-    color: #ffffff;
-    margin-top: 20px;  /* Keeps skills section correctly spaced */
-  }
-
-  /* Rest of the Layout */
-  .portfolio-container {
-    flex-direction: column;
+ .portfolio-container {
+    flex-direction: column; /* Stack sections vertically */
     padding: 20px;
   }
 
-  .left-section,
+  .left-section, .right-section {
+    flex: 1 1 100%; /* Allow both sections to take full width on mobile */
+    margin-bottom: 30px; /* Add spacing between sections */
+  }
+
+  .left-section {
+    padding: 20px; /* Adjust padding for mobile */
+    margin-bottom: 40px; /* Space between hero and about me sections */
+  }
+
   .right-section {
-    flex: 1 1 100%;
-    margin-bottom: 30px;
+    padding: 20px;
+  }
+
+  .about-me-wrapper {
+    margin-top: 20px;
+    transform: translateY(0%); /* Ensure it starts properly below the hero section */
+  }
+
+  .skills-section {
+    margin-top: 40px;
+    padding: 40px 20px 60px;
+  }
+
+  .left-section-svg {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    transform: translateY(0%);
+    margin: 0;
   }
 
   .typing-effect {
@@ -1119,38 +1091,50 @@ canvas#canvas3d {
     height: 50px;
   }
 
-  .contact-icons {
-    gap: 10px;
+  .about-heading {
+    font-size: 2.2em;
+  }
+
+  .about-subheading {
+    font-size: 1.6em;
+  }
+
+  .about-paragraph {
+    font-size: 1.1em;
   }
 
   .gradient-line {
     width: 90%;
   }
 
-  .section-title {
-    font-size: 2.5rem;
+  .recommendations-section .section-title {
+    font-size: 2rem;
+  }
+
+  .recommendations-section .accordion-header {
+    padding: 10px;
   }
 
   .recommendations-section .recommender-photo-container {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
   }
 
   .recommendations-section .recommender-name {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .recommendations-section .recommender-title {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .accordion-icon {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .accordion-content p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .projects-section {
@@ -1158,16 +1142,20 @@ canvas#canvas3d {
     height: 180px;
   }
 
-  /* Relationship Section Adjustments on Mobile */
-  .relationship-section {
-    flex-direction: column;
-    gap: 20px;
+  .relationship-logo {
+    width: 50px;
+    height: 50px;
   }
-  .relationship-separator {
-    display: none;
+
+  .relationship-caption {
+    font-size: 0.85rem;
+  }
+
+  /* Ensure no overlap between sections on mobile */
+  .content-section {
+    margin-bottom: 40px; /* Add space between sections */
   }
 }
-
 
 @media (max-width: 480px) {
   .cards-container {
