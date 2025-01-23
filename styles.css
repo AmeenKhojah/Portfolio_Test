@@ -1099,7 +1099,7 @@ canvas#canvas3d {
 
   /* Fix for About Me section */
   .about-me-wrapper {
-    margin-top: 150px; /* Create space between hero and about me section */
+    margin-top: 400px; /* Create space between hero and about me section */
     transform: translateY(0%); /* Ensure smooth positioning */
   }
 
