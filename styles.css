@@ -1178,17 +1178,32 @@ canvas#canvas3d {
   }
   .carousel-wrapper {
     display: flex;
-    justify-content: center; /* This ensures horizontal centering */
-    align-items: flex-start; /* Keeps the carousel aligned at the top */
-    width: 100%; /* Ensures the wrapper takes up full width */
-    margin-top: 100px; /* Adjust as needed for spacing */
+    justify-content: center; /* Center the carousel wrapper horizontally */
+    align-items: center;     /* Ensure the carousel is vertically centered */
+    width: 100%;             /* Ensure the wrapper spans full width */
+    padding-left: 10px;      /* Add a small padding if needed */
+    padding-right: 10px;     /* Add a small padding if needed */
+    box-sizing: border-box;  /* Ensure padding doesn’t mess up the width */
+    margin-top: 60px;        /* Adjust to space the carousel below content */
   }
 
   .carousel {
-    position: static; /* Reset any positioning that might be interfering */
-    margin: 0; /* Reset margin */
-    transform: none; /* No scaling or translation */
-    display: block; /* Ensures it’s not overriding the size */
+    display: block;          /* Ensures the carousel is displayed as a block */
+    margin: 0 auto;          /* Automatically aligns it to the center */
+    position: relative;      /* Keeps carousel content within normal flow */
+    width: auto;             /* Prevent any width constraints from being applied */
+    max-width: 100%;         /* Makes sure it's not expanding beyond its content */
+    transform: none;         /* No transformations (like translate) */
+  }
+
+  .carousel-card {
+    /* No width change, but ensure cards are not forced to behave differently */
+    width: auto;             /* Let them scale naturally */
+    flex-shrink: 0;          /* Prevent cards from shrinking */
+  }
+
+  #carousel-instruction {
+    margin-top: 40px;        /* Adjust this to move the instruction text into view */
   }
   .recommendations-section .recommender-photo-container {
     width: 50px;
