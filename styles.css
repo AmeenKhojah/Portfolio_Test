@@ -1052,7 +1052,7 @@ canvas#canvas3d {
     width: 100%;
     position: absolute;
     left: 0;
-    top: 45%;
+    top: 85%;
     transform: translateY(0%);
     padding: 0;
     margin: 0;
@@ -1103,7 +1103,16 @@ canvas#canvas3d {
   position: relative; /* Ensure proper placement */
 
 }
-
+  .about-me {
+    margin-top: 20px;
+    width: 100%;
+    text-align: left;
+    padding-left: 20px; /* Align the content to the left */
+    padding-right: 20px; /* Add padding on the right as well */
+    overflow-wrap: break-word; /* Prevent text from overflowing */
+    word-wrap: break-word;
+    word-break: break-word; /* Ensure long words break correctly */
+  }
 
   .typing-effect {
     height: 50px;
