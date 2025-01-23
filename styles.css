@@ -1176,30 +1176,7 @@ canvas#canvas3d {
   .section-title {
     font-size: 2.5rem;
   }
-  /* Ensure the carousel is centered horizontally */
-  .carousel-wrapper {
-    width: 90%;  /* Make sure it doesn't take up full width */
-    max-width: 600px;  /* Optional: limit the max width */
-    margin: 0 auto;  /* This centers it horizontally */
-    display: block;  /* Make sure it's a block-level element */
-    padding-top: 20px;  /* Add space from the top (adjust as needed) */
-    padding-bottom: 50px;  /* Add space from the bottom (adjust as needed) */
-  }
 
-  /* Optional: Adjust carousel card size for mobile */
-  .carousel-card {
-    width: 160px; /* Adjust width to fit better on mobile */
-    height: 180px; /* Adjust height */
-    margin: 0 auto; /* Center individual cards */
-  }
-
-  /* Adjust instruction text for mobile */
-  #carousel-instruction {
-    text-align: center;
-    padding-top: 10px;
-  }
-  
-  
   .recommendations-section .recommender-photo-container {
     width: 50px;
     height: 50px;
