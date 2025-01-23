@@ -1262,47 +1262,24 @@ canvas#canvas3d {
 
 
 
-/* General photo container styles */
-.recommender-photo-container {
-  width: 60px; /* Fixed width for all containers */
-  height: 60px; /* Fixed height for all containers */
-  border-radius: 50%; /* Make all containers circular */
-  overflow: hidden; /* Prevent content from overflowing */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Ensure the KAU photo container remains circular */
+.recommendations-section .accordion-item:last-child .recommender-photo-container {
+  width: 60px !important;           /* Set the container width to 60px */
+  height: 60px !important;          /* Set the container height to 60px */
+  border-radius: 50% !important;    /* Make it a circle */
+  background-color: white;         /* White background */
+  overflow: hidden;                /* Hide any content that overflows */
+  display: flex;                   /* Flexbox for centering */
+  justify-content: center;         /* Center the content horizontally */
+  align-items: center;             /* Center the content vertically */
 }
 
-/* General image styles */
-.recommender-photo-container img {
-  width: 100%; /* Fill the container */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Fill container while respecting proportions */
-}
-
-/* Specific KAU logo fix */
-.recommender-photo-container.kau-logo {
-  width: 60px; /* Fixed width */
-  height: 60px; /* Fixed height */
-  border-radius: 50%; /* Ensure circular container */
-  overflow: hidden; /* Prevent overflow */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.recommender-photo-container.kau-logo img {
-  width: 100%;
-  height: auto;
-  object-fit: contain; /* Maintain the logo proportions */
-  aspect-ratio: 1 / 1; /* Force a square aspect ratio */
-}
-
-/* Additional specificity for the last item */
-.accordion-item:last-child .recommender-photo-container.kau-logo img {
-  object-fit: contain; /* Ensure the logo is proportionally correct */
-  width: 100%; /* Cover the container width */
-  height: auto; /* Maintain aspect ratio */
+/* Ensure the image fits into the circle container, cropped if needed */
+.recommendations-section .accordion-item:last-child .recommender-photo-container img {
+  width: 100% !important;          /* Make the image take the full width of the container */
+  height: 100% !important;         /* Make the image take the full height of the container */
+  object-fit: cover !important;    /* Ensure the image covers the container without stretching */
+  object-position: center !important; /* Center the image within the container */
 }
 
 
