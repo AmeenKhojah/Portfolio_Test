@@ -1048,27 +1048,6 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-/* Ensure that the KAU container is identical to the Aramco one (60px by 60px circle) */
-.recommendations-section .accordion-item:last-child .recommender-photo-container {
-  width: 60px !important;    /* Force the container's width to 60px */
-  height: 60px !important;   /* Force the container's height to 60px */
-  border-radius: 50% !important; /* Make the container a perfect circle */
-  background-color: white;  /* Set a white background */
-  overflow: hidden;         /* Hide anything that overflows the container */
-  display: flex;            /* Flexbox for centering */
-  justify-content: center;  /* Center the image horizontally */
-  align-items: center;     /* Center the image vertically */
-}
-
-/* Ensures the image fills the circle perfectly without distortion */
-.recommendations-section .accordion-item:last-child .recommender-photo-container img {
-  width: 100% !important;     /* Image takes up full width of container */
-  height: 100% !important;    /* Image takes up full height of container */
-  object-fit: cover !important; /* Ensures the image covers the area without stretching */
-  object-position: center !important; /* Centers the image */
-}
-
-
 
   .left-section-svg {
     width: 100%;
@@ -1280,6 +1259,31 @@ canvas#canvas3d {
   color: #ffffff; /* Match the text color */
   flex: 1; /* Allow text to occupy remaining space and align properly */
 }
+
+
+
+/* General recommender photo styles */
+.recommender-photo-container img {
+  width: 100%; /* Scales image within its container */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Prevents distortion */
+}
+
+/* Specific styles for KAU logo */
+.recommender-photo-container.kau-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Specific styles for the last recommendation */
+.accordion-item:last-child .recommender-photo-container.kau-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
 }
 
 @media (max-width: 480px) {
