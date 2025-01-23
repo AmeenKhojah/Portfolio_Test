@@ -1205,13 +1205,32 @@ canvas#canvas3d {
   }
 
   /* Relationship Section Adjustments on Mobile */
-  .relationship-section {
-    flex-direction: column;
-    gap: 20px;
-  }
+.relationship-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  gap: 20px; /* Space between each logo-text pair */
+}
   .relationship-separator {
     display: none;
   }
+  .relationship-item {
+  display: flex;
+  align-items: center; /* Align logo and text vertically */
+  gap: 15px; /* Space between logo and text */
+}
+.relationship-logo {
+  width: 80px; /* Set fixed width for all logos */
+  height: 80px; /* Set fixed height for all logos */
+  object-fit: contain; /* Keep the logos proportional */
+}
+
+.relationship-caption {
+  margin: 0;
+  font-size: 1rem; /* Adjust text size as needed */
+  line-height: 1.5; /* Add spacing for readability */
+  color: #ffffff; /* Match the text color */
+}
 }
 
 @media (max-width: 480px) {
