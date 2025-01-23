@@ -1216,9 +1216,12 @@ canvas#canvas3d {
   }
 .relationship-item {
   display: flex;
-  align-items: center; /* Align logos and text vertically */
-  gap: 15px; /* Space between the logo and text */
+  align-items: center;
+  gap: 15px;
+  width: auto; /* Ensure it doesn't constrain children */
+  flex-shrink: 0; /* Prevent the container from shrinking */
 }
+
 
 .relationship-logo {
   width: 80px; /* Default size for all logos */
