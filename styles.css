@@ -1233,10 +1233,12 @@ canvas#canvas3d {
   width: auto;
   flex-shrink: 0;
 }
-  .relationship-item.kau-item {
-    gap: 30px; /* Adjust the gap between the logo and text */
-  }
-  
+.relationship-item div {
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+  justify-content: flex-start; /* Ensure the text aligns to the top */
+}
+
 .relationship-caption {
   margin: 0;
   font-size: 1rem; /* Text size */
