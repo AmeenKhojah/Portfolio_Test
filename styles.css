@@ -1221,8 +1221,8 @@ canvas#canvas3d {
 }
 
 .relationship-logo.aramco-logo {
-  width: 120px; /* Larger size for the Aramco logo */
-  height: 120px;
+  width: 90px; /* Larger size for the Aramco logo */
+  height: 90px;
   object-fit: contain; /* Maintain aspect ratio */
 }
 
