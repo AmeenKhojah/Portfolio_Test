@@ -1049,8 +1049,9 @@ canvas#canvas3d {
 
 @media (max-width: 768px) {
 /* Fix for the last photo (Dr. Naif Rajkhan, KAU) */
+/* Fix for the last photo (Dr. Naif Rajkhan, KAU) */
 .recommendations-section .accordion-item:last-child .recommender-photo-container {
-  width: 60px;  /* Set the width of the circle */
+  width: 60px;  /* Set the width of the circle to match Aramco logo size */
   height: 60px; /* Set the height of the circle */
   border-radius: 50%; /* Force a perfect circle */
   background-color: white; /* Set a white background */
@@ -1068,6 +1069,7 @@ canvas#canvas3d {
   object-fit: cover;   /* Ensures the image covers the container without distortion */
   object-position: center; /* Ensure the image is centered within the circle */
 }
+
 
   .left-section-svg {
     width: 100%;
