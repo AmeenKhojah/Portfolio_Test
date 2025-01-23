@@ -1050,21 +1050,23 @@ canvas#canvas3d {
 @media (max-width: 768px) {
 /* Fix for the last photo (Dr. Naif Rajkhan, KAU) */
 .recommendations-section .accordion-item:last-child .recommender-photo-container {
-  width: 60px;  /* Fixed width */
-  height: 60px; /* Fixed height */
-  overflow: hidden; /* Ensures no overflow */
-  border-radius: 50%; /* Perfectly round */
-  background-color: white; /* Set the background color to white */
+  width: 60px;  /* Set the width of the circle */
+  height: 60px; /* Set the height of the circle */
+  border-radius: 50%; /* Force a perfect circle */
+  background-color: white; /* Set a white background */
+  overflow: hidden; /* Prevent overflow of image outside the container */
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0; /* Prevents container from shrinking */
 }
 
 /* Ensuring the image fits the container correctly without distortion */
 .recommendations-section .accordion-item:last-child .recommender-photo-container img {
-  object-fit: cover;  /* Ensures the image covers the container without distortion */
-  width: 100%;         /* Fill the container's width */
-  height: 100%;        /* Fill the container's height */
+  width: 100%;         /* Ensure the image takes up the full width of the container */
+  height: 100%;        /* Ensure the image takes up the full height of the container */
+  object-fit: cover;   /* Ensures the image covers the container without distortion */
+  object-position: center; /* Ensure the image is centered within the circle */
 }
 
   .left-section-svg {
