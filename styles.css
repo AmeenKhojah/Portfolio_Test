@@ -1048,65 +1048,88 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
- .portfolio-container {
+  /* Ensure portfolio container sections are stacked vertically */
+  .portfolio-container {
+    display: flex;
     flex-direction: column; /* Stack sections vertically */
     padding: 20px;
+    margin-top: 40px; /* Adjust the margin for better spacing */
   }
 
+  /* Ensure the left and right sections take full width */
   .left-section, .right-section {
-    flex: 1 1 100%; /* Allow both sections to take full width on mobile */
-    margin-bottom: 30px; /* Add spacing between sections */
+    flex: 1 1 100%; /* Each section should take full width */
+    margin-bottom: 40px; /* Space between sections */
   }
 
-  .left-section {
-    padding: 20px; /* Adjust padding for mobile */
-    margin-bottom: 40px; /* Space between hero and about me sections */
-  }
-
-  .right-section {
-    padding: 20px;
-  }
-
-  .about-me-wrapper {
-    margin-top: 20px;
-    transform: translateY(0%); /* Ensure it starts properly below the hero section */
-  }
-
-  .skills-section {
-    margin-top: 40px;
-    padding: 40px 20px 60px;
-  }
-
+  /* Adjust SVG position in left-section */
   .left-section-svg {
     position: absolute;
-    top: 45%;
+    top: 45%; /* Ensure it stays positioned correctly */
     left: 0;
     width: 100%;
     transform: translateY(0%);
     margin: 0;
   }
 
+  /* About Me Section Fixes */
+  .about-me-wrapper {
+    margin-top: 40px;
+    padding: 0 20px; /* Add some padding inside */
+    transform: translateY(0%); /* Remove any offset that could cause weird behavior */
+    position: relative;
+  }
+
+  .about-me {
+    margin-top: 20px; /* Ensure space between the hero section and about me */
+    overflow-wrap: break-word; /* Ensure long words break correctly */
+    word-wrap: break-word;
+    word-break: break-word; /* Break any long words to prevent overflow */
+  }
+
+  .about-heading {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+  }
+
+  .about-subheading {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+  }
+
+  .about-paragraph {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 30px;
+  }
+
+  /* Skills Section */
+  .skills-section {
+    margin-top: 60px;
+    padding: 40px 20px 60px;
+    margin-bottom: 40px; /* Space between skills and previous section */
+  }
+
+  /* Ensure proper text sizing for mobile */
   .typing-effect {
     font-size: 1.5rem;
     height: 50px;
   }
 
-  .about-heading {
-    font-size: 2.2em;
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
   }
 
-  .about-subheading {
-    font-size: 1.6em;
-  }
-
-  .about-paragraph {
+  /* Adjust the skills section text */
+  .card-content {
+    padding: 20px;
     font-size: 1.1em;
+    text-align: center;
   }
 
-  .gradient-line {
-    width: 90%;
-  }
-
+  /* Reduce size of recommendation section text */
   .recommendations-section .section-title {
     font-size: 2rem;
   }
@@ -1137,11 +1160,13 @@ canvas#canvas3d {
     font-size: 0.9rem;
   }
 
+  /* Adjust projects section */
   .projects-section {
     max-width: 400px;
     height: 180px;
   }
 
+  /* Make sure relationship logos are small on mobile */
   .relationship-logo {
     width: 50px;
     height: 50px;
@@ -1149,11 +1174,6 @@ canvas#canvas3d {
 
   .relationship-caption {
     font-size: 0.85rem;
-  }
-
-  /* Ensure no overlap between sections on mobile */
-  .content-section {
-    margin-bottom: 40px; /* Add space between sections */
   }
 }
 
