@@ -1260,27 +1260,54 @@ canvas#canvas3d {
   flex: 1; /* Allow text to occupy remaining space and align properly */
 }
 
+  .recommendations-section .accordion-item:last-child .recommender-photo-container.kau-logo {
+    width: 50px !important;  /* Adjust the width for mobile */
+    height: 50px !important; /* Set height to match width for a circle */
+    border-radius: 50% !important;  /* Make it a perfect circle */
+    background-color: white !important;  /* Set white background */
+    overflow: hidden !important; /* Hide any overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  /* Ensure the image is centered inside the container */
+  .recommendations-section .accordion-item:last-child .recommender-photo-container.kau-logo img {
+    width: 100% !important;  /* Make image fill the entire container */
+    height: 100% !important; /* Make image cover the container */
+    object-fit: cover !important;  /* Ensure the image is cropped and fills the circle */
+    object-position: center !important;  /* Ensure the important part of the image is centered */
+  }
 
-/* Ensure the KAU photo container remains circular */
-.recommendations-section .accordion-item:last-child .recommender-photo-container {
-  width: 60px !important;           /* Set the container width to 60px */
-  height: 60px !important;          /* Set the container height to 60px */
-  border-radius: 50% !important;    /* Make it a circle */
-  background-color: white;         /* White background */
-  overflow: hidden;                /* Hide any content that overflows */
-  display: flex;                   /* Flexbox for centering */
-  justify-content: center;         /* Center the content horizontally */
-  align-items: center;             /* Center the content vertically */
-}
+  /* Additional styles to ensure everything works fine for mobile */
+  .recommendations-section .recommender-photo-container {
+    width: 50px !important;
+    height: 50px !important;
+    margin-right: 10px;
+  }
 
-/* Ensure the image fits into the circle container, cropped if needed */
-.recommendations-section .accordion-item:last-child .recommender-photo-container img {
-  width: 100% !important;          /* Make the image take the full width of the container */
-  height: 100% !important;         /* Make the image take the full height of the container */
-  object-fit: cover !important;    /* Ensure the image covers the container without stretching */
-  object-position: center !important; /* Center the image within the container */
-}
+  /* Ensure that the text and the circle image appear correctly next to each other */
+  .recommendations-section .recommender-name,
+  .recommendations-section .recommender-title {
+    font-size: 1rem;
+  }
+
+  .recommendations-section .recommender-title {
+    font-size: 0.8rem;
+  }
+
+  .recommendations-section .accordion-icon {
+    font-size: 1rem;
+  }
+
+  .recommendations-section .accordion-content p {
+    font-size: 0.9rem;
+  }
+
+  .recommendations-section .accordion-header {
+    padding: 10px;
+  }
+
 
 
 }
