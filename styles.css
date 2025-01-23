@@ -1233,8 +1233,10 @@ canvas#canvas3d {
   width: auto;
   flex-shrink: 0;
 }
-
-
+  .relationship-item.kau-item {
+    gap: 30px; /* Adjust the gap between the logo and text */
+  }
+  
 .relationship-caption {
   margin: 0;
   font-size: 1rem; /* Text size */
