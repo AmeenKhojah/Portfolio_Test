@@ -1264,32 +1264,45 @@ canvas#canvas3d {
 
 /* General photo container styles */
 .recommender-photo-container {
-  width: 60px; /* Set a fixed width for all containers */
-  height: 60px; /* Set a fixed height for all containers */
-  border-radius: 50%; /* Keep containers circular */
-  overflow: hidden; /* Ensure images don’t overflow */
+  width: 60px; /* Fixed width for all containers */
+  height: 60px; /* Fixed height for all containers */
+  border-radius: 50%; /* Make all containers circular */
+  overflow: hidden; /* Prevent content from overflowing */
   display: flex;
-  align-items: center; /* Center image vertically */
-  justify-content: center; /* Center image horizontally */
-  background-color: #ffffff; /* Optional: Add a white background */
+  align-items: center;
+  justify-content: center;
 }
 
 /* General image styles */
 .recommender-photo-container img {
-  width: 100%; /* Ensure the image covers the container */
-  height: 100%; /* Ensure the image covers the container */
-  object-fit: cover; /* Fill the container without distortion */
+  width: 100%; /* Fill the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Fill container while respecting proportions */
 }
 
-/* Specific styling for KAU logo in the last recommendation */
-.accordion-item:last-child .recommender-photo-container.kau-logo {
-  width: 60px; /* Match the size of other containers */
-  height: 60px;
+/* Specific KAU logo fix */
+.recommender-photo-container.kau-logo {
+  width: 60px; /* Fixed width */
+  height: 60px; /* Fixed height */
+  border-radius: 50%; /* Ensure circular container */
+  overflow: hidden; /* Prevent overflow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.recommender-photo-container.kau-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Maintain the logo proportions */
+  aspect-ratio: 1 / 1; /* Force a square aspect ratio */
+}
+
+/* Additional specificity for the last item */
 .accordion-item:last-child .recommender-photo-container.kau-logo img {
-  object-fit: contain; /* Keep the logo proportional within the container */
-  background-color: transparent; /* Optional: Ensure no background color */
+  object-fit: contain; /* Ensure the logo is proportionally correct */
+  width: 100%; /* Cover the container width */
+  height: auto; /* Maintain aspect ratio */
 }
 
 
