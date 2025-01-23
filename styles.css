@@ -1097,33 +1097,57 @@ canvas#canvas3d {
     display: none;
   }
 
-  /* Fix for About Me section */
+  /* New Section for About Me */
   .about-me-wrapper {
-    margin-top: 400px; /* Create space between hero and about me section */
-    transform: translateY(0%); /* Ensure smooth positioning */
+    padding: 40px 20px;
+    margin-top: 20px; /* Ensure space between Hero and About Me */
+    background-color: #000000;
+    color: #ffffff;
+    border-top: 2px solid #ff2df7; /* Optional: styling for separation */
+    box-sizing: border-box;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto; /* Ensures that it fits within screen */
   }
 
-  /* Typing effect */
-  .typing-effect {
-    height: 50px;
-  }
-
-  .left-section {
-    padding: 40px 20px 20px 20px;
-  }
-
+  /* About Me Text */
   .about-me {
-    padding: 0 20px;
+    padding: 20px;
+    max-height: 100%;
+    overflow-y: auto; /* Avoids text overflow */
+    box-sizing: border-box;
+  }
+
+  .about-heading {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+  }
+
+  .about-subheading {
+    font-size: 1.6em;
     margin-bottom: 20px;
   }
 
-  /* Skills Section */
+  .about-paragraph {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #cccccc;
+    text-align: left;
+  }
+
+  /* Fix for About Me section overflowing */
+  .about-me-wrapper {
+    padding: 20px 10px;
+    overflow-y: auto;
+  }
+
   .skills-section {
     padding: 40px 20px 60px;
     text-align: center;
     background-color: #000000;
     color: #ffffff;
-    margin-top: 100px;
+    margin-top: 20px;
   }
 
   .portfolio-container {
