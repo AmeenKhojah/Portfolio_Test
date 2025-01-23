@@ -1052,7 +1052,7 @@ canvas#canvas3d {
     width: 100%;
     position: absolute;
     left: 0;
-    top: 45%;
+    top: 50%; /* Adjust to avoid overlap */
     transform: translateY(0%);
     padding: 0;
     margin: 0;
@@ -1097,7 +1097,8 @@ canvas#canvas3d {
   }
 
   .about-me-wrapper {
-    transform: translateY(0%);
+    transform: translateY(0%); /* Ensure the About Me section is not covered */
+    margin-top: 120px; /* Add spacing above the About Me section */
   }
 
   .typing-effect {
@@ -1130,7 +1131,6 @@ canvas#canvas3d {
     flex: 1 1 100%;
     margin-bottom: 30px;
   }
-
   .typing-effect {
     font-size: 1.5rem;
     height: 50px;
@@ -1197,7 +1197,19 @@ canvas#canvas3d {
     display: none;
   }
 }
-
+  .project-vector {
+    width: 100%;
+    transform: translate(0%, -50%);
+    opacity: 0.8;
+  }
+  .relationship-logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .relationship-caption {
+    font-size: 0.85rem;
+  }
 @media (max-width: 480px) {
   .cards-container {
     grid-template-columns: 1fr;
