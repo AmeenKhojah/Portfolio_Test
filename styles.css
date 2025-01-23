@@ -1048,7 +1048,21 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
+  .navbar-menu {
+    flex-direction: column; /* Stack menu items vertically */
+    gap: 10px; /* Reduce space between items */
+    width: 100%; /* Take full width on mobile */
+    align-items: flex-start; /* Align items to the left */
+  }
 
+  .navbar-link {
+    font-size: 0.9em; /* Reduce font size for smaller screens */
+    padding: 8px 10px; /* Adjust padding for better fit */
+  }
+
+  .navbar-container {
+    padding: 0 10px; /* Reduce horizontal padding */
+  }
   .left-section-svg {
     width: 100%;
     position: absolute;
@@ -1115,52 +1129,7 @@ canvas#canvas3d {
   max-width: 1200px; /* Optionally set a maximum width for readability */
   box-sizing: border-box; /* Ensure padding is included in the width calculation */
 }
-  .navbar-menu {
-    display: none;  /* Initially hide the menu */
-    flex-direction: column;  /* Stack items vertically */
-    align-items: center;  /* Center items */
-    background-color: rgba(0, 0, 0, 0.9); /* Dark background for dropdown */
-    position: absolute;  /* Position it fixed */
-    top: 60px;  /* Just below the navbar */
-    left: 0;
-    width: 100%;
-    padding: 20px 0;
-  }
 
-  .navbar-menu.active {
-    display: flex;  /* Show when active */
-  }
-
-  .navbar-toggle {
-    display: block; /* Show the hamburger menu */
-    cursor: pointer;
-    z-index: 5;
-    padding: 10px;
-  }
-
-  .navbar-toggle span {
-    display: block;
-    width: 30px;
-    height: 4px;
-    margin: 6px auto;
-    background-color: #fff;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-  }
-
-  .navbar-toggle.active span:nth-child(1) {
-    transform: rotate(45deg);
-    top: 10px;
-  }
-
-  .navbar-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .navbar-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: -10px;
-  }
 
   .typing-effect {
     height: 50px;
