@@ -1227,8 +1227,8 @@ canvas#canvas3d {
 }
 
 .aramco-logo {
-  width: 180px; /* Larger size for the Aramco logo */
-  height: 180px;
+  width: 500px; /* Larger size for the Aramco logo */
+  height: 500px;
   object-fit: contain; /* Maintain aspect ratio */
 }
 
