@@ -1048,6 +1048,17 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
+/* Ensure the last recommendation photo doesn't get distorted */
+.recommendations-section .accordion-item:last-child .recommender-photo-container {
+  object-fit: cover;  /* Ensure the aspect ratio is maintained */
+  overflow: hidden;   /* Prevent overflow and maintain image shape */
+  width: 100%;        /* Make sure it covers the available space */
+  height: 100%;       /* Keep it within bounds */
+  display: flex;      /* Ensure it remains flexible within its container */
+  justify-content: center; /* Center the image inside the container */
+  align-items: center;     /* Center the image vertically */
+}
+
   .left-section-svg {
     width: 100%;
     position: absolute;
