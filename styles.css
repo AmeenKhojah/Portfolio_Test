@@ -1059,7 +1059,7 @@ canvas#canvas3d {
   }
 
   #about {
-    scroll-margin-top: 620px; /* Adjust this value as needed */
+    scroll-margin-top: 600px; /* Adjust this value as needed */
   }
 
   /* ====== Left Section Adjustments ====== */
@@ -1067,7 +1067,7 @@ canvas#canvas3d {
     width: 100%;
     position: absolute;
     left: 0;
-    top: 85%;
+    top: 75%;
     transform: translateY(0%);
     padding: 0;
     margin: 0;
