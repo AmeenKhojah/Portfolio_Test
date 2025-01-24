@@ -22,7 +22,10 @@ body {
   color: #ffffff; /* Default text color */
   overflow-x: hidden; /* Prevent horizontal scroll */
   scroll-behavior: smooth;
+
 }
+
+
 
 /* ====== Navigation Bar ====== */
 .navbar {
@@ -43,9 +46,6 @@ body {
 .navbar-container {
   width: 90%;
   max-width: 1200px;
-  display: flex;
-  justify-content: center; /* Center the navbar menu */
-  align-items: center;
 }
 
 .navbar-menu {
@@ -53,7 +53,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px; /* Default gap for desktop */
+  gap: 30px;
 }
 
 .navbar-item {
@@ -63,7 +63,7 @@ body {
   position: relative;
   text-decoration: none;
   color: #ffffff;
-  font-size: 1.1em; /* Default font size for desktop */
+  font-size: 1.1em;
   font-weight: 500;
   transition: color 0.3s ease;
   user-select: none;
@@ -229,6 +229,7 @@ section {
   background: linear-gradient(90deg, #ff00ff, #65558f);
 }
 
+/* ====== Contact Icons ====== */
 .contact-icons {
   display: flex;
   gap: 15px;
@@ -288,6 +289,7 @@ canvas#canvas3d {
   transform: translateY(255%);
   contain: layout;
   will-change: transform;
+
 }
 
 .about-me {
@@ -299,6 +301,7 @@ canvas#canvas3d {
   transform: translateY(-550px);
   margin-left: 85px;
   will-change: transform;
+
 }
 
 .left-section-svg {
@@ -382,6 +385,7 @@ canvas#canvas3d {
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
   box-sizing: border-box;
+  user-select: none;
 }
 
 .download-button:hover {
@@ -389,6 +393,7 @@ canvas#canvas3d {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: color 0.5s, background 0.5s;
+  user-select: none;
 }
 
 .download-button:hover::before {
@@ -436,11 +441,10 @@ canvas#canvas3d {
   color: #cccccc;
   white-space: nowrap;
 }
-
 /* This ensures the aramco logo is the same size as KAU's */
 .aramco-logo {
-  width: 120px; /* same as KAU width */
-  height: 120px; /* same as KAU height */
+  width: 120px;        /* same as KAU width */
+  height: 120px;       /* same as KAU height */
   object-fit: contain; /* keep it from distorting */
 }
 
@@ -465,44 +469,44 @@ canvas#canvas3d {
 
 /* Recommender Photo (KAU + Aramco) */
 .recommender-photo-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Specific styling for the KAU logo */
 .recommender-photo-container.kau-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 0;
-  background-color: white;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0;
+    background-color: white;
 }
 
 /* Add optional shadow for better visibility */
 .recommender-photo-container img[alt="KAU Logo"] {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Specific styling for Aramco logos */
 .recommender-photo-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .recommender-photo-container img[alt="Aramco Logo"] {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .recommender-photo-container img:hover {
-  transform: scale(1.2);
-  transition: transform 0.2s ease-in-out;
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
 }
 
 /* ====== Cards Container ====== */
@@ -756,12 +760,12 @@ canvas#canvas3d {
 }
 
 .recommendations-section .recommender-photo-container {
-  width: 60px;
-  height: 60px;
-  margin-right: 15px;
-  overflow: hidden;
-  border-radius: 50%;
-  border: 2px solid #FF2DF7;
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #FF2DF7;
 }
 
 .recommendations-section .recommender-name {
@@ -860,6 +864,7 @@ canvas#canvas3d {
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
   box-sizing: border-box;
+  user-select: none;
 }
 
 .download-recommendation-button:hover {
@@ -870,136 +875,136 @@ canvas#canvas3d {
   background-clip: text;
   color: transparent;
   transition: color 0.5s, background 0.5s;
+  user-select: none;
 }
 
 .download-recommendation-button:hover::before {
   background: linear-gradient(90deg, #ff00ff, #65558f);
+  user-select: none;
 }
 
 .recommendations-section
   .accordion-header[aria-expanded='true']
   + .accordion-content {
   padding: 20px;
-}
 
+}
 /* ====== MODAL STYLES ====== */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .modal-content {
-  width: 95%;
-  max-width: 1200px;
-  max-height: 80vh;
-  overflow-y: auto;
-  padding: 20px;
-  border-radius: 12px;
+    width: 95%;
+    max-width: 1200px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 12px;
 }
 
 .modal.show {
-  display: flex;
-  opacity: 1;
+    display: flex;
+    opacity: 1;
 }
-
 .modal-content.show {
-  transform: scale(1);
-  opacity: 1;
+    transform: scale(1);
+    opacity: 1;
 }
 
 .close-button {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 20px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
 
 .close-button:hover,
 .close-button:focus {
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* Modal Header */
 .modal-header {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-  font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
 /* Modal Body */
 .modal-body {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .modal-image {
-  flex: 1 1 40%;
+    flex: 1 1 40%;
 }
 
 .modal-image img {
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
 .modal-description {
-  flex: 1 1 55%;
+    flex: 1 1 55%;
 }
 
 .modal-description h3 {
-  margin-bottom: 10px;
-  color: #ff77ff;
+    margin-bottom: 10px;
+    color: #ff77ff;
 }
 
 .modal-description ul {
-  list-style-type: disc;
-  padding-left: 20px;
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
 .modal-description ul li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 /* Modal Footer */
 .modal-footer {
-  text-align: center;
+    text-align: center;
 }
 
 .modal-button {
-  background-color: #ff77ff;
-  color: #1a1a1a;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #ff77ff;
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .modal-button:hover {
-  background-color: #ff55ff;
-  transform: scale(1.05);
+    background-color: #ff55ff;
+    transform: scale(1.05);
 }
-
 /* ====== Content Section Visibility ====== */
 .content-section {
   opacity: 0;
@@ -1044,21 +1049,6 @@ canvas#canvas3d {
 
 @media (max-width: 768px) {
 
-  /* ====== Navbar Adjustments for Tablets ====== */
-  .navbar-container {
-    padding: 0 10px; /* Reduced horizontal padding */
-  }
-
-  .navbar-menu {
-    gap: 15px; /* Reduced gap between menu items */
-  }
-
-  .navbar-link {
-    font-size: 1em; /* Slightly smaller font size */
-    padding: 8px 0; /* Added vertical padding for better touch targets */
-  }
-
-  /* ====== Left Section Adjustments ====== */
   .left-section-svg {
     width: 100%;
     position: absolute;
@@ -1107,24 +1097,25 @@ canvas#canvas3d {
     display: none;
   }
 
-  .about-me-wrapper {
-    transform: translateY(0%);
-    margin-top: 600px; /* Space below the hero section */
-    margin-bottom: 600px; /* Space above the skills section */
-    position: relative; /* Ensure proper placement */
-    display: flex;
-    justify-content: flex-start; /* Align content to the left */
-    width: 100%; /* Ensure it spans the entire width of the container */
-  }
+.about-me-wrapper {
+  transform: translateY(0%);
+  margin-top: 600px; /* Space below the hero section */
+  margin-bottom: 600px; /* Space above the skills section */
+  position: relative; /* Ensure proper placement */
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  width: 100%; /* Ensure it spans the entire width of the container */
+}
 
-  .about-me {
-    padding: 0 40px; /* Add horizontal padding for spacing */
-    margin-left: 0; /* Align directly to the left */
-    text-align: left; /* Ensure text is left-aligned */
-    width: 100%; /* Fit within the screen */
-    max-width: 1200px; /* Optionally set a maximum width for readability */
-    box-sizing: border-box; /* Ensure padding is included in the width calculation */
-  }
+.about-me {
+  padding: 0 40px; /* Add horizontal padding for spacing */
+  margin-left: 0; /* Align directly to the left */
+  text-align: left; /* Ensure text is left-aligned */
+  width: 100%; /* Fit within the screen */
+  max-width: 1200px; /* Optionally set a maximum width for readability */
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
 
   .typing-effect {
     height: 50px;
@@ -1164,6 +1155,7 @@ canvas#canvas3d {
 
   .contact-icons {
     gap: 10px;
+
   }
 
   .about-heading {
@@ -1233,75 +1225,84 @@ canvas#canvas3d {
   }
 
   /* Relationship Section Adjustments on Mobile */
-  .relationship-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
-    gap: 20px; /* Space between each logo-text pair */
+.relationship-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  gap: 20px; /* Space between each logo-text pair */
+}
+  .relationship-separator {
+    display: none;
   }
-    .relationship-separator {
-      display: none;
+.relationship-item {
+  display: flex;
+  align-items: center; /* Align logos and text vertically */
+  gap: 15px; /* Space between the logo and text */
+}
+
+.relationship-logo {
+  width: 80px; /* Default size for all logos */
+  height: 80px;
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+.aramco-logo {
+  width: 120px; /* Larger size for the Aramco logo */
+  height: 120px;
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+.relationship-caption {
+  margin: 0;
+  font-size: 1rem; /* Text size */
+  line-height: 1.5; /* Add spacing for readability */
+  color: #ffffff; /* Match the text color */
+  flex: 1; /* Allow text to occupy remaining space and align properly */
+}
+
+    .recommendations-section .recommender-photo-container {
+        width: 50px; /* Fixed width */
+        height: 50px; /* Fixed height - maintaining perfect circle */
+        min-width: 50px; /* Prevent distortion */
+        min-height: 50px; /* Prevent distortion */
     }
-  .relationship-item {
-    display: flex;
-    align-items: center; /* Align logos and text vertically */
-    gap: 15px; /* Space between the logo and text */
-  }
 
-  .relationship-logo {
-    width: 80px; /* Default size for all logos */
-    height: 80px;
-    object-fit: contain; /* Maintain aspect ratio */
-  }
+    .recommendations-section .accordion-content {
+        max-height: 0; /* Reset to default collapsed state */
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
 
-  .aramco-logo {
-    width: 120px; /* Larger size for the Aramco logo */
-    height: 120px;
-    object-fit: contain; /* Maintain aspect ratio */
-  }
+    /* Active state for accordion content */
+    .recommendations-section .accordion-header[aria-expanded="true"] + .accordion-content {
+        max-height: 1000px; /* Allow enough height for content */
+    }
 
-  .relationship-caption {
-    margin: 0;
-    font-size: 1rem; /* Text size */
-    line-height: 1.5; /* Add spacing for readability */
-    color: #ffffff; /* Match the text color */
-    flex: 1; /* Allow text to occupy remaining space and align properly */
-  }
+    /* Keep download button aligned to the end */
+    .download-recommendation-button {
+        gap: 4px; /* Reduced spacing for mobile screens */
+        padding: 6px 12px; /* Smaller padding for compact design */
+        font-size: 0.8em; /* Slightly smaller text size */
+        align-self: flex-start; /* Align the button to the left */
+    }
 
-  .recommendations-section .recommender-photo-container {
-      width: 50px; /* Fixed width */
-      height: 50px; /* Fixed height - maintaining perfect circle */
-      min-width: 50px; /* Prevent distortion */
-      min-height: 50px; /* Prevent distortion */
-  }
+    /* Fix expansion button rotation */
+    .recommendations-section .accordion-icon {
+        transform: rotate(0deg); /* Reset rotation */
+        transition: transform 0.3s ease;
+    }
 
-  .recommendations-section .accordion-content {
-      max-height: 0; /* Reset to default collapsed state */
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-  }
+    .recommendations-section .accordion-header[aria-expanded="true"] .accordion-icon {
+        transform: rotate(45deg); /* Only rotate when expanded */
+    }
 
-  /* Active state for accordion content */
-  .recommendations-section .accordion-header[aria-expanded="true"] + .accordion-content {
-      max-height: 1000px; /* Allow enough height for content */
-  }
-
-  /* Keep download button aligned to the end */
-  .download-recommendation-button {
-      gap: 4px; /* Reduced spacing for mobile screens */
-      padding: 6px 12px; /* Smaller padding for compact design */
-      font-size: 0.8em; /* Slightly smaller text size */
-      align-self: flex-start; /* Align the button to the left */
-  }
-
-  /* Fix expansion button rotation */
-  .recommendations-section .accordion-icon {
-      transform: rotate(0deg); /* Reset rotation */
-      transition: transform 0.3s ease;
-  }
-
-  .recommendations-section .accordion-header[aria-expanded="true"] .accordion-icon {
-      transform: rotate(45deg); /* Only rotate when expanded */
+  .project-vector {
+    width: 100%;
+    max-width: 100%; /* Ensure it doesn't overflow the container */
+    height: auto; /* Maintain aspect ratio */
+    transform: translateY(0%); /* Align vertically if needed */
+    opacity: 1; /* Ensure it's visible */
+    pointer-events: none;
   }
 
 }
@@ -1368,24 +1369,4 @@ canvas#canvas3d {
   .relationship-caption {
     font-size: 0.85rem;
   }
-
-  /* ====== Navbar Adjustments for Mobile ====== */
-  .navbar-container {
-    padding: 0 5px; /* Further reduced horizontal padding */
-  }
-
-  .navbar-menu {
-    gap: 10px; /* Further reduced gap between menu items */
-  }
-
-  .navbar-link {
-    font-size: 0.9em; /* Further reduced font size */
-    padding: 8px 0; /* Ensure adequate touch targets */
-  }
 }
-
-/* ====== Additional Mobile Navbar Styles ====== */
-/* No dropdown or hamburger menu styles are included as per your request */
-
-/* ====== Responsive Typography and Spacing ====== */
-/* All other responsive adjustments are already handled above */
