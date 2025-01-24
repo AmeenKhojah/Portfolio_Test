@@ -1058,12 +1058,7 @@ canvas#canvas3d {
     padding: 0;
     margin: 0;
   }
-  .recommendations-section img.project-vector {
-    width: 700vw; /* 10% of the viewport width */
-    max-width: 700px; /* Limit size on smaller screens */
-    transform: translate(50%, -50%);
-    object-fit: contain;
-  }
+
 
   .recommendations-section .accordion-content {
     max-height: 0;
