@@ -1059,6 +1059,7 @@ canvas#canvas3d {
     margin: 0;
   }
 
+
   .recommendations-section .accordion-content {
     max-height: 0;
     overflow: hidden;
@@ -1260,53 +1261,41 @@ canvas#canvas3d {
   flex: 1; /* Allow text to occupy remaining space and align properly */
 }
 
-  .recommendations-section .accordion-item:last-child .recommender-photo-container.kau-logo {
-    width: 50px !important;  /* Adjust the width for mobile */
-    height: 50px !important; /* Set height to match width for a circle */
-    border-radius: 50% !important;  /* Make it a perfect circle */
-    background-color: white !important;  /* Set white background */
-    overflow: hidden !important; /* Hide any overflow */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .recommendations-section .recommender-photo-container {
+        width: 50px; /* Fixed width */
+        height: 50px; /* Fixed height - maintaining perfect circle */
+        min-width: 50px; /* Prevent distortion */
+        min-height: 50px; /* Prevent distortion */
+    }
 
-  /* Ensure the image is centered inside the container */
-  .recommendations-section .accordion-item:last-child .recommender-photo-container.kau-logo img {
-    width: 100% !important;  /* Make image fill the entire container */
-    height: 100% !important; /* Make image cover the container */
-    object-fit: cover !important;  /* Ensure the image is cropped and fills the circle */
-    object-position: center !important;  /* Ensure the important part of the image is centered */
-  }
+    .recommendations-section .accordion-content {
+        max-height: 0; /* Reset to default collapsed state */
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
 
-  /* Additional styles to ensure everything works fine for mobile */
-  .recommendations-section .recommender-photo-container {
-    width: 50px !important;
-    height: 50px !important;
-    margin-right: 10px;
-  }
+    /* Active state for accordion content */
+    .recommendations-section .accordion-header[aria-expanded="true"] + .accordion-content {
+        max-height: 1000px; /* Allow enough height for content */
+    }
 
-  /* Ensure that the text and the circle image appear correctly next to each other */
-  .recommendations-section .recommender-name,
-  .recommendations-section .recommender-title {
-    font-size: 1rem;
-  }
+    /* Keep download button aligned to the end */
+    .download-recommendation-button {
+        gap: 4px; /* Reduced spacing for mobile screens */
+        padding: 6px 12px; /* Smaller padding for compact design */
+        font-size: 0.8em; /* Slightly smaller text size */
+        align-self: flex-start; /* Align the button to the left */
+    }
 
-  .recommendations-section .recommender-title {
-    font-size: 0.8rem;
-  }
+    /* Fix expansion button rotation */
+    .recommendations-section .accordion-icon {
+        transform: rotate(0deg); /* Reset rotation */
+        transition: transform 0.3s ease;
+    }
 
-  .recommendations-section .accordion-icon {
-    font-size: 1rem;
-  }
-
-  .recommendations-section .accordion-content p {
-    font-size: 0.9rem;
-  }
-
-  .recommendations-section .accordion-header {
-    padding: 10px;
-  }
+    .recommendations-section .accordion-header[aria-expanded="true"] .accordion-icon {
+        transform: rotate(45deg); /* Only rotate when expanded */
+    }
 
 
 
