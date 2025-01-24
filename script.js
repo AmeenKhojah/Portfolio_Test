@@ -404,29 +404,31 @@ document.addEventListener('DOMContentLoaded', () => {
   contentSections.forEach(section => {
     sectionObserver.observe(section);
   });
-});
-// ====== Download Functionality ======
-document.addEventListener('DOMContentLoaded', () => {
+
+  // ====== Download Functionality for Mobile ======
   // Function to trigger download
   function triggerDownload(filePath) {
     const link = document.createElement('a');
     link.href = filePath;
-    link.download = filePath.split('/').pop();
+    link.download = filePath.split('/').pop(); // Extracts the file name from the path
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   }
 
-  // Attach click event listeners to all download buttons
+  // Select all download buttons
   const downloadButtons = document.querySelectorAll('.download-button, .download-recommendation-button');
+
+  // Attach click event listeners to each download button
   downloadButtons.forEach(button => {
     button.addEventListener('click', (e) => {
-      e.preventDefault(); // Prevent default link behavior
-      const filePath = button.getAttribute('href');
+      e.preventDefault(); // Prevents the default navigation behavior
+      const filePath = button.getAttribute('href'); // Retrieves the file path from href attribute
+
       if (filePath) {
         triggerDownload(filePath);
       } else {
-        console.error('Download link not found.');
+        console.error('Download file path not specified.');
         alert('File not found.');
       }
     });
