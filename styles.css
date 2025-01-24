@@ -22,10 +22,7 @@ body {
   color: #ffffff; /* Default text color */
   overflow-x: hidden; /* Prevent horizontal scroll */
   scroll-behavior: smooth;
-
 }
-
-
 
 /* ====== Navigation Bar ====== */
 .navbar {
@@ -46,6 +43,9 @@ body {
 .navbar-container {
   width: 90%;
   max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar-menu {
@@ -289,7 +289,6 @@ canvas#canvas3d {
   transform: translateY(255%);
   contain: layout;
   will-change: transform;
-
 }
 
 .about-me {
@@ -301,7 +300,6 @@ canvas#canvas3d {
   transform: translateY(-550px);
   margin-left: 85px;
   will-change: transform;
-
 }
 
 .left-section-svg {
@@ -393,7 +391,6 @@ canvas#canvas3d {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: color 0.5s, background 0.5s;
-  user-select: none;
 }
 
 .download-button:hover::before {
@@ -887,8 +884,8 @@ canvas#canvas3d {
   .accordion-header[aria-expanded='true']
   + .accordion-content {
   padding: 20px;
-
 }
+
 /* ====== MODAL STYLES ====== */
 .modal {
     display: none;
@@ -1005,6 +1002,7 @@ canvas#canvas3d {
     background-color: #ff55ff;
     transform: scale(1.05);
 }
+
 /* ====== Content Section Visibility ====== */
 .content-section {
   opacity: 0;
@@ -1049,6 +1047,23 @@ canvas#canvas3d {
 
 @media (max-width: 768px) {
 
+  /* ====== Navbar Adjustments for Tablets ====== */
+  .navbar-container {
+    padding: 0 10px;
+    flex-wrap: wrap;
+  }
+
+  .navbar-menu {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-link {
+    font-size: 1em;
+  }
+
+  /* ====== Left Section Adjustments ====== */
   .left-section-svg {
     width: 100%;
     position: absolute;
@@ -1058,7 +1073,6 @@ canvas#canvas3d {
     padding: 0;
     margin: 0;
   }
-
 
   .recommendations-section .accordion-content {
     max-height: 0;
@@ -1098,25 +1112,24 @@ canvas#canvas3d {
     display: none;
   }
 
-.about-me-wrapper {
-  transform: translateY(0%);
-  margin-top: 600px; /* Space below the hero section */
-  margin-bottom: 600px; /* Space above the skills section */
-  position: relative; /* Ensure proper placement */
-  display: flex;
-  justify-content: flex-start; /* Align content to the left */
-  width: 100%; /* Ensure it spans the entire width of the container */
-}
+  .about-me-wrapper {
+    transform: translateY(0%);
+    margin-top: 600px; /* Space below the hero section */
+    margin-bottom: 600px; /* Space above the skills section */
+    position: relative; /* Ensure proper placement */
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    width: 100%; /* Ensure it spans the entire width of the container */
+  }
 
-.about-me {
-  padding: 0 40px; /* Add horizontal padding for spacing */
-  margin-left: 0; /* Align directly to the left */
-  text-align: left; /* Ensure text is left-aligned */
-  width: 100%; /* Fit within the screen */
-  max-width: 1200px; /* Optionally set a maximum width for readability */
-  box-sizing: border-box; /* Ensure padding is included in the width calculation */
-}
-
+  .about-me {
+    padding: 0 40px; /* Add horizontal padding for spacing */
+    margin-left: 0; /* Align directly to the left */
+    text-align: left; /* Ensure text is left-aligned */
+    width: 100%; /* Fit within the screen */
+    max-width: 1200px; /* Optionally set a maximum width for readability */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+  }
 
   .typing-effect {
     height: 50px;
@@ -1226,78 +1239,76 @@ canvas#canvas3d {
   }
 
   /* Relationship Section Adjustments on Mobile */
-.relationship-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align items to the left */
-  gap: 20px; /* Space between each logo-text pair */
-}
-  .relationship-separator {
-    display: none;
+  .relationship-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    gap: 20px; /* Space between each logo-text pair */
   }
-.relationship-item {
-  display: flex;
-  align-items: center; /* Align logos and text vertically */
-  gap: 15px; /* Space between the logo and text */
-}
-
-.relationship-logo {
-  width: 80px; /* Default size for all logos */
-  height: 80px;
-  object-fit: contain; /* Maintain aspect ratio */
-}
-
-.aramco-logo {
-  width: 120px; /* Larger size for the Aramco logo */
-  height: 120px;
-  object-fit: contain; /* Maintain aspect ratio */
-}
-
-.relationship-caption {
-  margin: 0;
-  font-size: 1rem; /* Text size */
-  line-height: 1.5; /* Add spacing for readability */
-  color: #ffffff; /* Match the text color */
-  flex: 1; /* Allow text to occupy remaining space and align properly */
-}
-
-    .recommendations-section .recommender-photo-container {
-        width: 50px; /* Fixed width */
-        height: 50px; /* Fixed height - maintaining perfect circle */
-        min-width: 50px; /* Prevent distortion */
-        min-height: 50px; /* Prevent distortion */
+    .relationship-separator {
+      display: none;
     }
+  .relationship-item {
+    display: flex;
+    align-items: center; /* Align logos and text vertically */
+    gap: 15px; /* Space between the logo and text */
+  }
 
-    .recommendations-section .accordion-content {
-        max-height: 0; /* Reset to default collapsed state */
-        overflow: hidden;
-        transition: max-height 0.5s ease;
-    }
+  .relationship-logo {
+    width: 80px; /* Default size for all logos */
+    height: 80px;
+    object-fit: contain; /* Maintain aspect ratio */
+  }
 
-    /* Active state for accordion content */
-    .recommendations-section .accordion-header[aria-expanded="true"] + .accordion-content {
-        max-height: 1000px; /* Allow enough height for content */
-    }
+  .aramco-logo {
+    width: 120px; /* Larger size for the Aramco logo */
+    height: 120px;
+    object-fit: contain; /* Maintain aspect ratio */
+  }
 
-    /* Keep download button aligned to the end */
-    .download-recommendation-button {
-        gap: 4px; /* Reduced spacing for mobile screens */
-        padding: 6px 12px; /* Smaller padding for compact design */
-        font-size: 0.8em; /* Slightly smaller text size */
-        align-self: flex-start; /* Align the button to the left */
-    }
+  .relationship-caption {
+    margin: 0;
+    font-size: 1rem; /* Text size */
+    line-height: 1.5; /* Add spacing for readability */
+    color: #ffffff; /* Match the text color */
+    flex: 1; /* Allow text to occupy remaining space and align properly */
+  }
 
-    /* Fix expansion button rotation */
-    .recommendations-section .accordion-icon {
-        transform: rotate(0deg); /* Reset rotation */
-        transition: transform 0.3s ease;
-    }
+      .recommendations-section .recommender-photo-container {
+          width: 50px; /* Fixed width */
+          height: 50px; /* Fixed height - maintaining perfect circle */
+          min-width: 50px; /* Prevent distortion */
+          min-height: 50px; /* Prevent distortion */
+      }
 
-    .recommendations-section .accordion-header[aria-expanded="true"] .accordion-icon {
-        transform: rotate(45deg); /* Only rotate when expanded */
-    }
+      .recommendations-section .accordion-content {
+          max-height: 0; /* Reset to default collapsed state */
+          overflow: hidden;
+          transition: max-height 0.5s ease;
+      }
 
+      /* Active state for accordion content */
+      .recommendations-section .accordion-header[aria-expanded="true"] + .accordion-content {
+          max-height: 1000px; /* Allow enough height for content */
+      }
 
+      /* Keep download button aligned to the end */
+      .download-recommendation-button {
+          gap: 4px; /* Reduced spacing for mobile screens */
+          padding: 6px 12px; /* Smaller padding for compact design */
+          font-size: 0.8em; /* Slightly smaller text size */
+          align-self: flex-start; /* Align the button to the left */
+      }
+
+      /* Fix expansion button rotation */
+      .recommendations-section .accordion-icon {
+          transform: rotate(0deg); /* Reset rotation */
+          transition: transform 0.3s ease;
+      }
+
+      .recommendations-section .accordion-header[aria-expanded="true"] .accordion-icon {
+          transform: rotate(45deg); /* Only rotate when expanded */
+      }
 
 }
 
@@ -1363,4 +1374,77 @@ canvas#canvas3d {
   .relationship-caption {
     font-size: 0.85rem;
   }
+
+  /* ====== Navbar Adjustments for Mobile ====== */
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .navbar-link {
+    font-size: 0.9em;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .navbar-menu {
+    overflow: hidden;
+  }
+
+  /* Optional: Add a hamburger menu icon if not already present in HTML */
+  /* .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  } */
+
 }
+
+/* ====== Additional Mobile Navbar Styles ====== */
+/* If you have a hamburger menu, you can uncomment and use the following styles */
+
+/* @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar-menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-link {
+    padding: 10px;
+    width: 100%;
+  }
+} */
