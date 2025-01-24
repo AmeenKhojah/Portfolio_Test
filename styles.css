@@ -1058,9 +1058,6 @@ canvas#canvas3d {
     padding: 8px 0; /* Added vertical padding for better touch targets */
   }
 
-  #about {
-    scroll-margin-top: 70px; /* Adjust this value as needed */
-  }
 
   /* ====== Left Section Adjustments ====== */
   .left-section-svg {
@@ -1119,8 +1116,9 @@ canvas#canvas3d {
   }
 
   .about-me-wrapper {
-    margin-top: -1000px; /* Space below the hero section */
-    margin-bottom: -1000px; /* Space above the skills section */
+    transform: translateY(0%);
+    margin-top: 600px; /* Space below the hero section */
+    margin-bottom: 600px; /* Space above the skills section */
     position: relative; /* Ensure proper placement */
     display: flex;
     justify-content: flex-start; /* Align content to the left */
