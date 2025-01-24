@@ -1059,8 +1059,9 @@ canvas#canvas3d {
   }
 
   #about {
-    scroll-margin-top: 70px; /* Adjust this value as needed */
+    scroll-margin-top: 50px; /* Adjust this value as needed */
   }
+  
   /* ====== Left Section Adjustments ====== */
   .left-section-svg {
     width: 100%;
