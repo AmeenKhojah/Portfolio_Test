@@ -1060,7 +1060,7 @@ canvas#canvas3d {
   }
   .recommendations-section img.project-vector {
     width: 10vw; /* 10% of the viewport width */
-    max-width: 60px; /* Limit size on smaller screens */
+    max-width: 300px; /* Limit size on smaller screens */
     transform: translate(50%, -50%);
     object-fit: contain;
   }
