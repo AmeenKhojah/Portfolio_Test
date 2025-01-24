@@ -1058,7 +1058,14 @@ canvas#canvas3d {
     padding: 0;
     margin: 0;
   }
-
+  .project-vector {
+    width: 500%;
+    height: auto; /* Maintain aspect ratio */
+    transform: translateY(0%); /* Align vertically if needed */
+    opacity: 1; /* Ensure it's visible */
+    pointer-events: none;
+  }
+  
   .recommendations-section .accordion-content {
     max-height: 0;
     overflow: hidden;
@@ -1296,14 +1303,7 @@ canvas#canvas3d {
         transform: rotate(45deg); /* Only rotate when expanded */
     }
 
-  .project-vector {
-    width: 100%;
-    max-width: 100%; /* Ensure it doesn't overflow the container */
-    height: auto; /* Maintain aspect ratio */
-    transform: translateY(0%); /* Align vertically if needed */
-    opacity: 1; /* Ensure it's visible */
-    pointer-events: none;
-  }
+
 
 }
 
