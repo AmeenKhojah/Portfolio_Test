@@ -1059,12 +1059,8 @@ canvas#canvas3d {
     margin: 0;
   }
   .project-vector {
-    display: block; /* Ensure it behaves like a block element */
-    width: 100% !important; /* Fill the container width */
-    max-width: 850px !important; /* Match the left section SVG */
-    height: auto !important; /* Maintain aspect ratio */
-    transform: none !important; /* Remove any applied transformations */
-    margin: 0 auto !important; /* Center it horizontally */
+    width: 60px; /* Adjusted for better responsiveness */
+    transform: translate(50%, -50%); /* Maintain location */
   }
 
   .recommendations-section .accordion-content {
