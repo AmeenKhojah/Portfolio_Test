@@ -1059,7 +1059,7 @@ canvas#canvas3d {
   }
 
   #about {
-    scroll-margin-top: 70px; /* Adjust this value as needed */
+    scroll-margin-top: 30px; /* Adjust this value as needed */
   }
 
   /* ====== Left Section Adjustments ====== */
@@ -1119,8 +1119,8 @@ canvas#canvas3d {
   }
 
   .about-me-wrapper {
-    margin-top: -1000px; /* Space below the hero section */
-    margin-bottom: -1000px; /* Space above the skills section */
+    margin-top: -1200px; /* Space below the hero section */
+    margin-bottom: -1200px; /* Space above the skills section */
     position: relative; /* Ensure proper placement */
     display: flex;
     justify-content: flex-start; /* Align content to the left */
