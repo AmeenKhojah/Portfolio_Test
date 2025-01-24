@@ -405,32 +405,49 @@ document.addEventListener('DOMContentLoaded', () => {
     sectionObserver.observe(section);
   });
 
-  // ====== Download Functionality for Mobile ======
-  // Function to trigger download
-  function triggerDownload(filePath) {
-    const link = document.createElement('a');
-    link.href = filePath;
-    link.download = filePath.split('/').pop(); // Extracts the file name from the path
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
+  // ====== Download Functionality for Mobile Devices ======
+  // Detect if the device is mobile
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-  // Select all download buttons
-  const downloadButtons = document.querySelectorAll('.download-button, .download-recommendation-button');
-
-  // Attach click event listeners to each download button
-  downloadButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault(); // Prevents the default navigation behavior
-      const filePath = button.getAttribute('href'); // Retrieves the file path from href attribute
-
-      if (filePath) {
-        triggerDownload(filePath);
-      } else {
-        console.error('Download file path not specified.');
-        alert('File not found.');
+  if (isMobile) {
+    // Function to trigger download
+    async function triggerDownload(fileUrl) {
+      try {
+        const response = await fetch(fileUrl, { mode: 'cors' });
+        if (!response.ok) throw new Error('Network response was not ok.');
+        const blob = await response.blob();
+        const blobUrl = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        // Extract filename from URL
+        const fileName = fileUrl.substring(fileUrl.lastIndexOf('/') + 1);
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(blobUrl);
+      } catch (error) {
+        console.error('Download failed:', error);
+        alert('Failed to download file.');
       }
+    }
+
+    // Select all download buttons
+    const downloadButtons = document.querySelectorAll('.download-button, .download-recommendation-button');
+
+    // Attach click event listeners to each download button
+    downloadButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevents the default navigation behavior
+        const fileUrl = button.getAttribute('href'); // Retrieves the file path from href attribute
+
+        if (fileUrl) {
+          triggerDownload(fileUrl);
+        } else {
+          console.error('Download file path not specified.');
+          alert('File not found.');
+        }
+      });
     });
-  });
+  }
 });
