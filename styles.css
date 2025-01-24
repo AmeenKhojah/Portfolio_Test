@@ -1058,7 +1058,9 @@ canvas#canvas3d {
     padding: 8px 0; /* Added vertical padding for better touch targets */
   }
 
-
+  #about {
+    scroll-margin-top: 100px; /* Adjust this value as needed */
+  }
   /* ====== Left Section Adjustments ====== */
   .left-section-svg {
     width: 100%;
@@ -1070,10 +1072,10 @@ canvas#canvas3d {
     margin: 0;
   }
   .recommendations-section img.project-vector {
-    width: 700vw; /* 10% of the viewport width */ 
-    max-width: 700px; /* Limit size on smaller screens */ 
+    width: 700vw; /* 10% of the viewport width */
+    max-width: 700px; /* Limit size on smaller screens */
     transform: translate(50%, -50%);
-    object-fit: contain; 
+    object-fit: contain;
   }
 
 
