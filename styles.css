@@ -1059,9 +1059,9 @@ canvas#canvas3d {
   }
 
   #about {
-    scroll-margin-top: 30px; /* Adjust this value as needed */
+    scroll-margin-top: 70px; /* Adjust this value as needed */
   }
-  
+
   /* ====== Left Section Adjustments ====== */
   .left-section-svg {
     width: 100%;
@@ -1119,7 +1119,6 @@ canvas#canvas3d {
   }
 
   .about-me-wrapper {
-    transform: translateY(0%);
     margin-top: 600px; /* Space below the hero section */
     margin-bottom: 600px; /* Space above the skills section */
     position: relative; /* Ensure proper placement */
