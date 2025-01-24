@@ -1059,11 +1059,11 @@ canvas#canvas3d {
     margin: 0;
   }
   .project-vector {
-    width: 850px; /* Hardcoded to match left-section-svg size */
-    height: auto; /* Maintains aspect ratio */
-    max-width: 100%; /* Responsive and prevents overflow */
-    transform: none; /* Removes unnecessary transformations */
-    margin: 0 auto; /* Centers the SVG horizontally */
+    width: 850px !important; /* Force exact size match */
+    height: auto !important; /* Maintain aspect ratio */
+    max-width: 100% !important; /* Prevent container constraints */
+    transform: none !important; /* Reset any transforms */
+    margin: 0 auto !important; /* Center if required */
   }
 
   .recommendations-section .accordion-content {
