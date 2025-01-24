@@ -1,11 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Portfolio scripts loaded.');
 
-  // Scroll to the top on mobile devices
-  if (window.innerWidth <= 768) {  // Target mobile devices
-    window.scrollTo(0, 0); // Scroll to the very top of the page
-  }
-
   // ====== Disable dragging on all images ======
   const images = document.querySelectorAll('img');
   images.forEach(img => {
@@ -230,7 +225,9 @@ document.addEventListener('DOMContentLoaded', () => {
               openModal();
             } else {
               alert(
-                `Opening details for: ${card.querySelector('h3')?.textContent || 'Project'}`
+                `Opening details for: ${
+                  card.querySelector('h3')?.textContent || 'Project'
+                }`
               );
             }
           }
@@ -306,7 +303,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 openModal();
               } else {
                 alert(
-                  `Opening details for: ${card.querySelector('h3')?.textContent || 'Project'}`
+                  `Opening details for: ${
+                    card.querySelector('h3')?.textContent || 'Project'
+                  }`
                 );
               }
             }
@@ -404,5 +403,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   contentSections.forEach(section => {
     sectionObserver.observe(section);
+  });
+});
+// ====== Download Functionality ======
+document.addEventListener('DOMContentLoaded', () => {
+  // Function to trigger download
+  function triggerDownload(filePath) {
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = filePath.split('/').pop();
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  // Attach click event listeners to all download buttons
+  const downloadButtons = document.querySelectorAll('.download-button, .download-recommendation-button');
+  downloadButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent default link behavior
+      const filePath = button.getAttribute('href');
+      if (filePath) {
+        triggerDownload(filePath);
+      } else {
+        console.error('Download link not found.');
+        alert('File not found.');
+      }
+    });
   });
 });
