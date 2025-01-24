@@ -1058,9 +1058,11 @@ canvas#canvas3d {
     padding: 0;
     margin: 0;
   }
-  .project-vector {
-    width: 60px; /* Adjusted for better responsiveness */
-    transform: translate(50%, -50%); /* Maintain location */
+  .recommendations-section img.project-vector {
+    width: 10vw; /* 10% of the viewport width */
+    max-width: 60px; /* Limit size on smaller screens */
+    transform: translate(50%, -50%);
+    object-fit: contain;
   }
 
   .recommendations-section .accordion-content {
