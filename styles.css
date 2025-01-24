@@ -1059,8 +1059,8 @@ canvas#canvas3d {
     margin: 0;
   }
   .recommendations-section img.project-vector {
-    width: 1000vw; /* 10% of the viewport width */
-    max-width: 1000px; /* Limit size on smaller screens */
+    width: 700vw; /* 10% of the viewport width */
+    max-width: 700px; /* Limit size on smaller screens */
     transform: translate(50%, -50%);
     object-fit: contain;
   }
