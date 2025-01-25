@@ -1045,8 +1045,8 @@ canvas#canvas3d {
 @media (max-width: 768px) {
   #about {
     position: relative;
-    scroll-margin-top: 80px;
-    
+    scroll-margin-top: 600px;
+
   }
   /* ====== Navbar Adjustments for Tablets ====== */
   .navbar-container {
