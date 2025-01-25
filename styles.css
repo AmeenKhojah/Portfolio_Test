@@ -26,14 +26,14 @@ body {
 
 /* ====== Navigation Bar ====== */
 .navbar {
-  position: fixed; /* Changed to fixed for better control */
+  position: sticky;
   top: 0;
   width: 100%;
   height: 60px;
   backdrop-filter: blur(10px) saturate(180%);
   background-color: rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 1000;
+  z-index: 4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,11 +100,10 @@ body {
   color: #8a2be2;
 }
 
-/* ====== Remove or Adjust Global scroll-margin-top ====== */
-/* Remove this if not needed or adjust accordingly */
-/* section {
+/* Add scroll margin to all sections */
+section {
   scroll-margin-top: 80px;
-} */
+}
 
 /* ====== Portfolio Container ====== */
 .portfolio-container {
@@ -286,14 +285,9 @@ canvas#canvas3d {
 .about-me-wrapper {
   width: 100%;
   position: relative;
-  /* Removed excessive translateY */
-  /* transform: translateY(255%); */
+  transform: translateY(255%);
   contain: layout;
   will-change: transform;
-}
-
-.about-content {
-  padding-top: 60px; /* Padding equal to navbar height */
 }
 
 .about-me {
@@ -302,13 +296,9 @@ canvas#canvas3d {
   text-align: left;
   padding: 0 26px;
   position: relative;
-  /* Removed excessive translateY and margin-left */
-  /* transform: translateY(-550px);
-  margin-left: 85px; */
-  margin-left: 0;
+  transform: translateY(-550px);
+  margin-left: 85px;
   will-change: transform;
-  background-color: #1a1a1a; /* Added background for visibility */
-  padding: 20px;
 }
 
 .left-section-svg {
@@ -345,6 +335,10 @@ canvas#canvas3d {
   color: #cccccc;
   margin-bottom: 35px;
   text-align: left;
+}
+
+#about {
+  scroll-margin-top: 900px;
 }
 
 /* ====== Gradient Line ====== */
@@ -1022,7 +1016,6 @@ canvas#canvas3d {
 .projects-section {
   position: relative;
 }
-
 .project-vector {
   position: absolute;
   top: 0%;
@@ -1050,25 +1043,11 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-  /* ====== Anchor Offset for #about Section ====== */
   #about {
     position: relative;
-    scroll-margin-top: 60px; /* Ensure this matches the navbar height */
+    scroll-margin-top: 80px;
+    
   }
-
-  .about-anchor-offset {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px; /* Height of your navbar */
-    margin-top: -60px; /* Negative margin equal to navbar height */
-  }
-
-  .about-content {
-    padding-top: 60px; /* Padding equal to navbar height */
-  }
-
   /* ====== Navbar Adjustments for Tablets ====== */
   .navbar-container {
     padding: 0 10px; /* Reduced horizontal padding */
@@ -1095,7 +1074,7 @@ canvas#canvas3d {
     margin: 0;
   }
   .recommendations-section img.project-vector {
-    width: 700vw; /* 700% of the viewport width */
+    width: 700vw; /* 10% of the viewport width */
     max-width: 700px; /* Limit size on smaller screens */
     transform: translate(50%, -50%);
     object-fit: contain;
@@ -1125,7 +1104,9 @@ canvas#canvas3d {
     transform: rotate(0deg);
     transition: transform 0.3s ease;
   }
-  .recommendations-section .accordion-header[aria-expanded='true'] .accordion-icon {
+  .recommendations-section
+    .accordion-header[aria-expanded='true']
+    .accordion-icon {
     transform: rotate(45deg);
   }
 
@@ -1337,7 +1318,6 @@ canvas#canvas3d {
 
 }
 
-/* ====== Mobile Specific Styles for Smaller Screens ====== */
 @media (max-width: 480px) {
   .cards-container {
     grid-template-columns: 1fr;
@@ -1420,4 +1400,4 @@ canvas#canvas3d {
 /* No dropdown or hamburger menu styles are included as per your request */
 
 /* ====== Responsive Typography and Spacing ====== */
-/* All other responsive adjustments are already handled above */  
+/* All other responsive adjustments are already handled above */
