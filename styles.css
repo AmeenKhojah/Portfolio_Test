@@ -1044,7 +1044,7 @@ canvas#canvas3d {
 
 @media (max-width: 768px) {
   #about {
-    position: relative;
+
     scroll-margin-top: 600px;
 
   }
