@@ -1046,6 +1046,19 @@ canvas#canvas3d {
   #about {
     position: relative;
   }
+  
+    .about-anchor-offset {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Height of your navbar */
+    margin-top: -60px; /* Negative margin equal to navbar height */
+  }
+
+  .about-content {
+    padding-top: 60px; /* Padding equal to navbar height */
+  }
   /* ====== Navbar Adjustments for Tablets ====== */
   .navbar-container {
     padding: 0 10px; /* Reduced horizontal padding */
