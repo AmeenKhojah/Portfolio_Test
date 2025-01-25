@@ -1117,7 +1117,7 @@ canvas#canvas3d {
   #about {
 
     position: relative;
-        scroll-margin-top: 600px; /* Matches navbar height */
+        scroll-margin-top: 620px; /* Matches navbar height */
   }
   .about-me-wrapper {
     transform: translateY(0%);
