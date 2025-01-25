@@ -1045,7 +1045,7 @@ canvas#canvas3d {
 @media (max-width: 768px) {
   #about {
 
-    scroll-margin-top: 600px;
+    scroll-margin-top: 100px;
 
   }
   /* ====== Navbar Adjustments for Tablets ====== */
