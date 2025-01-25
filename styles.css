@@ -1043,7 +1043,9 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-
+  #about {
+    position: relative;
+  }
   /* ====== Navbar Adjustments for Tablets ====== */
   .navbar-container {
     padding: 0 10px; /* Reduced horizontal padding */
