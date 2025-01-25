@@ -1057,7 +1057,7 @@ canvas#canvas3d {
   }
 
   .about-content {
-    padding-top: 60px; /* Padding equal to navbar height */
+    padding-top: 100px; /* Padding equal to navbar height */
   }
   /* ====== Navbar Adjustments for Tablets ====== */
   .navbar-container {
