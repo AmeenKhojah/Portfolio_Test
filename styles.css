@@ -1115,21 +1115,7 @@ canvas#canvas3d {
     display: none;
   }
 
-  .about-me-wrapper {
-    position: relative; /* Ensure proper placement */
-    display: flex;
-    justify-content: flex-start; /* Align content to the left */
-    width: 100%; /* Ensure it spans the entire width of the container */
-  }
 
-  .about-me {
-    padding: 0 40px; /* Add horizontal padding for spacing */
-    margin-left: 0; /* Align directly to the left */
-    text-align: left; /* Ensure text is left-aligned */
-    width: 100%; /* Fit within the screen */
-    max-width: 1200px; /* Optionally set a maximum width for readability */
-    box-sizing: border-box; /* Ensure padding is included in the width calculation */
-  }
 
   .typing-effect {
     height: 50px;
