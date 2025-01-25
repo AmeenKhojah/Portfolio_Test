@@ -1115,10 +1115,7 @@ canvas#canvas3d {
     display: none;
   }
   #about {
-    scroll-margin-top: 60px; /* Adjust as necessary */
-    padding-top: 60px; /* Optional alternative */
-    transform: none; /* Reset if previously transformed */
-    margin-top: 0;
+
     position: relative;
   }
   .about-me-wrapper {
