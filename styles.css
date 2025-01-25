@@ -1116,7 +1116,7 @@ canvas#canvas3d {
   }
 
   .about-me-wrapper {
-    transform: translateY(0%);
+    transform: translateY(50%);
 
     position: relative; /* Ensure proper placement */
     display: flex;
