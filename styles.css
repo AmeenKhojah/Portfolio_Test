@@ -1043,13 +1043,7 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-  #about {
-    scroll-margin-top: 60px; /* Adjust as necessary */
-    padding-top: 60px; /* Optional alternative */
-    transform: none; /* Reset if previously transformed */
-    margin-top: 0;
-    position: relative;
-  }
+
   /* ====== Navbar Adjustments for Tablets ====== */
   .navbar-container {
     padding: 0 10px; /* Reduced horizontal padding */
