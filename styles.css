@@ -25,11 +25,9 @@ body {
 }
 
 /* ====== Navigation Bar ====== */
-/* ====== Navigation Bar ====== */
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
   height: 60px;
   backdrop-filter: blur(10px) saturate(180%);
@@ -40,9 +38,7 @@ body {
   justify-content: center;
   align-items: center;
   user-select: none;
-  transition: top 0.3s ease-in-out; /* Transition effect for hiding/showing navbar */
 }
-
 
 .navbar-container {
   width: 90%;
@@ -1051,9 +1047,6 @@ canvas#canvas3d {
 }
 
 @media (max-width: 768px) {
-
-
-
     #project2 .coming-soon-label {
     font-size: 1em;          /* Slightly smaller font size */
     bottom: 5px;             /* Reduce distance from bottom */
@@ -1061,7 +1054,9 @@ canvas#canvas3d {
     width: 90%;              /* Slightly reduce width for better fit */
   }
 
+  /* Ensure the parent project card is positioned relatively */
 
+  /* ====== Navbar Adjustments for Tablets ====== */
   .navbar-container {
     padding: 0 10px; /* Reduced horizontal padding */
   }
