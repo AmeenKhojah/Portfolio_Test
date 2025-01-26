@@ -1114,7 +1114,11 @@ canvas#canvas3d {
   canvas#canvas3d {
     display: none;
   }
+  #about {
 
+    position: relative;
+        scroll-margin-top: 620px; /* Matches navbar height */
+  }
   .about-me-wrapper {
     transform: translateY(0%);
     margin-top: 600px; /* Space below the hero section */
