@@ -1493,4 +1493,7 @@ canvas#canvas3d {
     transform: translateY(0);
   }
 }
+#comingSoonModal {
+  cursor: default; /* Default cursor for the entire modal */
+}
 /* ====== End of COMING SOON MODAL STYLES ====== */
