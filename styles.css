@@ -1198,7 +1198,17 @@ canvas#canvas3d {
     font-size: 2.5rem;
   }
 
+    #project2 .coming-soon-label {
+    font-size: 1em;          /* Slightly smaller font size */
+    bottom: 5px;             /* Reduce distance from bottom */
+    padding-top: 5px;        /* Reduce top padding */
+    width: 90%;              /* Slightly reduce width for better fit */
+  }
 
+  /* Ensure the parent project card is positioned relatively */
+  #project2 {
+    position: relative; /* Already set globally, redundant but safe */
+  }
 
   .carousel-wrapper {
     display: flex;
@@ -1452,9 +1462,7 @@ canvas#canvas3d {
   background-clip: text;
   color: transparent;
 }
-#project2 {
-  position: relative; /* Establishes a new positioning context */
-}
+
 #project2 .coming-soon-label {
   position: absolute; /* Positions the label absolutely within #project2 */
   bottom: 10px;       /* Adjusts the distance from the bottom of the card */
