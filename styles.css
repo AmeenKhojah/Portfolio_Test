@@ -1051,9 +1051,7 @@ canvas#canvas3d {
   }
 
   /* Ensure the parent project card is positioned relatively */
-  #project2 {
-    position: relative; /* Already set globally, redundant but safe */
-  }
+
   /* ====== Navbar Adjustments for Tablets ====== */
   .navbar-container {
     padding: 0 10px; /* Reduced horizontal padding */
