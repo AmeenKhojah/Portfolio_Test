@@ -398,15 +398,9 @@ function closeComingSoonModal() {
   }, 400);
 }
 
-// Add event listener for clicks anywhere on the modal to close it
+// Add event listener for clicks anywhere in the modal (including content area) to close it
 comingSoonModal.addEventListener('click', () => {
   closeComingSoonModal();
-});
-
-// Prevent immediate closing when clicking inside the modal content
-const modalContent = comingSoonModal.querySelector('.modal-content');
-modalContent.addEventListener('click', event => {
-  event.stopPropagation();
 });
 
 // Add event listener for the Escape key to close the modal
