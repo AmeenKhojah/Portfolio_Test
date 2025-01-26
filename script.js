@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   console.log('Portfolio scripts loaded.');
 
   // ====== Disable dragging on all images ======
