@@ -372,41 +372,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+
+
+
   // ====== Coming Soon Modal Functionality ======
-  const comingSoonModal = document.getElementById('comingSoonModal');
-  const closeComingSoonButton = document.querySelector('.close-coming-soon-button');
+// ====== Coming Soon Modal Functionality ======
+const comingSoonModal = document.getElementById('comingSoonModal');
 
-  function openComingSoonModal() {
-    comingSoonModal.style.display = 'flex';
-    setTimeout(() => {
-      comingSoonModal.classList.add('show');
-      comingSoonModal.querySelector('.modal-content').classList.add('show');
-    }, 10);
+// Open the Coming Soon modal
+function openComingSoonModal() {
+  comingSoonModal.style.display = 'flex';
+  setTimeout(() => {
+    comingSoonModal.classList.add('show');
+    comingSoonModal.querySelector('.modal-content').classList.add('show');
+  }, 10);
+}
+
+// Close the Coming Soon modal
+function closeComingSoonModal() {
+  comingSoonModal.classList.remove('show');
+  comingSoonModal.querySelector('.modal-content').classList.remove('show');
+  setTimeout(() => {
+    comingSoonModal.style.display = 'none';
+  }, 400);
+}
+
+// Add event listener for clicks anywhere on the modal to close it
+comingSoonModal.addEventListener('click', event => {
+  // Ensure the click is outside the modal content area
+  if (!event.target.closest('.modal-content')) {
+    closeComingSoonModal();
   }
+});
 
-  function closeComingSoonModal() {
-    comingSoonModal.classList.remove('show');
-    comingSoonModal.querySelector('.modal-content').classList.remove('show');
-    setTimeout(() => {
-      comingSoonModal.style.display = 'none';
-    }, 400);
+// Add event listener for the Escape key to close the modal
+window.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    closeComingSoonModal();
   }
+});
 
-  if (closeComingSoonButton) {
-    closeComingSoonButton.addEventListener('click', closeComingSoonModal);
-  }
-
-  window.addEventListener('click', event => {
-    if (event.target == comingSoonModal) {
-      closeComingSoonModal();
-    }
-  });
-
-  window.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
-      closeComingSoonModal();
-    }
-  });
 
   // ====== Content Loading Animation ======
   const contentSections = document.querySelectorAll('.content-section');
