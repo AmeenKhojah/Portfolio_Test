@@ -97,7 +97,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // ====== Projects Carousel ======
   const carousel = document.querySelector('.carousel');
   const carouselCards = document.querySelectorAll('.carousel-card');
-  const instruction = document.getElementById('carousel-instruction');
+const instruction = document.getElementById('carousel-instruction');
+
+// Check if the user is on a mobile device
+const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+  navigator.userAgent
+);
+
+// Update the instruction text based on the device type
+if (isMobileDevice) {
+  instruction.innerHTML =
+    'Use <strong>Drag</strong> to move between projects and <strong>Tap</strong> to view details.';
+} else {
+  instruction.innerHTML =
+    'Use <strong>Left/Right Arrow Keys</strong> to move between projects and <strong>Enter</strong> to view details.';
+}
+
 
   if (carousel && carouselCards.length > 0) {
     const totalCards = carouselCards.length;
