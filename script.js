@@ -377,6 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ====== Coming Soon Modal Functionality ======
 // ====== Coming Soon Modal Functionality ======
+// ====== Coming Soon Modal Functionality ======
 const comingSoonModal = document.getElementById('comingSoonModal');
 
 // Open the Coming Soon modal
@@ -398,11 +399,14 @@ function closeComingSoonModal() {
 }
 
 // Add event listener for clicks anywhere on the modal to close it
-comingSoonModal.addEventListener('click', event => {
-  // Ensure the click is outside the modal content area
-  if (!event.target.closest('.modal-content')) {
-    closeComingSoonModal();
-  }
+comingSoonModal.addEventListener('click', () => {
+  closeComingSoonModal();
+});
+
+// Prevent immediate closing when clicking inside the modal content
+const modalContent = comingSoonModal.querySelector('.modal-content');
+modalContent.addEventListener('click', event => {
+  event.stopPropagation();
 });
 
 // Add event listener for the Escape key to close the modal
@@ -411,6 +415,7 @@ window.addEventListener('keydown', event => {
     closeComingSoonModal();
   }
 });
+
 
 
   // ====== Content Loading Animation ======
