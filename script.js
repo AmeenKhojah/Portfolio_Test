@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const textArray = [
     "A Software Engineer.",
     "A Problem Solver.",
-    "A Leader",
+    "Aspiring Leader",
     "An AI Enthusiast."
   ];
   const typingDelay = 100;
@@ -391,7 +391,7 @@ function openComingSoonModal() {
 
 // Close the Coming Soon modal
 function closeComingSoonModal() {
-  comingSoonModal.classLfist.remove('show');
+  comingSoonModal.classList.remove('show');
   comingSoonModal.querySelector('.modal-content').classList.remove('show');
   setTimeout(() => {
     comingSoonModal.style.display = 'none';
