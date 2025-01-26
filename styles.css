@@ -1463,25 +1463,7 @@ canvas#canvas3d {
   color: transparent;
 }
 
-#project2 .coming-soon-label {
-  position: absolute; /* Positions the label absolutely within #project2 */
-  bottom: 10px;       /* Adjusts the distance from the bottom of the card */
-  left: 50%;          /* Centers the label horizontally */
-  transform: translateX(-50%); /* Ensures perfect horizontal centering */
 
-  /* Existing Styles */
-  background: linear-gradient(90deg, #ff00ff, #65558f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-
-  /* Additional Styling for Better Visibility */
-  font-size: 1.2em;      /* Adjusts the font size */
-  text-align: center;    /* Centers the text within the label */
-  width: 100%;           /* Ensures the label spans the full width of the card */
-  padding-top: 10px;     /* Adds spacing above the text (optional) */
-}
 
 /* Optional: Add a subtle animation to the "Coming Soon" label */
 #project3 .coming-soon-label,
