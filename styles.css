@@ -121,7 +121,7 @@ section {
 
 /* ====== Left Section: Name and Contact ====== */
 .left-section {
-  flex: 0.68;
+
   padding: 600px 40px 400px 120px;
   box-sizing: border-box;
   display: flex;
