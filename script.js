@@ -163,22 +163,42 @@ document.addEventListener('DOMContentLoaded', () => {
       hideInstruction();
     }
 
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight') {
-        spinForward();
-      } else if (e.key === 'ArrowLeft') {
-        spinBackward();
-      } else if (e.key === 'Enter') {
-        const card = carouselCards[selectedIndex];
-        if (card) {
-          if (card.id === 'project1') {
-            openModal();
-          } else {
-            openComingSoonModal();
-          }
-        }
+let isComingSoonModalActive = false; // Flag to prevent rapid toggling of the modal
+
+document.addEventListener('keydown', e => {
+  const isComingSoonModalVisible =
+    comingSoonModal.style.display === 'flex' && comingSoonModal.classList.contains('show');
+
+  if (e.key === 'ArrowRight' && !isComingSoonModalVisible) {
+    // Spin the carousel forward if the Coming Soon modal is not visible
+    spinForward();
+  } else if (e.key === 'ArrowLeft' && !isComingSoonModalVisible) {
+    // Spin the carousel backward if the Coming Soon modal is not visible
+    spinBackward();
+  } else if (e.key === 'Enter') {
+    if (!isComingSoonModalVisible && !isComingSoonModalActive) {
+      // Open Coming Soon modal if it's not visible and Enter is pressed
+      const card = carouselCards[selectedIndex];
+      if (card && card.id !== 'project1') {
+        openComingSoonModal();
+        isComingSoonModalActive = true; // Prevent immediate toggle
+        setTimeout(() => {
+          isComingSoonModalActive = false; // Reset after a short delay
+        }, 500); // Adjust delay as needed
+      } else if (card && card.id === 'project1') {
+        openModal();
       }
-    });
+    } else if (isComingSoonModalVisible) {
+      // Close the Coming Soon modal if it's visible
+      closeComingSoonModal();
+    }
+  } else if (e.key === 'Escape' && isComingSoonModalVisible) {
+    // Close the Coming Soon modal on Escape key
+    closeComingSoonModal();
+  }
+});
+
+
 
     // Drag logic (Desktop)
     let isDraggingCarousel = false;
@@ -376,8 +396,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ====== Coming Soon Modal Functionality ======
-// ====== Coming Soon Modal Functionality ======
-// ====== Coming Soon Modal Functionality ======
+
+
 const comingSoonModal = document.getElementById('comingSoonModal');
 
 // Open the Coming Soon modal
@@ -407,6 +427,8 @@ comingSoonModal.addEventListener('click', () => {
 window.addEventListener('keydown', event => {
   if (event.key === 'Escape') {
     closeComingSoonModal();
+
+
   }
 });
 
