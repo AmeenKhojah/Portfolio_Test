@@ -1075,9 +1075,6 @@ canvas#canvas3d {
     padding: 8px 0; /* Added vertical padding for better touch targets */
   }
 
-.navbar {
-  position: sticky;
-}
 
   /* ====== Left Section Adjustments ====== */
   .left-section-svg {
