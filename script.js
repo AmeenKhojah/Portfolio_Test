@@ -174,9 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (card.id === 'project1') {
             openModal();
           } else {
-            alert(
-              `Opening details for: ${card.querySelector('h3')?.textContent || 'Project'}`
-            );
+            openComingSoonModal();
           }
         }
       }
@@ -224,11 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (card.id === 'project1') {
               openModal();
             } else {
-              alert(
-                `Opening details for: ${
-                  card.querySelector('h3')?.textContent || 'Project'
-                }`
-              );
+              openComingSoonModal();
             }
           }
         }
@@ -302,11 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
               if (card.id === 'project1') {
                 openModal();
               } else {
-                alert(
-                  `Opening details for: ${
-                    card.querySelector('h3')?.textContent || 'Project'
-                  }`
-                );
+                openComingSoonModal();
               }
             }
           }
@@ -323,9 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (card.id === 'project1') {
             openModal();
           } else {
-            alert(
-              `Opening details for: ${card.querySelector('h3')?.textContent || 'Project'}`
-            );
+            openComingSoonModal();
           }
         }
       });
@@ -384,6 +372,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // ====== Coming Soon Modal Functionality ======
+  const comingSoonModal = document.getElementById('comingSoonModal');
+  const closeComingSoonButton = document.querySelector('.close-coming-soon-button');
+
+  function openComingSoonModal() {
+    comingSoonModal.style.display = 'flex';
+    setTimeout(() => {
+      comingSoonModal.classList.add('show');
+      comingSoonModal.querySelector('.modal-content').classList.add('show');
+    }, 10);
+  }
+
+  function closeComingSoonModal() {
+    comingSoonModal.classList.remove('show');
+    comingSoonModal.querySelector('.modal-content').classList.remove('show');
+    setTimeout(() => {
+      comingSoonModal.style.display = 'none';
+    }, 400);
+  }
+
+  if (closeComingSoonButton) {
+    closeComingSoonButton.addEventListener('click', closeComingSoonModal);
+  }
+
+  window.addEventListener('click', event => {
+    if (event.target == comingSoonModal) {
+      closeComingSoonModal();
+    }
+  });
+
+  window.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeComingSoonModal();
+    }
+  });
+
   // ====== Content Loading Animation ======
   const contentSections = document.querySelectorAll('.content-section');
   const observerOptions = {
@@ -404,50 +428,4 @@ document.addEventListener('DOMContentLoaded', () => {
   contentSections.forEach(section => {
     sectionObserver.observe(section);
   });
-
-  // ====== Download Functionality for Mobile Devices ======
-  // Detect if the device is mobile
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-  if (isMobile) {
-    // Function to trigger download
-    async function triggerDownload(fileUrl) {
-      try {
-        const response = await fetch(fileUrl, { mode: 'cors' });
-        if (!response.ok) throw new Error('Network response was not ok.');
-        const blob = await response.blob();
-        const blobUrl = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = blobUrl;
-        // Extract filename from URL
-        const fileName = fileUrl.substring(fileUrl.lastIndexOf('/') + 1);
-        a.download = fileName;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        window.URL.revokeObjectURL(blobUrl);
-      } catch (error) {
-        console.error('Download failed:', error);
-        alert('Failed to download file.');
-      }
-    }
-
-    // Select all download buttons
-    const downloadButtons = document.querySelectorAll('.download-button, .download-recommendation-button');
-
-    // Attach click event listeners to each download button
-    downloadButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevents the default navigation behavior
-        const fileUrl = button.getAttribute('href'); // Retrieves the file path from href attribute
-
-        if (fileUrl) {
-          triggerDownload(fileUrl);
-        } else {
-          console.error('Download file path not specified.');
-          alert('File not found.');
-        }
-      });
-    });
-  }
 });
