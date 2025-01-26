@@ -1198,12 +1198,6 @@ canvas#canvas3d {
     font-size: 2.5rem;
   }
 
-    #project2 .coming-soon-label {
-    font-size: 1em;          /* Slightly smaller font size */
-    bottom: 5px;             /* Reduce distance from bottom */
-    padding-top: 5px;        /* Reduce top padding */
-    width: 90%;              /* Slightly reduce width for better fit */
-  }
 
 
   .carousel-wrapper {
