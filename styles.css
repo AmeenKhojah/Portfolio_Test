@@ -569,8 +569,9 @@ canvas#canvas3d {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Reduced margin for better alignment */
   height: 60px;
+  width: 60px; /* Ensure consistent width */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -589,15 +590,18 @@ canvas#canvas3d {
 }
 
 .card-content h3 {
-  margin: 10px 0;
+  margin: 5px 0; /* Reduced margin for uniformity */
   font-size: 1.5em;
   color: #ffffff;
+  text-align: center; /* Center the text */
 }
 
 .card-content p {
   font-size: 1em;
   line-height: 1.4;
   color: #cccccc;
+  text-align: center; /* Center the text */
+  flex-grow: 1; /* Pushes the paragraph to take available space */
 }
 
 /* ====== Projects Section ====== */
