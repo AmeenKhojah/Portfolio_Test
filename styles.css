@@ -1044,7 +1044,7 @@ canvas#canvas3d {
 
 @media (max-width: 768px) {
     #project2 .coming-soon-label {
-    font-size: 10em;          /* Slightly smaller font size */
+    font-size: 1em;          /* Slightly smaller font size */
     bottom: 5px;             /* Reduce distance from bottom */
     padding-top: 5px;        /* Reduce top padding */
     width: 90%;              /* Slightly reduce width for better fit */
