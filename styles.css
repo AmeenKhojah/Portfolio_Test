@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'Glacial Indifference';
+    src: url('fonts/GlacialIndifference-Bold.otf') format('opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Glacial Indifference';
+    src: url('fonts/GlacialIndifference-Regular.otf') format('opentype');
+    font-weight: 400;
+}
 /* ====== Reset & Base Styles ====== */
 * {
   margin: 0;
@@ -22,6 +33,17 @@ body {
   color: #ffffff; /* Default text color */
   overflow-x: hidden; /* Prevent horizontal scroll */
   scroll-behavior: smooth;
+}
+/* Apply Glacial Indifference Bold to Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Glacial Indifference', sans-serif;
+    font-weight: 700;
+}
+
+/* Apply Glacial Indifference Light to Paragraphs */
+p {
+    font-family: 'Glacial Indifference', sans-serif;
+    font-weight: 400;
 }
 
 /* ====== Navigation Bar ====== */
